@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 无涯的博客
+title: 无涯
 subtitle: "无涯的博客"
 description: "我将会在这里分享学习到的知识，工作上的问题，生活中的感悟"
 keywords:
@@ -11,6 +11,9 @@ author: fullsize
 language: zh-CN
 timezone: Asia/Shanghai
 
+# markdown
+markdown:
+  render: true
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: http://fullsize.online
