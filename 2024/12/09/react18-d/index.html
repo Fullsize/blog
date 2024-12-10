@@ -409,12 +409,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/react/">
-                                <span class="chip bg-color">react</span>
-                            </a>
-                        
                             <a href="/tags/javascript/">
                                 <span class="chip bg-color">javascript</span>
+                            </a>
+                        
+                            <a href="/tags/react/">
+                                <span class="chip bg-color">react</span>
                             </a>
                         
                             <a href="/tags/%E5%9F%BA%E7%A1%80/">
@@ -462,10 +462,12 @@
         <hr class="clearfix">
 
         
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
-        
 
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
         
 
         <div class="card-content article-card-content">
@@ -489,7 +491,9 @@
 </ul>
 <h3 id="6-严格模式中的双重渲染"><a href="#6-严格模式中的双重渲染" class="headerlink" title="6. 严格模式中的双重渲染"></a>6. 严格模式中的双重渲染</h3><p>React 18 加强了开发环境下的严格模式（Strict Mode），在首次渲染组件时会触发两次渲染。这一机制帮助开发者更容易检测副作用，确保组件的行为稳定。虽然双重渲染仅在开发模式下启用，但它能有效帮助开发者找到隐藏的依赖和潜在问题，提高代码质量。</p>
 <h3 id="7-全新的-createRoot-API"><a href="#7-全新的-createRoot-API" class="headerlink" title="7. 全新的 createRoot API"></a>7. 全新的 <code>createRoot</code> API</h3><p>在 React 18 中，<code>createRoot</code> API 取代了 <code>ReactDOM.render</code>。使用 <code>createRoot</code> 可以启用并发特性，进一步提升渲染性能。开发者需要注意，React 18 的 <code>createRoot</code> 是启用并发渲染的必要步骤，在挂载根组件时必须使用。例如：</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createRoot &#125; <span class="keyword">from</span> <span class="string">&quot;react-dom/client&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> root = <span class="title function_">createRoot</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;root&quot;</span>));</span><br><span class="line">root.<span class="title function_">render</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">App</span> /&gt;</span></span>);</span><br></pre></td></tr></table></figure>
+<pre class="language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> createRoot <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">"react-dom/client"</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> root <span class="token operator">=</span> <span class="token function">createRoot</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"root"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+root<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">App</span></span> <span class="token punctuation">/></span></span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 
 <h3 id="8-全局错误处理与新的错误恢复机制"><a href="#8-全局错误处理与新的错误恢复机制" class="headerlink" title="8. 全局错误处理与新的错误恢复机制"></a>8. 全局错误处理与新的错误恢复机制</h3><p>React 18 中改进了全局错误处理和恢复机制，增强了应用的稳定性。例如，部分组件在遇到错误时会自动重新渲染，而无需刷新整个应用，这样的增强使得应用在面对意外错误时可以更平稳地恢复。</p>
 
@@ -556,12 +560,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/react/">
-                                    <span class="chip bg-color">react</span>
-                                </a>
-                            
                                 <a href="/tags/javascript/">
                                     <span class="chip bg-color">javascript</span>
+                                </a>
+                            
+                                <a href="/tags/react/">
+                                    <span class="chip bg-color">react</span>
                                 </a>
                             
                                 <a href="/tags/%E5%9F%BA%E7%A1%80/">
@@ -709,12 +713,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/react/">
-                        <span class="chip bg-color">react</span>
-                    </a>
-                    
                     <a href="/tags/javascript/">
                         <span class="chip bg-color">javascript</span>
+                    </a>
+                    
+                    <a href="/tags/react/">
+                        <span class="chip bg-color">react</span>
                     </a>
                     
                     <a href="/tags/%E5%9F%BA%E7%A1%80/">
@@ -737,8 +741,6 @@
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
 <!-- 代码语言 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
 
 
 <!-- 代码块复制 -->
@@ -1116,8 +1118,6 @@ $(function () {
     })();
 </script>
 
-    
-    <script src="/libs/others/clicklove.js" async="async"></script>
     
     
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
