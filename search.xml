@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>React 18 更新内容</title>
+      <link href="/2024/12/09/react18-d/"/>
+      <url>/2024/12/09/react18-d/</url>
+      
+        <content type="html"><![CDATA[<p>React 18 是 React 框架的一个重要版本更新，为开发者带来了诸多新的功能和优化，特别是在并发渲染、性能提升和用户体验方面的改进。本文将为您全面解析 React 18 的更新要点，包括并发特性、新的 API、服务端渲染增强以及性能改进，帮助您更好地理解并使用这些新特性。</p><hr><h3 id="1-并发特性：提升渲染体验和性能"><a href="#1-并发特性：提升渲染体验和性能" class="headerlink" title="1. 并发特性：提升渲染体验和性能"></a>1. 并发特性：提升渲染体验和性能</h3><p>React 18 引入了并发特性（Concurrent Features），使得 React 能够更智能地处理 UI 更新，避免阻塞主线程，实现更顺畅的用户体验。</p><ul><li><strong>自动批量更新</strong>：在 React 18 中，所有的状态更新都会自动进行批量处理，无论是事件处理器内部还是异步回调函数中的更新。这项改进能够减少渲染次数，从而提升性能。例如，以前在异步代码中更新多个状态会触发多次渲染，而现在这些更新将合并成一次渲染。</li><li><strong><code>startTransition</code> API</strong>：这个新 API 使开发者能够区分“紧急”和“非紧急”更新。在不需要立刻完成的更新（如页面内容加载等）中，可以使用 <code>startTransition</code> 将其标记为非紧急，允许 React 在有空闲时间时再执行这些更新，从而避免阻塞用户操作。</li></ul><h3 id="2-新的-useId-Hook"><a href="#2-新的-useId-Hook" class="headerlink" title="2. 新的 useId Hook"></a>2. 新的 <code>useId</code> Hook</h3><p>React 18 引入了一个新的 Hook：<code>useId</code>，用于生成唯一的 ID。该功能尤其适用于在 SSR 和客户端渲染中保持 ID 的一致性，比如表单元素的 <code>id</code> 属性、ARIA 属性等场景。通过 <code>useId</code>，开发者可以避免手动管理 ID，减少冲突风险，增强代码的可维护性。</p><h3 id="3-Suspense-的服务端渲染改进"><a href="#3-Suspense-的服务端渲染改进" class="headerlink" title="3. Suspense 的服务端渲染改进"></a>3. <code>Suspense</code> 的服务端渲染改进</h3><p><code>Suspense</code> 是 React 中实现异步组件加载的重要工具，而在 React 18 中，其功能得到了进一步增强：</p><ul><li><strong>服务端渲染支持</strong>：React 18 允许 <code>Suspense</code> 在服务端渲染（SSR）时处理异步数据。这意味着开发者可以使用 <code>Suspense</code> 直接控制组件的数据加载和显示顺序，服务器将自动生成更流畅的内容加载体验。这一改进能够显著减少白屏时间，提高页面响应速度。</li></ul><h3 id="4-新的流式服务器端渲染-API（Streaming-Server-Rendering）"><a href="#4-新的流式服务器端渲染-API（Streaming-Server-Rendering）" class="headerlink" title="4. 新的流式服务器端渲染 API（Streaming Server Rendering）"></a>4. 新的流式服务器端渲染 API（Streaming Server Rendering）</h3><p>React 18 提供了新的流式服务器端渲染方法。通过分块传输内容，服务器可以在部分内容渲染完毕后就将其发送到客户端，使得应用可以更早地展示内容。相比之前的 SSR 模式，这种流式渲染方式能够提升初始加载速度，为用户带来更加流畅的浏览体验。</p><h3 id="5-新的-Hooks：useTransition-和-useDeferredValue"><a href="#5-新的-Hooks：useTransition-和-useDeferredValue" class="headerlink" title="5. 新的 Hooks：useTransition 和 useDeferredValue"></a>5. 新的 Hooks：<code>useTransition</code> 和 <code>useDeferredValue</code></h3><ul><li>**<code>useTransition</code>**：这是 React 18 中另一个用于处理并发更新的 Hook，可以搭配 <code>startTransition</code> 使用。通过将一些低优先级的更新（如数据加载）放入 <code>useTransition</code> 中，React 可以推迟这些更新的执行，从而保证页面的流畅性，特别适合在复杂交互场景下使用。</li><li>**<code>useDeferredValue</code>**：此 Hook 允许将某些更新延迟到后续的空闲时间再处理。对于那些需要频繁交互的组件（例如输入框、搜索框等），<code>useDeferredValue</code> 能够有效减少重新渲染的次数，避免卡顿。</li></ul><h3 id="6-严格模式中的双重渲染"><a href="#6-严格模式中的双重渲染" class="headerlink" title="6. 严格模式中的双重渲染"></a>6. 严格模式中的双重渲染</h3><p>React 18 加强了开发环境下的严格模式（Strict Mode），在首次渲染组件时会触发两次渲染。这一机制帮助开发者更容易检测副作用，确保组件的行为稳定。虽然双重渲染仅在开发模式下启用，但它能有效帮助开发者找到隐藏的依赖和潜在问题，提高代码质量。</p><h3 id="7-全新的-createRoot-API"><a href="#7-全新的-createRoot-API" class="headerlink" title="7. 全新的 createRoot API"></a>7. 全新的 <code>createRoot</code> API</h3><p>在 React 18 中，<code>createRoot</code> API 取代了 <code>ReactDOM.render</code>。使用 <code>createRoot</code> 可以启用并发特性，进一步提升渲染性能。开发者需要注意，React 18 的 <code>createRoot</code> 是启用并发渲染的必要步骤，在挂载根组件时必须使用。例如：</p><pre><code class="jsx">import &#123; createRoot &#125; from &quot;react-dom/client&quot;;const root = createRoot(document.getElementById(&quot;root&quot;));root.render(&lt;App /&gt;);</code></pre><h3 id="8-全局错误处理与新的错误恢复机制"><a href="#8-全局错误处理与新的错误恢复机制" class="headerlink" title="8. 全局错误处理与新的错误恢复机制"></a>8. 全局错误处理与新的错误恢复机制</h3><p>React 18 中改进了全局错误处理和恢复机制，增强了应用的稳定性。例如，部分组件在遇到错误时会自动重新渲染，而无需刷新整个应用，这样的增强使得应用在面对意外错误时可以更平稳地恢复。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> react </tag>
+            
+            <tag> javascript </tag>
+            
+            <tag> 基础 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
