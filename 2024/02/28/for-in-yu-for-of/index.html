@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Tailwind CSS 介绍, 无涯">
+    <meta name="keywords" content="for in 与 for of, 无涯">
     <meta name="description" content="我将会在这里分享学习到的知识，工作上的问题，生活中的感悟">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Tailwind CSS 介绍 | 无涯</title>
+    <title>for in 与 for of | 无涯</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -288,12 +288,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Tailwind CSS 介绍</h1>
+                    <h1 class="description center-align post-title">for in 与 for of</h1>
                 </div>
             </div>
         </div>
@@ -409,10 +409,6 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%BA%93/">
-                                <span class="chip bg-color">库</span>
-                            </a>
-                        
                             <a href="/tags/javascript/">
                                 <span class="chip bg-color">javascript</span>
                             </a>
@@ -442,7 +438,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-12-10
+                    2024-02-28
                 </div>
                 
 
@@ -468,69 +464,29 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Tailwind-CSS-介绍"><a href="#Tailwind-CSS-介绍" class="headerlink" title="Tailwind CSS 介绍"></a>Tailwind CSS 介绍</h1><h3 id="什么是-Tailwind-CSS"><a href="#什么是-Tailwind-CSS" class="headerlink" title="什么是 Tailwind CSS?"></a>什么是 Tailwind CSS?</h3><p>Tailwind CSS 是一个功能强大的实用工具优先（utility-first）的 CSS 框架，允许开发者通过使用预定义的 CSS 类来快速构建自定义的用户界面。与传统的 CSS 框架不同，Tailwind 并没有预设的组件，而是提供了一套全面的、低级的实用工具类，可以直接在 HTML 中使用来构建任何设计。</p>
-<h3 id="Tailwind-CSS-的核心概念"><a href="#Tailwind-CSS-的核心概念" class="headerlink" title="Tailwind CSS 的核心概念"></a>Tailwind CSS 的核心概念</h3><ol>
-<li><strong>实用工具优先（Utility-First）</strong>:<br>Tailwind 提供大量的低级实用工具类，如 <code>flex</code>、<code>pt-4</code>、<code>text-center</code> 和 <code>rotate-90</code>，这些类可以组合起来，直接在 HTML 中构建复杂的设计，而不需要编写自定义的 CSS。</li>
-<li><strong>配置驱动（Configuration-Driven）</strong>:<br>通过 <code>tailwind.config.js</code> 文件，开发者可以完全自定义 Tailwind 的默认主题、颜色、间距等。这样可以保证设计的一致性，同时允许灵活的定制。</li>
-<li><strong>响应式设计（Responsive Design）</strong>:<br>Tailwind 内置了对响应式设计的支持，使用诸如 <code>sm:</code>, <code>md:</code>, <code>lg:</code>, <code>xl:</code> 和 <code>2xl:</code> 前缀，开发者可以轻松地为不同屏幕尺寸定义不同的样式。</li>
-<li><strong>状态变体（State Variants）</strong>:<br>Tailwind 提供诸如 <code>hover:</code>, <code>focus:</code>, <code>active:</code>, <code>disabled:</code> 等状态变体，帮助开发者轻松地处理用户交互状态。</li>
-<li><strong>即用即弃（PurgeCSS）</strong>:<br>Tailwind 与 PurgeCSS 集成，允许开发者在生产环境中删除未使用的 CSS 类，从而减少最终 CSS 文件的大小，提高性能。</li>
-</ol>
-<h3 id="为什么选择-Tailwind-CSS？"><a href="#为什么选择-Tailwind-CSS？" class="headerlink" title="为什么选择 Tailwind CSS？"></a>为什么选择 Tailwind CSS？</h3><ol>
-<li><strong>快速开发</strong>:<br>使用 Tailwind，开发者可以显著减少编写 CSS 的时间，通过组合现有的实用工具类，快速实现设计。</li>
-<li><strong>高度可定制</strong>:<br>Tailwind 的配置文件使得定制变得简单，开发者可以根据项目需求，轻松调整默认设置，以符合品牌或设计规范。</li>
-<li><strong>一致性</strong>:<br>Tailwind 强调在整个项目中使用一致的设计语言，避免了传统 CSS 中的命名冲突和样式覆盖问题。</li>
-<li><strong>维护简单</strong>:<br>由于所有样式都是由类名直接定义在 HTML 中，Tailwind 使得项目的样式更加直观和易于维护。</li>
-</ol>
-<h3 id="基本使用方法"><a href="#基本使用方法" class="headerlink" title="基本使用方法"></a>基本使用方法</h3><ol>
-<li><strong>安装 Tailwind CSS</strong>:<br>使用 npm 安装 Tailwind：<br><code>bash npm install tailwindcss npx tailwindcss init </code></li>
-<li><strong>配置 Tailwind</strong>:<br>在 <code>tailwind.config.js</code> 文件中，可以定义自定义配置：</li>
-</ol>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-  <span class="token literal-property property">content</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./src/**/*.&#123;html,js&#125;"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token literal-property property">theme</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-    <span class="token literal-property property">extend</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-  <span class="token literal-property property">plugins</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                <h2 id="for-in-迭代对象的属性："><a href="#for-in-迭代对象的属性：" class="headerlink" title="for...in 迭代对象的属性："></a><strong><code>for...in</code> 迭代对象的属性：</strong></h2><ul>
+<li><strong><code>for...in</code></strong> 循环用于迭代对象的可枚举属性，包括继承的可枚举属性。</li>
+<li>在迭代过程中，它会遍历对象的所有可枚举属性名称，而不仅限于数组或类似数组的对象的索引。</li>
+<li>注意：**<code>for...in</code>** 不建议用于迭代数组，因为它会枚举数组的所有可枚举属性，包括原型链上的属性，而且迭代顺序不一定是按照数组的顺序。</li>
+</ul>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span> <span class="token literal-property property">a</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token literal-property property">b</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token literal-property property">c</span><span class="token operator">:</span> <span class="token number">3</span> <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
 
-<ol>
-<li><p><strong>使用 Tailwind 类</strong>:<br>在 HTML 文件中直接使用 Tailwind 提供的类：</p>
-<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bg-blue-500 text-white p-4 rounded-lg shadow-lg<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-  你好，Tailwind CSS!
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
-</ol>
-<h3 id="Tailwind-CSS-的实战应用"><a href="#Tailwind-CSS-的实战应用" class="headerlink" title="Tailwind CSS 的实战应用"></a>Tailwind CSS 的实战应用</h3><p>以下是一个使用 Tailwind CSS 构建的简单页面示例：</p>
-<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Tailwind CSS 示例<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span>
-      <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css<span class="token punctuation">"</span></span>
-      <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span>
-    <span class="token punctuation">/></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bg-gray-100 flex items-center justify-center h-screen<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bg-white p-6 rounded-lg shadow-lg max-w-sm<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text-2xl font-bold mb-4 text-gray-800<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-        欢迎使用 Tailwind CSS
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text-gray-600 mb-4<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-        这是一个使用 Tailwind CSS
-        构建的简单示例。它展示了如何使用实用工具类来快速构建美观的 UI。
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span>
-        <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600<span class="token punctuation">"</span></span>
-      <span class="token punctuation">></span></span>
-        点击我
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> prop <span class="token keyword">in</span> obj<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>prop<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 输出：a, b, c</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>Tailwind CSS 是一个现代、高效的 CSS 框架，它通过提供丰富的实用工具类，使得开发者可以快速构建响应式和一致的用户界面。通过学习和使用 Tailwind CSS，您将能够显著提高开发效率，减少样式冲突，并创造出高度可定制和维护的设计。</p>
+<h2 id="for-of-迭代可迭代对象的值："><a href="#for-of-迭代可迭代对象的值：" class="headerlink" title="for...of 迭代可迭代对象的值："></a><strong><code>for...of</code> 迭代可迭代对象的值：</strong></h2><ul>
+<li><strong><code>for...of</code></strong> 循环用于迭代可迭代对象（如数组、Map、Set、字符串等）的元素值。</li>
+<li>在迭代过程中，它会遍历对象的值，而不是键或索引。</li>
+<li>对于普通的对象，它并不适用，因为普通对象不是可迭代的。</li>
+</ul>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> value <span class="token keyword">of</span> arr<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 输出：1, 2, 3</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>总的来说，**<code>for...in</code>** 用于迭代对象的属性，而 <strong><code>for...of</code></strong> 用于迭代可迭代对象的值。</p>
 
                 
             </div>
@@ -557,7 +513,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://fullsize.online/2024/12/10/tailwind-css-jie-shao/">http://fullsize.online/2024/12/10/tailwind-css-jie-shao/</a>
+                    <a href="http://fullsize.online/2024/02/28/for-in-yu-for-of/">http://fullsize.online/2024/02/28/for-in-yu-for-of/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -594,10 +550,6 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E5%BA%93/">
-                                    <span class="chip bg-color">库</span>
-                                </a>
                             
                                 <a href="/tags/javascript/">
                                     <span class="chip bg-color">javascript</span>
@@ -644,29 +596,81 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/12/10/tailwind-css-jie-shao/">
+                <a href="/2024/03/27/bi-bao/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Tailwind CSS 介绍">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="闭包">
                         
-                        <span class="card-title">Tailwind CSS 介绍</span>
+                        <span class="card-title">闭包</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            什么是 Tailwind CSS?
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-03-27
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category">
+                                    技术
+                                </a>
+                            
+                            <a href="/categories/%E6%8A%80%E6%9C%AF/%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    学习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/javascript/">
+                        <span class="chip bg-color">javascript</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/02/28/for-in-yu-for-of/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="for in 与 for of">
+                        
+                        <span class="card-title">for in 与 for of</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-12-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-02-28
                             </span>
                         <span class="publish-author">
                             
@@ -688,73 +692,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%BA%93/">
-                        <span class="chip bg-color">库</span>
-                    </a>
-                    
                     <a href="/tags/javascript/">
                         <span class="chip bg-color">javascript</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2024/12/09/react18-d/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="React 18 更新内容">
-                        
-                        <span class="card-title">React 18 更新内容</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-12-09
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category">
-                                    技术
-                                </a>
-                            
-                            <a href="/categories/%E6%8A%80%E6%9C%AF/%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    学习
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/javascript/">
-                        <span class="chip bg-color">javascript</span>
-                    </a>
-                    
-                    <a href="/tags/react/">
-                        <span class="chip bg-color">react</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">基础</span>
                     </a>
                     
                 </div>
