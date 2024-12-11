@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="React 18 更新内容, 无涯">
+    <meta name="keywords" content="开发的项目流程, 无涯">
     <meta name="description" content="我将会在这里分享学习到的知识，工作上的问题，生活中的感悟">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>React 18 更新内容 | 无涯</title>
+    <title>开发的项目流程 | 无涯</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -288,12 +288,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">React 18 更新内容</h1>
+                    <h1 class="description center-align post-title">开发的项目流程</h1>
                 </div>
             </div>
         </div>
@@ -409,16 +409,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/javascript/">
-                                <span class="chip bg-color">javascript</span>
-                            </a>
-                        
-                            <a href="/tags/react/">
-                                <span class="chip bg-color">react</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%9F%BA%E7%A1%80/">
-                                <span class="chip bg-color">基础</span>
+                            <a href="/tags/%E6%B5%81%E7%A8%8B/">
+                                <span class="chip bg-color">流程</span>
                             </a>
                         
                     </div>
@@ -446,7 +438,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-12-09
+                    2024-11-18
                 </div>
                 
 
@@ -472,30 +464,49 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>React 18 是 React 框架的一个重要版本更新，为开发者带来了诸多新的功能和优化，特别是在并发渲染、性能提升和用户体验方面的改进。本文将为您全面解析 React 18 的更新要点，包括并发特性、新的 API、服务端渲染增强以及性能改进，帮助您更好地理解并使用这些新特性。</p>
-<hr>
-<h3 id="1-并发特性：提升渲染体验和性能"><a href="#1-并发特性：提升渲染体验和性能" class="headerlink" title="1. 并发特性：提升渲染体验和性能"></a>1. 并发特性：提升渲染体验和性能</h3><p>React 18 引入了并发特性（Concurrent Features），使得 React 能够更智能地处理 UI 更新，避免阻塞主线程，实现更顺畅的用户体验。</p>
-<ul>
-<li><strong>自动批量更新</strong>：在 React 18 中，所有的状态更新都会自动进行批量处理，无论是事件处理器内部还是异步回调函数中的更新。这项改进能够减少渲染次数，从而提升性能。例如，以前在异步代码中更新多个状态会触发多次渲染，而现在这些更新将合并成一次渲染。</li>
-<li><strong><code>startTransition</code> API</strong>：这个新 API 使开发者能够区分“紧急”和“非紧急”更新。在不需要立刻完成的更新（如页面内容加载等）中，可以使用 <code>startTransition</code> 将其标记为非紧急，允许 React 在有空闲时间时再执行这些更新，从而避免阻塞用户操作。</li>
+                <p>之前面试问过，所以记录下来以免忘记</p>
+<h2 id="1-确认项目需求"><a href="#1-确认项目需求" class="headerlink" title="1. 确认项目需求"></a>1. 确认项目需求</h2><ul>
+<li><strong>需求调研</strong>：与需求方（客户、产品经理、业务部门）沟通，明确项目目标、核心功能、技术要求。</li>
+<li><strong>竞品分析</strong>：研究同类产品的特点，了解用户需求与痛点。</li>
+<li><strong>需求文档</strong>：整理需求清单，输出需求规格说明书（SRS）。<br><strong>产出</strong>:需求规格说明书（SRS）、功能清单、初步时间计划。</li>
 </ul>
-<h3 id="2-新的-useId-Hook"><a href="#2-新的-useId-Hook" class="headerlink" title="2. 新的 useId Hook"></a>2. 新的 <code>useId</code> Hook</h3><p>React 18 引入了一个新的 Hook：<code>useId</code>，用于生成唯一的 ID。该功能尤其适用于在 SSR 和客户端渲染中保持 ID 的一致性，比如表单元素的 <code>id</code> 属性、ARIA 属性等场景。通过 <code>useId</code>，开发者可以避免手动管理 ID，减少冲突风险，增强代码的可维护性。</p>
-<h3 id="3-Suspense-的服务端渲染改进"><a href="#3-Suspense-的服务端渲染改进" class="headerlink" title="3. Suspense 的服务端渲染改进"></a>3. <code>Suspense</code> 的服务端渲染改进</h3><p><code>Suspense</code> 是 React 中实现异步组件加载的重要工具，而在 React 18 中，其功能得到了进一步增强：</p>
-<ul>
-<li><strong>服务端渲染支持</strong>：React 18 允许 <code>Suspense</code> 在服务端渲染（SSR）时处理异步数据。这意味着开发者可以使用 <code>Suspense</code> 直接控制组件的数据加载和显示顺序，服务器将自动生成更流畅的内容加载体验。这一改进能够显著减少白屏时间，提高页面响应速度。</li>
+<h2 id="2-可行性分析"><a href="#2-可行性分析" class="headerlink" title="2. 可行性分析"></a>2. 可行性分析</h2><ul>
+<li><strong>技术评估</strong>：评估实现需求的技术难度，选择合适的技术栈（如框架、工具、库）。</li>
+<li><strong>资源评估</strong>：确定所需人力、时间、预算，识别潜在风险。</li>
+<li><strong>业务评估</strong>：判断项目的商业价值，评估投入产出比。<br><strong>产出</strong>:可行性分析报告、技术选型文档。</li>
 </ul>
-<h3 id="4-新的流式服务器端渲染-API（Streaming-Server-Rendering）"><a href="#4-新的流式服务器端渲染-API（Streaming-Server-Rendering）" class="headerlink" title="4. 新的流式服务器端渲染 API（Streaming Server Rendering）"></a>4. 新的流式服务器端渲染 API（Streaming Server Rendering）</h3><p>React 18 提供了新的流式服务器端渲染方法。通过分块传输内容，服务器可以在部分内容渲染完毕后就将其发送到客户端，使得应用可以更早地展示内容。相比之前的 SSR 模式，这种流式渲染方式能够提升初始加载速度，为用户带来更加流畅的浏览体验。</p>
-<h3 id="5-新的-Hooks：useTransition-和-useDeferredValue"><a href="#5-新的-Hooks：useTransition-和-useDeferredValue" class="headerlink" title="5. 新的 Hooks：useTransition 和 useDeferredValue"></a>5. 新的 Hooks：<code>useTransition</code> 和 <code>useDeferredValue</code></h3><ul>
-<li>**<code>useTransition</code>**：这是 React 18 中另一个用于处理并发更新的 Hook，可以搭配 <code>startTransition</code> 使用。通过将一些低优先级的更新（如数据加载）放入 <code>useTransition</code> 中，React 可以推迟这些更新的执行，从而保证页面的流畅性，特别适合在复杂交互场景下使用。</li>
-<li>**<code>useDeferredValue</code>**：此 Hook 允许将某些更新延迟到后续的空闲时间再处理。对于那些需要频繁交互的组件（例如输入框、搜索框等），<code>useDeferredValue</code> 能够有效减少重新渲染的次数，避免卡顿。</li>
+<h2 id="3-前期设计"><a href="#3-前期设计" class="headerlink" title="3. 前期设计"></a>3. 前期设计</h2><ul>
+<li><strong>架构设计</strong>：<ul>
+<li>选择前端框架（如 React、Vue、Svelte 等）。</li>
+<li>确定状态管理（如 Zustand、Redux、Pinia）。</li>
+<li>确定构建工具（如 Webpack、Vite）。</li>
+<li>设计目录结构、路由规则、组件划分。</li>
 </ul>
-<h3 id="6-严格模式中的双重渲染"><a href="#6-严格模式中的双重渲染" class="headerlink" title="6. 严格模式中的双重渲染"></a>6. 严格模式中的双重渲染</h3><p>React 18 加强了开发环境下的严格模式（Strict Mode），在首次渲染组件时会触发两次渲染。这一机制帮助开发者更容易检测副作用，确保组件的行为稳定。虽然双重渲染仅在开发模式下启用，但它能有效帮助开发者找到隐藏的依赖和潜在问题，提高代码质量。</p>
-<h3 id="7-全新的-createRoot-API"><a href="#7-全新的-createRoot-API" class="headerlink" title="7. 全新的 createRoot API"></a>7. 全新的 <code>createRoot</code> API</h3><p>在 React 18 中，<code>createRoot</code> API 取代了 <code>ReactDOM.render</code>。使用 <code>createRoot</code> 可以启用并发特性，进一步提升渲染性能。开发者需要注意，React 18 的 <code>createRoot</code> 是启用并发渲染的必要步骤，在挂载根组件时必须使用。例如：</p>
-<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> createRoot <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">"react-dom/client"</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> root <span class="token operator">=</span> <span class="token function">createRoot</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"root"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-root<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">App</span></span> <span class="token punctuation">/></span></span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="8-全局错误处理与新的错误恢复机制"><a href="#8-全局错误处理与新的错误恢复机制" class="headerlink" title="8. 全局错误处理与新的错误恢复机制"></a>8. 全局错误处理与新的错误恢复机制</h3><p>React 18 中改进了全局错误处理和恢复机制，增强了应用的稳定性。例如，部分组件在遇到错误时会自动重新渲染，而无需刷新整个应用，这样的增强使得应用在面对意外错误时可以更平稳地恢复。</p>
+</li>
+<li><strong>UI&#x2F;UX 设计</strong>：<ul>
+<li>确定设计风格（如扁平化、极简风）。</li>
+<li>输出低保真或高保真原型图（如使用 Figma、Sketch）。</li>
+</ul>
+</li>
+<li><strong>接口设计</strong>：与后端团队协作，定义 API 接口规范（RESTful 或 GraphQL）。<br><strong>产出</strong>:架构设计文档、UI 原型图、接口文档。</li>
+</ul>
+<h2 id="4-项目立项"><a href="#4-项目立项" class="headerlink" title="4. 项目立项"></a>4. 项目立项</h2><ul>
+<li><strong>立项评审</strong>：组织团队成员（技术负责人、产品经理、项目经理）对项目需求、技术方案、资源分配进行评审。</li>
+<li><strong>项目审批</strong>：获得高层管理或客户的正式批准。<br><strong>产出</strong>:项目立项报告、项目计划书。</li>
+</ul>
+<h2 id="5-项目计划"><a href="#5-项目计划" class="headerlink" title="5. 项目计划"></a>5. 项目计划</h2><ul>
+<li><strong>任务拆解</strong>：将需求拆解为可执行的任务，并优先排序。</li>
+<li><strong>时间估算</strong>：为每个任务分配合理时间。</li>
+<li><strong>团队分工</strong>：确定各成员的职责。</li>
+<li><strong>开发工具准备</strong>：配置代码仓库（Git）、CI&#x2F;CD 流水线、开发环境。<br><strong>产出</strong>:甘特图或 Sprint 计划、任务清单。</li>
+</ul>
+<h2 id="6-项目启动"><a href="#6-项目启动" class="headerlink" title="6. 项目启动"></a>6. 项目启动</h2><ul>
+<li><strong>启动会议</strong>：确认目标、时间节点，明确沟通方式（如会议频率、汇报机制）。</li>
+<li><strong>版本管理</strong>：制定分支管理策略（如 Git Flow）。</li>
+<li><strong>研发流程</strong>：定义开发标准和代码规范。<br><strong>产出</strong>:项目启动记录、开发流程文档。</li>
+</ul>
+<h2 id="7-后续跟踪与迭代"><a href="#7-后续跟踪与迭代" class="headerlink" title="7. 后续跟踪与迭代"></a>7. 后续跟踪与迭代</h2><p>立项完成后，根据 Agile 或其他开发模式进入项目实施阶段，定期检查进度，及时解决问题，确保交付质量。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>以上就是开发项目的基本流程了</p>
 
                 
             </div>
@@ -522,7 +533,7 @@ root<span class="token punctuation">.</span><span class="token function">render<
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://fullsize.online/2024/12/09/react18-d/">http://fullsize.online/2024/12/09/react18-d/</a>
+                    <a href="http://fullsize.online/2024/11/17/qian-duan-xiang-mu-li-xiang-liu-cheng/">http://fullsize.online/2024/11/17/qian-duan-xiang-mu-li-xiang-liu-cheng/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -560,16 +571,8 @@ root<span class="token punctuation">.</span><span class="token function">render<
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/javascript/">
-                                    <span class="chip bg-color">javascript</span>
-                                </a>
-                            
-                                <a href="/tags/react/">
-                                    <span class="chip bg-color">react</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%9F%BA%E7%A1%80/">
-                                    <span class="chip bg-color">基础</span>
+                                <a href="/tags/%E6%B5%81%E7%A8%8B/">
+                                    <span class="chip bg-color">流程</span>
                                 </a>
                             
                         </div>
@@ -617,63 +620,6 @@ root<span class="token punctuation">.</span><span class="token function">render<
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/12/10/tailwind-css-jie-shao/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Tailwind CSS 介绍">
-                        
-                        <span class="card-title">Tailwind CSS 介绍</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            什么是 Tailwind CSS?
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-12-10
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category">
-                                    技术
-                                </a>
-                            
-                            <a href="/categories/%E6%8A%80%E6%9C%AF/%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    学习
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%BA%93/">
-                        <span class="chip bg-color">库</span>
-                    </a>
-                    
-                    <a href="/tags/javascript/">
-                        <span class="chip bg-color">javascript</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
                 <a href="/2024/11/17/class-zu-jian-he-han-shu-zu-jian-de-qu-bie/">
                     <div class="card-image">
                         
@@ -690,9 +636,9 @@ root<span class="token punctuation">.</span><span class="token function">render<
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-11-18
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-11-18
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -722,6 +668,63 @@ root<span class="token punctuation">.</span><span class="token function">render<
                     
                     <a href="/tags/%E5%9F%BA%E7%A1%80/">
                         <span class="chip bg-color">基础</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/08/16/haxi/index/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="哈希表">
+                        
+                        <span class="card-title">哈希表</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-16
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category">
+                                    技术
+                                </a>
+                            
+                            <a href="/categories/%E6%8A%80%E6%9C%AF/%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    学习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">数据结构</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%93%88%E5%B8%8C/">
+                        <span class="chip bg-color">哈希</span>
                     </a>
                     
                 </div>
