@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="说说对React中类组件和函数组件的理解？有什么区别？, 无涯">
+    <meta name="keywords" content="闭包, 无涯">
     <meta name="description" content="我将会在这里分享学习到的知识，工作上的问题，生活中的感悟">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>说说对React中类组件和函数组件的理解？有什么区别？ | 无涯</title>
+    <title>闭包 | 无涯</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -288,12 +288,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">说说对React中类组件和函数组件的理解？有什么区别？</h1>
+                    <h1 class="description center-align post-title">闭包</h1>
                 </div>
             </div>
         </div>
@@ -413,14 +413,6 @@
                                 <span class="chip bg-color">javascript</span>
                             </a>
                         
-                            <a href="/tags/react/">
-                                <span class="chip bg-color">react</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%9F%BA%E7%A1%80/">
-                                <span class="chip bg-color">基础</span>
-                            </a>
-                        
                     </div>
                     
                 </div>
@@ -446,7 +438,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-11-18
+                    2024-03-27
                 </div>
                 
 
@@ -472,51 +464,21 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="类组件"><a href="#类组件" class="headerlink" title="类组件"></a>类组件</h2><p>顾名思义，使用<code>es6</code>类的方式去编写组件,该类必须继承<code>React.Component</code></p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">Welcome</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">&#123;</span>
-  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">&#125;</span>
-  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">return</span> <span class="token operator">&lt;</span>h1<span class="token operator">></span>Hello<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>name<span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">></span><span class="token punctuation">;</span>
-  <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="函数组件"><a href="#函数组件" class="headerlink" title="函数组件"></a>函数组件</h2><p>通过函数编写的形式去实现一个 <code>React</code> 组件，是 <code>React</code> 中定义组件最简单的方式</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">Welcome</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">return</span> <span class="token operator">&lt;</span>h1<span class="token operator">></span>Hello<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>props<span class="token punctuation">.</span>name<span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">></span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><table>
-<thead>
-<tr>
-<th>类别</th>
-<th>类组件</th>
-<th>函数组件</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>定义方式</td>
-<td>使用 ES6 类语法</td>
-<td>使用函数表达式</td>
-</tr>
-<tr>
-<td>生命周期</td>
-<td>支持生命周期,如 <code>componentDidMount</code>, <code>componentDidUpdate</code>, <code>componentWillUnmount</code> 等</td>
-<td>没有直接的生命周期<br />通常使用 <code>useEffect</code> 和 <code>useReducer</code> 等 React Hooks 来代替类组件中的生命周期钩子</td>
-</tr>
-<tr>
-<td>状态管理</td>
-<td>可以使用 <code>this.state</code> 来管理内部状态。更适合需要复杂状态管理或需要对生命周期有更细粒度控制的场景</td>
-<td>使用 <code>useState</code> 和 <code>useReducer</code> 等 React Hooks 来管理内部状态。</td>
-</tr>
-<tr>
-<td>其他</td>
-<td>类组件有更好继承性和扩展性的</td>
-<td>函数组件是更简洁、更轻量的实现方式<br />优化了性能，因为它们本质上是无状态的。 <br /><br /> 函数组件可以直接使用 React Hooks，使得状态管理和副作用处理变得更加简洁和灵活。</td>
-</tr>
-</tbody></table>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><strong>类组件</strong>：更适合复杂状态管理或需要使用生命周期钩子的场景。<br><strong>函数组件</strong>：简洁、无状态，更推荐用于简单组件和现代 React 应用。</p>
+                <p>JavaScript 中闭包是一种重要的编程概念，具有许多优点和一些缺点：</p>
+<p><strong>优点：</strong></p>
+<ol>
+<li><strong>保持状态：</strong> 闭包可以捕获并保持其所在作用域的状态，即使函数执行完毕后，闭包仍然可以访问和修改其所捕获的变量，从而在后续调用中保持状态。</li>
+<li><strong>数据封装和隐藏：</strong> 闭包允许将函数内部的数据隐藏在函数作用域内，从而实现了数据封装和隐藏。这有助于防止外部代码直接访问和修改内部数据，提高了程序的安全性和可维护性。</li>
+<li><strong>实现模块化：</strong> 闭包可以用于实现模块化的代码结构，通过将一些函数和变量封装在闭包中，可以减少全局命名空间的污染，提高代码的可重用性和可维护性。</li>
+<li><strong>实现私有变量和方法：</strong> 闭包可以用于模拟私有变量和方法，通过将变量和方法封装在闭包内部，外部代码无法直接访问，从而实现了一定程度的信息隐藏和封装。</li>
+</ol>
+<p><strong>缺点：</strong></p>
+<ol>
+<li><strong>内存泄漏：</strong> 闭包会持有对其所在作用域的引用，如果闭包中包含对大量对象的引用，并且闭包没有被正确释放，就可能导致内存泄漏的问题，使得不再需要的对象无法被垃圾回收。</li>
+<li><strong>性能开销：</strong> 由于闭包需要捕获外部作用域的状态，因此在创建和执行闭包时可能会产生一些额外的性能开销，特别是在嵌套的闭包中或者捕获大量变量时。</li>
+<li><strong>作用域链的影响：</strong> 闭包的作用域链可能会影响代码的性能和可读性，尤其是在处理嵌套闭包时，需要小心避免作用域链过长导致的性能问题。</li>
+</ol>
+<p>综上所述，JavaScript 中的闭包是一种强大的编程特性，可以带来许多优点，但同时也需要注意一些潜在的缺点，合理地使用闭包可以提高代码的灵活性和可维护性。</p>
 
                 
             </div>
@@ -543,7 +505,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://fullsize.online/2024/11/17/class-zu-jian-he-han-shu-zu-jian-de-qu-bie/">http://fullsize.online/2024/11/17/class-zu-jian-he-han-shu-zu-jian-de-qu-bie/</a>
+                    <a href="http://fullsize.online/2024/03/27/code/javascript/bi-bao/">http://fullsize.online/2024/03/27/code/javascript/bi-bao/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -583,14 +545,6 @@
                             
                                 <a href="/tags/javascript/">
                                     <span class="chip bg-color">javascript</span>
-                                </a>
-                            
-                                <a href="/tags/react/">
-                                    <span class="chip bg-color">react</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%9F%BA%E7%A1%80/">
-                                    <span class="chip bg-color">基础</span>
                                 </a>
                             
                         </div>
@@ -638,13 +592,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/12/09/react18-d/">
+                <a href="/2024/05/14/code/javascript/css-yu-bian-yi-he-hou-bian-yi-de-qu-bie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="React 18 更新内容">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="CSS 预编译和后编译的区别">
                         
-                        <span class="card-title">React 18 更新内容</span>
+                        <span class="card-title">CSS 预编译和后编译的区别</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -655,8 +609,61 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-12-09
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-05-14
                         </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category">
+                                    技术
+                                </a>
+                            
+                            <a href="/categories/%E6%8A%80%E6%9C%AF/%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    学习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/css/">
+                        <span class="chip bg-color">css</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/02/28/code/javascript/for-in-yu-for-of/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="for in 与 for of">
+                        
+                        <span class="card-title">for in 与 for of</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-02-28
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -678,67 +685,6 @@
                     
                     <a href="/tags/javascript/">
                         <span class="chip bg-color">javascript</span>
-                    </a>
-                    
-                    <a href="/tags/react/">
-                        <span class="chip bg-color">react</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">基础</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2024/11/17/qian-duan-xiang-mu-li-xiang-liu-cheng/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="开发的项目流程">
-                        
-                        <span class="card-title">开发的项目流程</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-11-18
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category">
-                                    技术
-                                </a>
-                            
-                            <a href="/categories/%E6%8A%80%E6%9C%AF/%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    学习
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%B5%81%E7%A8%8B/">
-                        <span class="chip bg-color">流程</span>
                     </a>
                     
                 </div>

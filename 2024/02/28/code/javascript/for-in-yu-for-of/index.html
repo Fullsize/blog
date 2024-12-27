@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="开发的项目流程, 无涯">
+    <meta name="keywords" content="for in 与 for of, 无涯">
     <meta name="description" content="我将会在这里分享学习到的知识，工作上的问题，生活中的感悟">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>开发的项目流程 | 无涯</title>
+    <title>for in 与 for of | 无涯</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -288,12 +288,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">开发的项目流程</h1>
+                    <h1 class="description center-align post-title">for in 与 for of</h1>
                 </div>
             </div>
         </div>
@@ -409,8 +409,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%B5%81%E7%A8%8B/">
-                                <span class="chip bg-color">流程</span>
+                            <a href="/tags/javascript/">
+                                <span class="chip bg-color">javascript</span>
                             </a>
                         
                     </div>
@@ -438,7 +438,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-11-18
+                    2024-02-28
                 </div>
                 
 
@@ -464,49 +464,29 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>之前面试问过，所以记录下来以免忘记</p>
-<h2 id="1-确认项目需求"><a href="#1-确认项目需求" class="headerlink" title="1. 确认项目需求"></a>1. 确认项目需求</h2><ul>
-<li><strong>需求调研</strong>：与需求方（客户、产品经理、业务部门）沟通，明确项目目标、核心功能、技术要求。</li>
-<li><strong>竞品分析</strong>：研究同类产品的特点，了解用户需求与痛点。</li>
-<li><strong>需求文档</strong>：整理需求清单，输出需求规格说明书（SRS）。<br><strong>产出</strong>:需求规格说明书（SRS）、功能清单、初步时间计划。</li>
+                <h2 id="for-in-迭代对象的属性："><a href="#for-in-迭代对象的属性：" class="headerlink" title="for...in 迭代对象的属性："></a><strong><code>for...in</code> 迭代对象的属性：</strong></h2><ul>
+<li><strong><code>for...in</code></strong> 循环用于迭代对象的可枚举属性，包括继承的可枚举属性。</li>
+<li>在迭代过程中，它会遍历对象的所有可枚举属性名称，而不仅限于数组或类似数组的对象的索引。</li>
+<li>注意：**<code>for...in</code>** 不建议用于迭代数组，因为它会枚举数组的所有可枚举属性，包括原型链上的属性，而且迭代顺序不一定是按照数组的顺序。</li>
 </ul>
-<h2 id="2-可行性分析"><a href="#2-可行性分析" class="headerlink" title="2. 可行性分析"></a>2. 可行性分析</h2><ul>
-<li><strong>技术评估</strong>：评估实现需求的技术难度，选择合适的技术栈（如框架、工具、库）。</li>
-<li><strong>资源评估</strong>：确定所需人力、时间、预算，识别潜在风险。</li>
-<li><strong>业务评估</strong>：判断项目的商业价值，评估投入产出比。<br><strong>产出</strong>:可行性分析报告、技术选型文档。</li>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span> <span class="token literal-property property">a</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token literal-property property">b</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token literal-property property">c</span><span class="token operator">:</span> <span class="token number">3</span> <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> prop <span class="token keyword">in</span> obj<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>prop<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 输出：a, b, c</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="for-of-迭代可迭代对象的值："><a href="#for-of-迭代可迭代对象的值：" class="headerlink" title="for...of 迭代可迭代对象的值："></a><strong><code>for...of</code> 迭代可迭代对象的值：</strong></h2><ul>
+<li><strong><code>for...of</code></strong> 循环用于迭代可迭代对象（如数组、Map、Set、字符串等）的元素值。</li>
+<li>在迭代过程中，它会遍历对象的值，而不是键或索引。</li>
+<li>对于普通的对象，它并不适用，因为普通对象不是可迭代的。</li>
 </ul>
-<h2 id="3-前期设计"><a href="#3-前期设计" class="headerlink" title="3. 前期设计"></a>3. 前期设计</h2><ul>
-<li><strong>架构设计</strong>：<ul>
-<li>选择前端框架（如 React、Vue、Svelte 等）。</li>
-<li>确定状态管理（如 Zustand、Redux、Pinia）。</li>
-<li>确定构建工具（如 Webpack、Vite）。</li>
-<li>设计目录结构、路由规则、组件划分。</li>
-</ul>
-</li>
-<li><strong>UI&#x2F;UX 设计</strong>：<ul>
-<li>确定设计风格（如扁平化、极简风）。</li>
-<li>输出低保真或高保真原型图（如使用 Figma、Sketch）。</li>
-</ul>
-</li>
-<li><strong>接口设计</strong>：与后端团队协作，定义 API 接口规范（RESTful 或 GraphQL）。<br><strong>产出</strong>:架构设计文档、UI 原型图、接口文档。</li>
-</ul>
-<h2 id="4-项目立项"><a href="#4-项目立项" class="headerlink" title="4. 项目立项"></a>4. 项目立项</h2><ul>
-<li><strong>立项评审</strong>：组织团队成员（技术负责人、产品经理、项目经理）对项目需求、技术方案、资源分配进行评审。</li>
-<li><strong>项目审批</strong>：获得高层管理或客户的正式批准。<br><strong>产出</strong>:项目立项报告、项目计划书。</li>
-</ul>
-<h2 id="5-项目计划"><a href="#5-项目计划" class="headerlink" title="5. 项目计划"></a>5. 项目计划</h2><ul>
-<li><strong>任务拆解</strong>：将需求拆解为可执行的任务，并优先排序。</li>
-<li><strong>时间估算</strong>：为每个任务分配合理时间。</li>
-<li><strong>团队分工</strong>：确定各成员的职责。</li>
-<li><strong>开发工具准备</strong>：配置代码仓库（Git）、CI&#x2F;CD 流水线、开发环境。<br><strong>产出</strong>:甘特图或 Sprint 计划、任务清单。</li>
-</ul>
-<h2 id="6-项目启动"><a href="#6-项目启动" class="headerlink" title="6. 项目启动"></a>6. 项目启动</h2><ul>
-<li><strong>启动会议</strong>：确认目标、时间节点，明确沟通方式（如会议频率、汇报机制）。</li>
-<li><strong>版本管理</strong>：制定分支管理策略（如 Git Flow）。</li>
-<li><strong>研发流程</strong>：定义开发标准和代码规范。<br><strong>产出</strong>:项目启动记录、开发流程文档。</li>
-</ul>
-<h2 id="7-后续跟踪与迭代"><a href="#7-后续跟踪与迭代" class="headerlink" title="7. 后续跟踪与迭代"></a>7. 后续跟踪与迭代</h2><p>立项完成后，根据 Agile 或其他开发模式进入项目实施阶段，定期检查进度，及时解决问题，确保交付质量。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>以上就是开发项目的基本流程了</p>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> value <span class="token keyword">of</span> arr<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 输出：1, 2, 3</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>总的来说，**<code>for...in</code>** 用于迭代对象的属性，而 <strong><code>for...of</code></strong> 用于迭代可迭代对象的值。</p>
 
                 
             </div>
@@ -533,7 +513,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://fullsize.online/2024/11/17/qian-duan-xiang-mu-li-xiang-liu-cheng/">http://fullsize.online/2024/11/17/qian-duan-xiang-mu-li-xiang-liu-cheng/</a>
+                    <a href="http://fullsize.online/2024/02/28/code/javascript/for-in-yu-for-of/">http://fullsize.online/2024/02/28/code/javascript/for-in-yu-for-of/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -571,8 +551,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%B5%81%E7%A8%8B/">
-                                    <span class="chip bg-color">流程</span>
+                                <a href="/tags/javascript/">
+                                    <span class="chip bg-color">javascript</span>
                                 </a>
                             
                         </div>
@@ -620,13 +600,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/11/17/class-zu-jian-he-han-shu-zu-jian-de-qu-bie/">
+                <a href="/2024/03/27/code/javascript/bi-bao/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="说说对React中类组件和函数组件的理解？有什么区别？">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="闭包">
                         
-                        <span class="card-title">说说对React中类组件和函数组件的理解？有什么区别？</span>
+                        <span class="card-title">闭包</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -637,7 +617,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-11-18
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-03-27
                         </span>
                         <span class="publish-author">
                             
@@ -662,14 +642,6 @@
                         <span class="chip bg-color">javascript</span>
                     </a>
                     
-                    <a href="/tags/react/">
-                        <span class="chip bg-color">react</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">基础</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -678,16 +650,16 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2024/08/16/haxi/index/">
+                <a href="/2024/02/28/code/javascript/for-in-yu-for-of/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="哈希表">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="for in 与 for of">
                         
-                        <span class="card-title">哈希表</span>
+                        <span class="card-title">for in 与 for of</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -698,7 +670,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-02-28
                             </span>
                         <span class="publish-author">
                             
@@ -716,15 +688,12 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-                        <span class="chip bg-color">数据结构</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%93%88%E5%B8%8C/">
-                        <span class="chip bg-color">哈希</span>
+                    <a href="/tags/javascript/">
+                        <span class="chip bg-color">javascript</span>
                     </a>
                     
                 </div>

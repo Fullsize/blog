@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Miniconda安装使用, 无涯">
+    <meta name="keywords" content="Tailwind CSS 介绍, 无涯">
     <meta name="description" content="我将会在这里分享学习到的知识，工作上的问题，生活中的感悟">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Miniconda安装使用 | 无涯</title>
+    <title>Tailwind CSS 介绍 | 无涯</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -288,12 +288,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Miniconda安装使用</h1>
+                    <h1 class="description center-align post-title">Tailwind CSS 介绍</h1>
                 </div>
             </div>
         </div>
@@ -409,12 +409,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/python/">
-                                <span class="chip bg-color">python</span>
-                            </a>
-                        
                             <a href="/tags/%E5%BA%93/">
                                 <span class="chip bg-color">库</span>
+                            </a>
+                        
+                            <a href="/tags/javascript/">
+                                <span class="chip bg-color">javascript</span>
                             </a>
                         
                     </div>
@@ -442,7 +442,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-06-14
+                    2024-12-27
                 </div>
                 
 
@@ -468,73 +468,69 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Miniconda 是一种轻量级的 Python 发行版，它包含了 Conda 包管理系统和环境管理系统。以下是使用 Miniconda 的一些基本操作指南：</p>
-<h3 id="安装-Miniconda"><a href="#安装-Miniconda" class="headerlink" title="安装 Miniconda"></a>安装 Miniconda</h3><p>如果你还没有安装 Miniconda，可以从官方网站下载并安装：<a target="_blank" rel="noopener" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda 下载页面</a>。</p>
-<h3 id="配置-Miniconda"><a href="#配置-Miniconda" class="headerlink" title="配置 Miniconda"></a>配置 Miniconda</h3><ol>
-<li><p><strong>更新 Conda</strong>:<br>首次安装后，建议更新 Conda 以确保你拥有最新版本。</p>
-<pre class="line-numbers language-none"><code class="language-none">conda update conda<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+                <h1 id="Tailwind-CSS-介绍"><a href="#Tailwind-CSS-介绍" class="headerlink" title="Tailwind CSS 介绍"></a>Tailwind CSS 介绍</h1><h3 id="什么是-Tailwind-CSS"><a href="#什么是-Tailwind-CSS" class="headerlink" title="什么是 Tailwind CSS?"></a>什么是 Tailwind CSS?</h3><p>Tailwind CSS 是一个功能强大的实用工具优先（utility-first）的 CSS 框架，允许开发者通过使用预定义的 CSS 类来快速构建自定义的用户界面。与传统的 CSS 框架不同，Tailwind 并没有预设的组件，而是提供了一套全面的、低级的实用工具类，可以直接在 HTML 中使用来构建任何设计。</p>
+<h3 id="Tailwind-CSS-的核心概念"><a href="#Tailwind-CSS-的核心概念" class="headerlink" title="Tailwind CSS 的核心概念"></a>Tailwind CSS 的核心概念</h3><ol>
+<li><strong>实用工具优先（Utility-First）</strong>:<br>Tailwind 提供大量的低级实用工具类，如 <code>flex</code>、<code>pt-4</code>、<code>text-center</code> 和 <code>rotate-90</code>，这些类可以组合起来，直接在 HTML 中构建复杂的设计，而不需要编写自定义的 CSS。</li>
+<li><strong>配置驱动（Configuration-Driven）</strong>:<br>通过 <code>tailwind.config.js</code> 文件，开发者可以完全自定义 Tailwind 的默认主题、颜色、间距等。这样可以保证设计的一致性，同时允许灵活的定制。</li>
+<li><strong>响应式设计（Responsive Design）</strong>:<br>Tailwind 内置了对响应式设计的支持，使用诸如 <code>sm:</code>, <code>md:</code>, <code>lg:</code>, <code>xl:</code> 和 <code>2xl:</code> 前缀，开发者可以轻松地为不同屏幕尺寸定义不同的样式。</li>
+<li><strong>状态变体（State Variants）</strong>:<br>Tailwind 提供诸如 <code>hover:</code>, <code>focus:</code>, <code>active:</code>, <code>disabled:</code> 等状态变体，帮助开发者轻松地处理用户交互状态。</li>
+<li><strong>即用即弃（PurgeCSS）</strong>:<br>Tailwind 与 PurgeCSS 集成，允许开发者在生产环境中删除未使用的 CSS 类，从而减少最终 CSS 文件的大小，提高性能。</li>
 </ol>
-<h3 id="创建和管理环境"><a href="#创建和管理环境" class="headerlink" title="创建和管理环境"></a>创建和管理环境</h3><ol>
-<li><p><strong>创建新的环境</strong>:<br>使用 <code>conda create</code> 命令创建一个新的环境。你可以指定 Python 版本或需要的包。</p>
-<pre class="line-numbers language-none"><code class="language-none">conda create --name myenv python&#x3D;3.9<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li><p><strong>激活环境</strong>:<br>使用 <code>conda activate</code> 命令激活刚创建的环境。</p>
-<pre class="line-numbers language-none"><code class="language-none">conda activate myenv
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li><p><strong>停用环境</strong>:<br>使用 <code>conda deactivate</code> 命令停用当前激活的环境。</p>
-<pre class="line-numbers language-none"><code class="language-none">conda deactivate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li><p><strong>列出所有环境</strong>:<br>使用 <code>conda env list</code> 或 <code>conda info --envs</code> 查看所有创建的环境。</p>
-<pre class="line-numbers language-none"><code class="language-none">conda env list<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li><p><strong>删除环境</strong>:<br>使用 <code>conda remove</code> 命令删除指定的环境。</p>
-<pre class="line-numbers language-none"><code class="language-none">conda remove --name myenv --all<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<h3 id="为什么选择-Tailwind-CSS？"><a href="#为什么选择-Tailwind-CSS？" class="headerlink" title="为什么选择 Tailwind CSS？"></a>为什么选择 Tailwind CSS？</h3><ol>
+<li><strong>快速开发</strong>:<br>使用 Tailwind，开发者可以显著减少编写 CSS 的时间，通过组合现有的实用工具类，快速实现设计。</li>
+<li><strong>高度可定制</strong>:<br>Tailwind 的配置文件使得定制变得简单，开发者可以根据项目需求，轻松调整默认设置，以符合品牌或设计规范。</li>
+<li><strong>一致性</strong>:<br>Tailwind 强调在整个项目中使用一致的设计语言，避免了传统 CSS 中的命名冲突和样式覆盖问题。</li>
+<li><strong>维护简单</strong>:<br>由于所有样式都是由类名直接定义在 HTML 中，Tailwind 使得项目的样式更加直观和易于维护。</li>
 </ol>
-<h3 id="安装和管理包"><a href="#安装和管理包" class="headerlink" title="安装和管理包"></a>安装和管理包</h3><ol>
-<li><p><strong>安装包</strong>:<br>使用 <code>conda install</code> 命令在当前环境中安装包。</p>
-<pre class="line-numbers language-none"><code class="language-none">conda install numpy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li><p><strong>更新包</strong>:<br>使用 <code>conda update</code> 命令更新指定的包。</p>
-<pre class="line-numbers language-base" data-language="base"><code class="language-base">conda update numpy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li><p><strong>删除包</strong>:<br>使用 <code>conda remove</code> 命令删除指定的包。</p>
-<pre class="line-numbers language-none"><code class="language-none">conda remove numpy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li><p><strong>列出已安装的包</strong>:<br>使用 <code>conda list</code> 查看当前环境中安装的所有包。</p>
-<pre class="line-numbers language-none"><code class="language-none">conda list<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<h3 id="基本使用方法"><a href="#基本使用方法" class="headerlink" title="基本使用方法"></a>基本使用方法</h3><ol>
+<li><strong>安装 Tailwind CSS</strong>:<br>使用 npm 安装 Tailwind：<br><code>bash npm install tailwindcss npx tailwindcss init </code></li>
+<li><strong>配置 Tailwind</strong>:<br>在 <code>tailwind.config.js</code> 文件中，可以定义自定义配置：</li>
 </ol>
-<h3 id="管理-Conda-配置"><a href="#管理-Conda-配置" class="headerlink" title="管理 Conda 配置"></a>管理 Conda 配置</h3><ol>
-<li><p><strong>查看配置</strong>:<br>使用 <code>conda config --show</code> 查看 Conda 的当前配置。</p>
-<pre class="line-numbers language-none"><code class="language-none">conda config --show
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li><p><strong>添加频道</strong>:<br>使用 <code>conda config --add channels</code> 命令添加新的频道，以获取更多包。</p>
-<pre class="line-numbers language-base" data-language="base"><code class="language-base">conda config --add channels conda-forge
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  <span class="token literal-property property">content</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./src/**/*.&#123;html,js&#125;"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">theme</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">extend</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">plugins</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<ol>
+<li><p><strong>使用 Tailwind 类</strong>:<br>在 HTML 文件中直接使用 Tailwind 提供的类：</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bg-blue-500 text-white p-4 rounded-lg shadow-lg<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  你好，Tailwind CSS!
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+</ol>
+<h3 id="Tailwind-CSS-的实战应用"><a href="#Tailwind-CSS-的实战应用" class="headerlink" title="Tailwind CSS 的实战应用"></a>Tailwind CSS 的实战应用</h3><p>以下是一个使用 Tailwind CSS 构建的简单页面示例：</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Tailwind CSS 示例<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span>
+      <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css<span class="token punctuation">"</span></span>
+      <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span>
+    <span class="token punctuation">/></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bg-gray-100 flex items-center justify-center h-screen<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bg-white p-6 rounded-lg shadow-lg max-w-sm<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text-2xl font-bold mb-4 text-gray-800<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        欢迎使用 Tailwind CSS
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text-gray-600 mb-4<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        这是一个使用 Tailwind CSS
+        构建的简单示例。它展示了如何使用实用工具类来快速构建美观的 UI。
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span>
+        <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600<span class="token punctuation">"</span></span>
+      <span class="token punctuation">></span></span>
+        点击我
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p><strong>移除频道</strong>:<br>使用 <code>conda config --remove channels</code> 命令移除指定的频道。</p>
-<pre class="line-numbers language-base" data-language="base"><code class="language-base">conda config --remove channels conda-forge<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-</ol>
-<h3 id="示例工作流程"><a href="#示例工作流程" class="headerlink" title="示例工作流程"></a>示例工作流程</h3><ol>
-<li><p><strong>创建环境并安装包</strong>:</p>
-<pre class="line-numbers language-base" data-language="base"><code class="language-base">conda create --name data_science python&#x3D;3.9
-conda activate data_science
-conda install numpy pandas matplotlib
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p><strong>使用环境</strong>:</p>
-<pre class="line-numbers language-base" data-language="base"><code class="language-base">python -c &quot;import numpy as np; print(np.__version__)&quot;
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li><p><strong>停用和删除环境</strong>:</p>
-<pre class="line-numbers language-base" data-language="base"><code class="language-base">conda deactivate
-conda remove --name data_science --all
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
-</ol>
-<p>通过这些基本命令和步骤，你可以高效地使用 Miniconda 来管理你的 Python 环境和包。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>Tailwind CSS 是一个现代、高效的 CSS 框架，它通过提供丰富的实用工具类，使得开发者可以快速构建响应式和一致的用户界面。通过学习和使用 Tailwind CSS，您将能够显著提高开发效率，减少样式冲突，并创造出高度可定制和维护的设计。</p>
 
                 
             </div>
@@ -561,7 +557,7 @@ conda remove --name data_science --all
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://fullsize.online/2024/06/14/miniconda-an-zhuang-shi-yong/">http://fullsize.online/2024/06/14/miniconda-an-zhuang-shi-yong/</a>
+                    <a href="http://fullsize.online/2024/12/27/code/tailwind-css-jie-shao/">http://fullsize.online/2024/12/27/code/tailwind-css-jie-shao/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -599,12 +595,12 @@ conda remove --name data_science --all
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/python/">
-                                    <span class="chip bg-color">python</span>
-                                </a>
-                            
                                 <a href="/tags/%E5%BA%93/">
                                     <span class="chip bg-color">库</span>
+                                </a>
+                            
+                                <a href="/tags/javascript/">
+                                    <span class="chip bg-color">javascript</span>
                                 </a>
                             
                         </div>
@@ -652,13 +648,13 @@ conda remove --name data_science --all
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/08/16/haxi/index/">
+                <a href="/2024/12/27/code/react/react18-d/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="哈希表">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="React 18 更新内容">
                         
-                        <span class="card-title">哈希表</span>
+                        <span class="card-title">React 18 更新内容</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -669,7 +665,7 @@ conda remove --name data_science --all
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-08-16
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-12-27
                         </span>
                         <span class="publish-author">
                             
@@ -690,12 +686,16 @@ conda remove --name data_science --all
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-                        <span class="chip bg-color">数据结构</span>
+                    <a href="/tags/javascript/">
+                        <span class="chip bg-color">javascript</span>
                     </a>
                     
-                    <a href="/tags/%E5%93%88%E5%B8%8C/">
-                        <span class="chip bg-color">哈希</span>
+                    <a href="/tags/react/">
+                        <span class="chip bg-color">react</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">基础</span>
                     </a>
                     
                 </div>
@@ -709,13 +709,13 @@ conda remove --name data_science --all
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/05/14/css-yu-bian-yi-he-hou-bian-yi-de-qu-bie/">
+                <a href="/2024/11/17/code/qian-duan-xiang-mu-li-xiang-liu-cheng/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="CSS 预编译和后编译的区别">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="开发的项目流程">
                         
-                        <span class="card-title">CSS 预编译和后编译的区别</span>
+                        <span class="card-title">开发的项目流程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -726,7 +726,7 @@ conda remove --name data_science --all
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-11-18
                             </span>
                         <span class="publish-author">
                             
@@ -747,8 +747,8 @@ conda remove --name data_science --all
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/css/">
-                        <span class="chip bg-color">css</span>
+                    <a href="/tags/%E6%B5%81%E7%A8%8B/">
+                        <span class="chip bg-color">流程</span>
                     </a>
                     
                 </div>
