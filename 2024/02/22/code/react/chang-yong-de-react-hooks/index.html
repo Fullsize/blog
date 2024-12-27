@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="CSS 预编译和后编译的区别, 无涯">
+    <meta name="keywords" content="常用的react hooks, 无涯">
     <meta name="description" content="我将会在这里分享学习到的知识，工作上的问题，生活中的感悟">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>CSS 预编译和后编译的区别 | 无涯</title>
+    <title>常用的react hooks | 无涯</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -288,12 +288,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">CSS 预编译和后编译的区别</h1>
+                    <h1 class="description center-align post-title">常用的react hooks</h1>
                 </div>
             </div>
         </div>
@@ -409,8 +409,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/css/">
-                                <span class="chip bg-color">css</span>
+                            <a href="/tags/javascript/">
+                                <span class="chip bg-color">javascript</span>
+                            </a>
+                        
+                            <a href="/tags/react/">
+                                <span class="chip bg-color">react</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%9F%BA%E7%A1%80/">
+                                <span class="chip bg-color">基础</span>
                             </a>
                         
                     </div>
@@ -438,7 +446,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-05-14
+                    2024-02-23
                 </div>
                 
 
@@ -464,80 +472,66 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="CSS-预编译和后编译的区别"><a href="#CSS-预编译和后编译的区别" class="headerlink" title="CSS 预编译和后编译的区别"></a>CSS 预编译和后编译的区别</h3><p>在现代前端开发中，CSS 的处理方式已经远远超出了简单的静态样式表。为了更高效地管理和优化 CSS，我们可以使用预编译（Pre-compilation）和后编译（Post-compilation）技术。本文将详细介绍这两者的区别，并讨论它们各自的优缺点及适用场景。</p>
-<h3 id="一、CSS-预编译（Pre-compilation）"><a href="#一、CSS-预编译（Pre-compilation）" class="headerlink" title="一、CSS 预编译（Pre-compilation）"></a>一、CSS 预编译（Pre-compilation）</h3><p>CSS 预编译是指在开发阶段使用 CSS 预处理器（如 Sass、LESS、Stylus 等）将编写的预处理语言转换成标准的 CSS 文件。这些预处理语言提供了更强大的功能，如变量、嵌套规则、混合（mixins）和继承等，使 CSS 的编写更加简洁和可维护。</p>
-<h3 id="常见的-CSS-预处理器："><a href="#常见的-CSS-预处理器：" class="headerlink" title="常见的 CSS 预处理器："></a>常见的 CSS 预处理器：</h3><ol>
-<li><p><strong>Sass&#x2F;SCSS</strong>：</p>
-<pre class="line-numbers language-scss" data-language="scss"><code class="language-scss"><span class="token property"><span class="token variable">$primary-color</span></span><span class="token punctuation">:</span> #333<span class="token punctuation">;</span>
-
-<span class="token selector">body </span><span class="token punctuation">&#123;</span>
-  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token variable">$primary-color</span><span class="token punctuation">;</span>
-  <span class="token selector">.container </span><span class="token punctuation">&#123;</span>
-    <span class="token property">margin</span><span class="token punctuation">:</span> 0 auto<span class="token punctuation">;</span>
-  <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p><strong>LESS</strong>：</p>
-<pre class="line-numbers language-less" data-language="less"><code class="language-less"><span class="token variable">@primary-color<span class="token punctuation">:</span></span> #333<span class="token punctuation">;</span>
-
-<span class="token selector">body</span> <span class="token punctuation">&#123;</span>
-  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token variable">@primary-color</span><span class="token punctuation">;</span>
-  <span class="token selector">.container</span> <span class="token punctuation">&#123;</span>
-    <span class="token property">margin</span><span class="token punctuation">:</span> 0 auto<span class="token punctuation">;</span>
-  <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p><strong>Stylus</strong>：</p>
-<pre class="line-numbers language-none"><code class="language-none">primary-color &#x3D; #333
-
-body
-  color primary-color
-  .container
-    margin 0 auto
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+                <p>React Hooks 提供了一系列常用的 API，这些 API 可以让你在函数组件中使用状态(state)、生命周期方法、上下文(context)等 React 特性。以下是一些常用的 React Hooks API：</p>
+<ol>
+<li><strong>useState</strong>: 用于在函数组件中添加状态。它返回一个包含状态值和更新状态值的函数。</li>
 </ol>
-<h3 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h3><ul>
-<li><strong>增强的功能</strong>：支持变量、嵌套、混合、继承等高级功能，使 CSS 更加灵活和易于维护。</li>
-<li><strong>代码可读性和可维护性高</strong>：模块化的写法使得代码结构更清晰，易于管理。</li>
-<li><strong>提高开发效率</strong>：简化了重复性的代码书写，通过预处理器可以自动生成复杂的 CSS。</li>
-</ul>
-<h3 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h3><ul>
-<li><strong>需要编译步骤</strong>：需要在开发过程中编译成标准的 CSS，增加了构建步骤和工具配置的复杂性。</li>
-<li><strong>学习成本</strong>：开发者需要学习预处理语言的语法和使用方法。</li>
-</ul>
-<h3 id="二、CSS-后编译（Post-compilation）"><a href="#二、CSS-后编译（Post-compilation）" class="headerlink" title="二、CSS 后编译（Post-compilation）"></a>二、CSS 后编译（Post-compilation）</h3><p>CSS 后编译指的是在开发和构建阶段使用工具（如 PostCSS）对已经编写好的 CSS 文件进行进一步处理和优化。这些工具可以执行诸如自动添加浏览器前缀、压缩 CSS、转译现代 CSS 特性、分割和合并文件等任务。</p>
-<h3 id="常见的后编译工具和插件："><a href="#常见的后编译工具和插件：" class="headerlink" title="常见的后编译工具和插件："></a>常见的后编译工具和插件：</h3><ol>
-<li><strong>PostCSS</strong>：一个强大的工具，支持多种插件来处理和优化 CSS。<ul>
-<li><strong>Autoprefixer</strong>：自动添加不同浏览器的前缀。<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">const</span> autoprefixer <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"autoprefixer"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">postcss</span><span class="token punctuation">(</span><span class="token punctuation">[</span>autoprefixer<span class="token punctuation">]</span><span class="token punctuation">)</span>
-  <span class="token punctuation">.</span><span class="token function">process</span><span class="token punctuation">(</span>css<span class="token punctuation">)</span>
-  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">result</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-    fs<span class="token punctuation">.</span><span class="token function">writeFileSync</span><span class="token punctuation">(</span><span class="token string">"output.css"</span><span class="token punctuation">,</span> result<span class="token punctuation">.</span>css<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><strong>cssnano</strong>：压缩和优化 CSS 文件。<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">const</span> cssnano <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"cssnano"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">postcss</span><span class="token punctuation">(</span><span class="token punctuation">[</span>cssnano<span class="token punctuation">]</span><span class="token punctuation">)</span>
-  <span class="token punctuation">.</span><span class="token function">process</span><span class="token punctuation">(</span>css<span class="token punctuation">)</span>
-  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">result</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-    fs<span class="token punctuation">.</span><span class="token function">writeFileSync</span><span class="token punctuation">(</span><span class="token string">"output.min.css"</span><span class="token punctuation">,</span> result<span class="token punctuation">.</span>css<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ul>
-</li>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token punctuation">[</span>state<span class="token punctuation">,</span> setState<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span>initialState<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ol start="2">
+<li><strong>useEffect</strong>: 用于在组件渲染后执行副作用操作，如数据获取、订阅、手动 DOM 操作等。它在每次渲染后都会执行。</li>
 </ol>
-<h3 id="优点：-1"><a href="#优点：-1" class="headerlink" title="优点："></a>优点：</h3><ul>
-<li><strong>代码优化</strong>：可以自动化地优化和压缩 CSS，减少文件大小，提高加载速度。</li>
-<li><strong>提高兼容性</strong>：通过插件如 Autoprefixer 自动添加必要的浏览器前缀，确保跨浏览器兼容性。</li>
-<li><strong>现代特性支持</strong>：可以使用插件转译最新的 CSS 特性，使其兼容旧版浏览器。</li>
-</ul>
-<h3 id="缺点：-1"><a href="#缺点：-1" class="headerlink" title="缺点："></a>缺点：</h3><ul>
-<li><strong>依赖工具链</strong>：需要配置和维护相应的工具链，增加了项目的复杂性。</li>
-<li><strong>调试复杂性</strong>：生成的代码可能难以直接调试，需要额外的映射文件（source maps）来帮助调试。</li>
-</ul>
-<h3 id="三、应用场景及选择"><a href="#三、应用场景及选择" class="headerlink" title="三、应用场景及选择"></a>三、应用场景及选择</h3><ol>
-<li><strong>小型项目</strong>：对于小型项目，可以选择使用 CSS 预编译。预处理器的简洁语法和增强功能可以显著提高开发效率和代码的可维护性。</li>
-<li><strong>大型项目</strong>：对于大型项目，建议结合使用预编译和后编译。预处理器用于编写结构化和模块化的 CSS，而后编译工具则用于最终的优化和兼容性处理。</li>
-<li><strong>团队协作</strong>：在团队开发中，预编译和后编译工具的结合使用可以确保代码的一致性和质量。预处理器帮助团队成员保持统一的编码风格，而后编译工具则确保生成的 CSS 具备最佳性能和兼容性。</li>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">// effect code</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// cleanup code</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>dependencies<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol start="3">
+<li><strong>useContext</strong>: 用于在函数组件中访问 React 上下文。</li>
 </ol>
-<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>CSS 预编译和后编译在现代前端开发中各自扮演着重要的角色。预编译通过提供更强大的语言特性和结构化的代码组织，提升了开发效率和代码的可维护性；后编译则通过自动化优化和兼容性处理，确保生成的 CSS 文件具备最佳性能和广泛的浏览器支持。在实际开发中，根据项目需求和团队情况，选择合适的技术或结合使用，可以最大化地发挥它们的优势。</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> value <span class="token operator">=</span> <span class="token function">useContext</span><span class="token punctuation">(</span>MyContext<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ol start="4">
+<li><strong>useReducer</strong>: 用于在函数组件中管理复杂的状态逻辑。它类似于 Redux 中的 reducer。</li>
+</ol>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token punctuation">[</span>state<span class="token punctuation">,</span> dispatch<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useReducer</span><span class="token punctuation">(</span>reducer<span class="token punctuation">,</span> initialState<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ol start="5">
+<li><strong>useCallback</strong>: 用于缓存回调函数，以便在依赖项不变时不重新创建该函数。</li>
+</ol>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> memoizedCallback <span class="token operator">=</span> <span class="token function">useCallback</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">// callback code</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>dependencies<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<ol start="6">
+<li><strong>useMemo</strong>: 用于缓存计算结果，以便在依赖项不变时不重新计算。</li>
+</ol>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">const</span> memoizedValue <span class="token operator">=</span> <span class="token function">useMemo</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">computeExpensiveValue</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>a<span class="token punctuation">,</span> b<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ol start="7">
+<li><strong>useRef</strong>: 用于在函数组件之间保存可变值的引用，类似于 class 组件中的实例变量。</li>
+</ol>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">const</span> refContainer <span class="token operator">=</span> <span class="token function">useRef</span><span class="token punctuation">(</span>initialValue<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ol start="8">
+<li><strong>useImperativeHandle</strong>: 用于自定义暴露给父组件的实例值</li>
+</ol>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token function">useImperativeHandle</span><span class="token punctuation">(</span>
+  ref<span class="token punctuation">,</span>
+  <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+    <span class="token comment">// exposed instance methods/properties</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">[</span>dependencies<span class="token punctuation">]</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol start="9">
+<li><strong>useLayoutEffect</strong>: 类似于 useEffect，但会在所有 DOM 变更后同步调用 effect。它会在浏览器完成布局与绘制之后，但在任何新的渲染之前执行。</li>
+</ol>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token function">useLayoutEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">// effect code</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>dependencies<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -564,7 +558,7 @@ body
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://fullsize.online/2024/05/14/code/javascript/css-yu-bian-yi-he-hou-bian-yi-de-qu-bie/">http://fullsize.online/2024/05/14/code/javascript/css-yu-bian-yi-he-hou-bian-yi-de-qu-bie/</a>
+                    <a href="http://fullsize.online/2024/02/22/code/react/chang-yong-de-react-hooks/">http://fullsize.online/2024/02/22/code/react/chang-yong-de-react-hooks/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -602,8 +596,16 @@ body
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/css/">
-                                    <span class="chip bg-color">css</span>
+                                <a href="/tags/javascript/">
+                                    <span class="chip bg-color">javascript</span>
+                                </a>
+                            
+                                <a href="/tags/react/">
+                                    <span class="chip bg-color">react</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%9F%BA%E7%A1%80/">
+                                    <span class="chip bg-color">基础</span>
                                 </a>
                             
                         </div>
@@ -651,13 +653,13 @@ body
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/05/19/code/typescript-de-gao-jie-yong-fa/">
+                <a href="/2024/02/28/code/javascript/for-in-yu-for-of/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="typescript的高阶用法">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="for in 与 for of">
                         
-                        <span class="card-title">typescript的高阶用法</span>
+                        <span class="card-title">for in 与 for of</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -668,7 +670,7 @@ body
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-05-20
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-02-28
                         </span>
                         <span class="publish-author">
                             
@@ -693,10 +695,6 @@ body
                         <span class="chip bg-color">javascript</span>
                     </a>
                     
-                    <a href="/tags/typescript/">
-                        <span class="chip bg-color">typescript</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -705,16 +703,16 @@ body
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2024/03/27/code/javascript/bi-bao/">
+                <a href="/2024/02/22/code/react/chang-yong-de-react-hooks/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="闭包">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="常用的react hooks">
                         
-                        <span class="card-title">闭包</span>
+                        <span class="card-title">常用的react hooks</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -725,7 +723,7 @@ body
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-27
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-02-23
                             </span>
                         <span class="publish-author">
                             
@@ -743,11 +741,20 @@ body
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
                     <a href="/tags/javascript/">
                         <span class="chip bg-color">javascript</span>
+                    </a>
+                    
+                    <a href="/tags/react/">
+                        <span class="chip bg-color">react</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">基础</span>
                     </a>
                     
                 </div>
