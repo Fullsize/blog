@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="开发的项目流程, 无涯">
+    <meta name="keywords" content="react fiber, 无涯">
     <meta name="description" content="我将会在这里分享学习到的知识，工作上的问题，生活中的感悟">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>开发的项目流程 | 无涯</title>
+    <title>react fiber | 无涯</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -288,12 +288,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">开发的项目流程</h1>
+                    <h1 class="description center-align post-title">react fiber</h1>
                 </div>
             </div>
         </div>
@@ -409,8 +409,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%B5%81%E7%A8%8B/">
-                                <span class="chip bg-color">流程</span>
+                            <a href="/tags/javascript/">
+                                <span class="chip bg-color">javascript</span>
+                            </a>
+                        
+                            <a href="/tags/react/">
+                                <span class="chip bg-color">react</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%9F%BA%E7%A1%80/">
+                                <span class="chip bg-color">基础</span>
                             </a>
                         
                     </div>
@@ -438,7 +446,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-11-18
+                    2020-12-01
                 </div>
                 
 
@@ -464,49 +472,25 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>之前面试问过，所以记录下来以免忘记</p>
-<h2 id="1-确认项目需求"><a href="#1-确认项目需求" class="headerlink" title="1. 确认项目需求"></a>1. 确认项目需求</h2><ul>
-<li><strong>需求调研</strong>：与需求方（客户、产品经理、业务部门）沟通，明确项目目标、核心功能、技术要求。</li>
-<li><strong>竞品分析</strong>：研究同类产品的特点，了解用户需求与痛点。</li>
-<li><strong>需求文档</strong>：整理需求清单，输出需求规格说明书（SRS）。<br><strong>产出</strong>:需求规格说明书（SRS）、功能清单、初步时间计划。</li>
+                <h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>是大量的同步计算任务阻塞了浏览器的 ui 渲染，默认情况下，js 运算，页面布局和页面绘制都是运行在浏览器的主进程中，他们是互斥的关系。如果 js 运算长时间占用主线程，页面就无法得到及时的更新。当我们调用<code>setState</code>更新页面的时候，react 回遍历应用的所有节点，计算出差异，然后更新 UI。整个过程是一气呵成，不能被打断。如果页面元素过多，就容易出现掉帧的现象。</p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>解决主线程一直被 js 运算占用这一问题的基本思路，将运算分割为多步骤，分批完成。也就是完成一部分任务之后，将控制权就给浏览器，让浏览器有时间进行页面渲染。等浏览器完成之后，再继续之前未完成的任务</p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>react 框架内部的运作可以为分为三层</p>
+<ul>
+<li>Virtual DOM 层 结构层(描述页面长什么样)，js 结构层</li>
+<li>Reconciler 层 负责调用组件生命周期方法，进行 DIff 等 调度阶段</li>
+<li>Renderer 层 渲染层 比较常见的就是<code>ReactDom</code>和<code>ReactNative</code></li>
 </ul>
-<h2 id="2-可行性分析"><a href="#2-可行性分析" class="headerlink" title="2. 可行性分析"></a>2. 可行性分析</h2><ul>
-<li><strong>技术评估</strong>：评估实现需求的技术难度，选择合适的技术栈（如框架、工具、库）。</li>
-<li><strong>资源评估</strong>：确定所需人力、时间、预算，识别潜在风险。</li>
-<li><strong>业务评估</strong>：判断项目的商业价值，评估投入产出比。<br><strong>产出</strong>:可行性分析报告、技术选型文档。</li>
-</ul>
-<h2 id="3-前期设计"><a href="#3-前期设计" class="headerlink" title="3. 前期设计"></a>3. 前期设计</h2><ul>
-<li><strong>架构设计</strong>：<ul>
-<li>选择前端框架（如 React、Vue、Svelte 等）。</li>
-<li>确定状态管理（如 Zustand、Redux、Pinia）。</li>
-<li>确定构建工具（如 Webpack、Vite）。</li>
-<li>设计目录结构、路由规则、组件划分。</li>
-</ul>
-</li>
-<li><strong>UI&#x2F;UX 设计</strong>：<ul>
-<li>确定设计风格（如扁平化、极简风）。</li>
-<li>输出低保真或高保真原型图（如使用 Figma、Sketch）。</li>
-</ul>
-</li>
-<li><strong>接口设计</strong>：与后端团队协作，定义 API 接口规范（RESTful 或 GraphQL）。<br><strong>产出</strong>:架构设计文档、UI 原型图、接口文档。</li>
-</ul>
-<h2 id="4-项目立项"><a href="#4-项目立项" class="headerlink" title="4. 项目立项"></a>4. 项目立项</h2><ul>
-<li><strong>立项评审</strong>：组织团队成员（技术负责人、产品经理、项目经理）对项目需求、技术方案、资源分配进行评审。</li>
-<li><strong>项目审批</strong>：获得高层管理或客户的正式批准。<br><strong>产出</strong>:项目立项报告、项目计划书。</li>
-</ul>
-<h2 id="5-项目计划"><a href="#5-项目计划" class="headerlink" title="5. 项目计划"></a>5. 项目计划</h2><ul>
-<li><strong>任务拆解</strong>：将需求拆解为可执行的任务，并优先排序。</li>
-<li><strong>时间估算</strong>：为每个任务分配合理时间。</li>
-<li><strong>团队分工</strong>：确定各成员的职责。</li>
-<li><strong>开发工具准备</strong>：配置代码仓库（Git）、CI&#x2F;CD 流水线、开发环境。<br><strong>产出</strong>:甘特图或 Sprint 计划、任务清单。</li>
-</ul>
-<h2 id="6-项目启动"><a href="#6-项目启动" class="headerlink" title="6. 项目启动"></a>6. 项目启动</h2><ul>
-<li><strong>启动会议</strong>：确认目标、时间节点，明确沟通方式（如会议频率、汇报机制）。</li>
-<li><strong>版本管理</strong>：制定分支管理策略（如 Git Flow）。</li>
-<li><strong>研发流程</strong>：定义开发标准和代码规范。<br><strong>产出</strong>:项目启动记录、开发流程文档。</li>
-</ul>
-<h2 id="7-后续跟踪与迭代"><a href="#7-后续跟踪与迭代" class="headerlink" title="7. 后续跟踪与迭代"></a>7. 后续跟踪与迭代</h2><p>立项完成后，根据 Agile 或其他开发模式进入项目实施阶段，定期检查进度，及时解决问题，确保交付质量。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>以上就是开发项目的基本流程了</p>
+<p>react 团队重写了 Reconciler 层，即组件生命周期和 diff 算法，react 团队命名为<code>fiber Reconciler</code>，建立了自己的组件调用栈，让 diff 计算可打断。</p>
+<p>Fiber 其实实指的一种数据结构，它可以用一个纯 js 对象来表示:</p>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">const</span> fiber<span class="token operator">=</span><span class="token punctuation">&#123;</span>
+	stateNode<span class="token punctuation">,</span> <span class="token comment">// 节点实例</span>
+	child<span class="token punctuation">,</span>     <span class="token comment">// 子节点</span>
+	sibing<span class="token punctuation">,</span>    <span class="token comment">// 兄弟节点</span>
+	<span class="token keyword">return</span>    <span class="token comment">// 父节点</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>为了区分，以前的 Reconiler 被命名为<code>Stack Reconiler</code> 。Stack Reconciler 运作的过程是不能被打断的，必须一条道走到黑：<br><img src="https://segmentfault.com/img/bVboIrF?w=1556&h=602" alt="示例1.png"><br>而 Fiber Reconiler 每执行一段时间，就会将控制权交回浏览器，可以分端执行：</p>
+<p><img src="https://segmentfault.com/img/bVboJj4?w=1472&h=578" alt="示例2.png"></p>
 
                 
             </div>
@@ -533,7 +517,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://fullsize.online/2024/11/17/code/qian-duan-xiang-mu-li-xiang-liu-cheng/">http://fullsize.online/2024/11/17/code/qian-duan-xiang-mu-li-xiang-liu-cheng/</a>
+                    <a href="http://fullsize.online/2020/11/30/code/react/react-fiber/">http://fullsize.online/2020/11/30/code/react/react-fiber/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -571,8 +555,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%B5%81%E7%A8%8B/">
-                                    <span class="chip bg-color">流程</span>
+                                <a href="/tags/javascript/">
+                                    <span class="chip bg-color">javascript</span>
+                                </a>
+                            
+                                <a href="/tags/react/">
+                                    <span class="chip bg-color">react</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%9F%BA%E7%A1%80/">
+                                    <span class="chip bg-color">基础</span>
                                 </a>
                             
                         </div>
@@ -620,13 +612,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/12/27/code/tailwind-css-jie-shao/">
+                <a href="/2020/11/30/code/javascript/header-dai-you-zhong-wen-can-shu-de-wen-ti/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Tailwind CSS 介绍">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="header带有中文参数的问题">
                         
-                        <span class="card-title">Tailwind CSS 介绍</span>
+                        <span class="card-title">header带有中文参数的问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -637,7 +629,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-12-27
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-12-01
                         </span>
                         <span class="publish-author">
                             
@@ -658,12 +650,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%BA%93/">
-                        <span class="chip bg-color">库</span>
-                    </a>
-                    
                     <a href="/tags/javascript/">
                         <span class="chip bg-color">javascript</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">基础</span>
                     </a>
                     
                 </div>
@@ -677,13 +669,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/11/17/code/react/class-zu-jian-he-han-shu-zu-jian-de-qu-bie/">
+                <a href="/2020/11/26/code/javascript/js-dui-xiang-dui-bi-shi-fou-xiang-deng/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="说说对React中类组件和函数组件的理解？有什么区别？">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="js 对象对比是否相等">
                         
-                        <span class="card-title">说说对React中类组件和函数组件的理解？有什么区别？</span>
+                        <span class="card-title">js 对象对比是否相等</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -694,7 +686,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-11-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-26
                             </span>
                         <span class="publish-author">
                             
@@ -717,14 +709,6 @@
                     
                     <a href="/tags/javascript/">
                         <span class="chip bg-color">javascript</span>
-                    </a>
-                    
-                    <a href="/tags/react/">
-                        <span class="chip bg-color">react</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">基础</span>
                     </a>
                     
                 </div>

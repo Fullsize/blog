@@ -321,6 +321,128 @@
     
     
     <entry>
+      <title>react生命周期和执行顺序</title>
+      <link href="/2020/11/30/code/react/react-sheng-ming-zhou-qi-he-zhi-xing-shun-xu/"/>
+      <url>/2020/11/30/code/react/react-sheng-ming-zhou-qi-he-zhi-xing-shun-xu/</url>
+      
+        <content type="html"><![CDATA[<p><img src="/images/react/zhouqi.jpeg" alt="周期.png"></p><h2 id="挂载和销毁阶段"><a href="#挂载和销毁阶段" class="headerlink" title="挂载和销毁阶段"></a>挂载和销毁阶段</h2><h3 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor()"></a>constructor()</h3><p>constructor()中完成了 react 数据的初始化,它接受两个参数:props 和 content</p><h3 id="componentWillMount"><a href="#componentWillMount" class="headerlink" title="componentWillMount()"></a>componentWillMount()</h3><p>在渲染前调用,在客户端也在服务端。它代表的过程是组件已经经历了 constructor()初始化数据后，但是还未渲染 DOM 时。</p><h3 id="componentDidMount"><a href="#componentDidMount" class="headerlink" title="componentDidMount()"></a>componentDidMount()</h3><p>组件第一次渲染完成,此时 dom 节点已经生成</p><h3 id="componentWillUnmount"><a href="#componentWillUnmount" class="headerlink" title="componentWillUnmount()"></a>componentWillUnmount()</h3><p>组件卸载和数据的销毁</p><h2 id="更新阶段"><a href="#更新阶段" class="headerlink" title="更新阶段"></a>更新阶段</h2><h3 id="componentWillReceiveProps-nextProps"><a href="#componentWillReceiveProps-nextProps" class="headerlink" title="componentWillReceiveProps(nextProps)"></a>componentWillReceiveProps(nextProps)</h3><p>在接受父组件改变后的 props 需要重新渲染组件时用的比较多</p><p>接受一个参数 nextProps;</p><p>通过对比 nextProps 和 this.props,将 nextProps 的 state 为组件的 state,从而重新渲染组件</p><h3 id="componentWillUpdate-nextProps-nextState"><a href="#componentWillUpdate-nextProps-nextState" class="headerlink" title="componentWillUpdate(nextProps,nextState)"></a>componentWillUpdate(nextProps,nextState)</h3><p>组件进入重新渲染的流程,这里同样能拿到 nextProps 和 nextState</p><h3 id="componentDidUpdate-prevProps-PrevState"><a href="#componentDidUpdate-prevProps-PrevState" class="headerlink" title="componentDidUpdate(prevProps,PrevState)"></a>componentDidUpdate(prevProps,PrevState)</h3><p>组件更新完毕后,react 只会在第一次初始化成功会进入 componentDidMount(),之后每次渲染都会进入这个生命周期</p><h2 id="新增生命周期"><a href="#新增生命周期" class="headerlink" title="新增生命周期"></a>新增生命周期</h2><h3 id="getDerivcedStateFromProps-nextProps-nextState"><a href="#getDerivcedStateFromProps-nextProps-nextState" class="headerlink" title="getDerivcedStateFromProps(nextProps,nextState)"></a>getDerivcedStateFromProps(nextProps,nextState)</h3><p>代替 componentWillProps(),就是在根据当前的 props 来更新组件的 state，而不是去做其他一些让组件自身状态变得更加不可预测的事情。</p><h3 id="getSnapshotBeforeUpdate-prevProps-PrevState"><a href="#getSnapshotBeforeUpdate-prevProps-PrevState" class="headerlink" title="getSnapshotBeforeUpdate(prevProps,PrevState)"></a>getSnapshotBeforeUpdate(prevProps,PrevState)</h3><p>代替 componentWillUpdate()</p><p>componentDidUpdate()和 componentWillUpdate()中读取的 dom 元素状态不是安全的,因为这个值很可能失效了</p><p>getSnapshotBeforeUpdate 会在最终的 render 前调用,也就是是说在 getSnapshotBeforeUpdate 中读取的 dom 元素状态和 componentDidUpdate 是一致的</p><p>此生命周期返回的任何值都将作为参数传递给 componentDidUpdate</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> javascript </tag>
+            
+            <tag> react </tag>
+            
+            <tag> 基础 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>react组件传参方式</title>
+      <link href="/2020/11/30/code/react/react-zu-jian-chuan-can-fang-shi/"/>
+      <url>/2020/11/30/code/react/react-zu-jian-chuan-can-fang-shi/</url>
+      
+        <content type="html"><![CDATA[<p>在 React 中，组件之间传递参数有几种常见的方式：</p><p><strong>Props 传递：</strong> 这是 React 中最常见的方式。你可以通过在组件的声明中传递 props 属性来传递参数。父组件可以向子组件传递数据，子组件通过 props 对象接收这些数据。例如：</p><pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token comment">// ParentComponent.js</span><span class="token keyword">import</span> ChildComponent <span class="token keyword">from</span> <span class="token string">"./ChildComponent"</span><span class="token punctuation">;</span><span class="token keyword">function</span> <span class="token function">ParentComponent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  <span class="token keyword">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">ChildComponent</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>John<span class="token punctuation">"</span></span> <span class="token attr-name">age</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">&#123;</span><span class="token number">30</span><span class="token punctuation">&#125;</span></span> <span class="token punctuation">/></span></span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span><span class="token comment">// ChildComponent.js</span><span class="token keyword">function</span> <span class="token function">ChildComponent</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  <span class="token keyword">return</span> <span class="token punctuation">(</span>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><span class="token plain-text">Name: </span><span class="token punctuation">&#123;</span>props<span class="token punctuation">.</span>name<span class="token punctuation">&#125;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><span class="token plain-text">      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><span class="token plain-text">Age: </span><span class="token punctuation">&#123;</span>props<span class="token punctuation">.</span>age<span class="token punctuation">&#125;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><span class="token plain-text">    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>  <span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ol><li><strong>State 管理：</strong> 你可以在组件内部使用 <strong><code>state</code></strong> 来管理数据，并通过 <strong><code>props</code></strong> 将这些数据传递给子组件。当父组件的状态发生变化时，会重新渲染子组件。这在需要在父组件中修改数据并通知子组件更新时很有用。</li><li><strong>Context API：</strong> 当组件嵌套较深，但多个组件需要访问相同的数据时，可以使用 Context API。Context 允许您将数据传递给组件树中的所有组件，而无需手动传递 props。这在跨多个层次的组件传递参数时很有用。</li><li><strong>Redux 或其他状态管理库：</strong> 当应用的状态变得更加复杂时，可以使用状态管理库（如 Redux）来管理应用的状态。Redux 允许您将应用程序的状态存储在一个单一的 store 中，并允许您以一种统一的方式在组件之间共享状态和派发操作。</li></ol><p>这些是 React 中常用的组件传递参数的方式，选择哪种方式取决于你的具体需求和应用程序的复杂性。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> javascript </tag>
+            
+            <tag> react </tag>
+            
+            <tag> 基础 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>header带有中文参数的问题</title>
+      <link href="/2020/11/30/code/javascript/header-dai-you-zhong-wen-can-shu-de-wen-ti/"/>
+      <url>/2020/11/30/code/javascript/header-dai-you-zhong-wen-can-shu-de-wen-ti/</url>
+      
+        <content type="html"><![CDATA[<p>HTTP 请求可以包含中文参数，但由于 HTTP 协议的设计和传输的标准，中文等非 ASCII 字符需要经过编码处理才能正确传输和解析。这是因为 HTTP 请求中 URL 使用的字符集是 ASCII，直接传递中文字符可能导致服务器无法正确解析，甚至可能引发错误。</p><p>HTTP 请求可以包含中文参数，但由于 HTTP 协议的设计和传输的标准，中文等非 ASCII 字符需要经过编码处理才能正确传输和解析。这是因为 HTTP 请求中 URL 使用的字符集是 ASCII，直接传递中文字符可能导致服务器无法正确解析，甚至可能引发错误。</p><p>以下是原因和解决方式：</p><h2 id="原因："><a href="#原因：" class="headerlink" title="原因："></a>原因：</h2><h3 id="URL-字符限制："><a href="#URL-字符限制：" class="headerlink" title="URL 字符限制："></a>URL 字符限制：</h3><p>URL 中的字符通常是基于 ASCII 编码的，而中文属于非 ASCII 字符，直接放入 URL 中可能导致解析问题。</p><h3 id="传输标准："><a href="#传输标准：" class="headerlink" title="传输标准："></a>传输标准：</h3><p>在 HTTP 请求中，URL 需要遵循 URI 规范，其中保留的字符（如&#x2F;、?、&#x3D;等）具有特定含义，非 ASCII 字符（如中文）需要编码为安全的格式。</p><h3 id="服务器解析问题："><a href="#服务器解析问题：" class="headerlink" title="服务器解析问题："></a>服务器解析问题：</h3><p>服务器解析 URL 时，通常会将其解码为指定的编码格式（如 UTF-8）。如果未进行正确的编码处理，可能会出现乱码或错误。</p><h2 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h2><h3 id="URL-编码："><a href="#URL-编码：" class="headerlink" title="URL 编码："></a>URL 编码：</h3><p>使用 URL encoding（百分号编码）将中文字符转换为可传输的 ASCII 格式。例如：<br>中文字符<code>你好</code> → <code>%E4%BD%A0%E5%A5%BD</code><br>在前端可以使用 <code>encodeURIComponent</code> 进行编码，后端使用相应的解码函数解析。</p><p>示例：</p><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> param <span class="token operator">=</span> <span class="token string">"你好"</span><span class="token punctuation">;</span><span class="token keyword">const</span> encodedParam <span class="token operator">=</span> <span class="token function">encodeURIComponent</span><span class="token punctuation">(</span>param<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 输出 "%E4%BD%A0%E5%A5%BD"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h3 id="设置字符集："><a href="#设置字符集：" class="headerlink" title="设置字符集："></a>设置字符集：</h3><p>确保客户端和服务器端使用一致的字符集（如 UTF-8），以避免因编码不匹配导致的问题。</p><h3 id="POST-请求中的-Body-参数："><a href="#POST-请求中的-Body-参数：" class="headerlink" title="POST 请求中的 Body 参数："></a>POST 请求中的 Body 参数：</h3><p>如果参数包含大量中文，建议使用 POST 方法，将参数放在请求体中，而不是 URL 中。请求体可以直接传递原始字符串，避免编码问题。</p><h3 id="检查服务器配置："><a href="#检查服务器配置：" class="headerlink" title="检查服务器配置："></a>检查服务器配置：</h3><p>确保服务器能够正确解析 URL 中的非 ASCII 字符。某些旧版本服务器可能需要额外配置支持 UTF-8 URL。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> javascript </tag>
+            
+            <tag> 基础 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>react fiber</title>
+      <link href="/2020/11/30/code/react/react-fiber/"/>
+      <url>/2020/11/30/code/react/react-fiber/</url>
+      
+        <content type="html"><![CDATA[<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>是大量的同步计算任务阻塞了浏览器的 ui 渲染，默认情况下，js 运算，页面布局和页面绘制都是运行在浏览器的主进程中，他们是互斥的关系。如果 js 运算长时间占用主线程，页面就无法得到及时的更新。当我们调用<code>setState</code>更新页面的时候，react 回遍历应用的所有节点，计算出差异，然后更新 UI。整个过程是一气呵成，不能被打断。如果页面元素过多，就容易出现掉帧的现象。</p><h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>解决主线程一直被 js 运算占用这一问题的基本思路，将运算分割为多步骤，分批完成。也就是完成一部分任务之后，将控制权就给浏览器，让浏览器有时间进行页面渲染。等浏览器完成之后，再继续之前未完成的任务</p><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>react 框架内部的运作可以为分为三层</p><ul><li>Virtual DOM 层 结构层(描述页面长什么样)，js 结构层</li><li>Reconciler 层 负责调用组件生命周期方法，进行 DIff 等 调度阶段</li><li>Renderer 层 渲染层 比较常见的就是<code>ReactDom</code>和<code>ReactNative</code></li></ul><p>react 团队重写了 Reconciler 层，即组件生命周期和 diff 算法，react 团队命名为<code>fiber Reconciler</code>，建立了自己的组件调用栈，让 diff 计算可打断。</p><p>Fiber 其实实指的一种数据结构，它可以用一个纯 js 对象来表示:</p><pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">const</span> fiber<span class="token operator">=</span><span class="token punctuation">&#123;</span>stateNode<span class="token punctuation">,</span> <span class="token comment">// 节点实例</span>child<span class="token punctuation">,</span>     <span class="token comment">// 子节点</span>sibing<span class="token punctuation">,</span>    <span class="token comment">// 兄弟节点</span><span class="token keyword">return</span>    <span class="token comment">// 父节点</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>为了区分，以前的 Reconiler 被命名为<code>Stack Reconiler</code> 。Stack Reconciler 运作的过程是不能被打断的，必须一条道走到黑：<br><img src="https://segmentfault.com/img/bVboIrF?w=1556&h=602" alt="示例1.png"><br>而 Fiber Reconiler 每执行一段时间，就会将控制权交回浏览器，可以分端执行：</p><p><img src="https://segmentfault.com/img/bVboJj4?w=1472&h=578" alt="示例2.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> javascript </tag>
+            
+            <tag> react </tag>
+            
+            <tag> 基础 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>js 对象对比是否相等</title>
       <link href="/2020/11/26/code/javascript/js-dui-xiang-dui-bi-shi-fou-xiang-deng/"/>
       <url>/2020/11/26/code/javascript/js-dui-xiang-dui-bi-shi-fou-xiang-deng/</url>
