@@ -1,6 +1,6 @@
 ---
 title: typescript的高阶用法
-date: 2024-05-20
+date: 2024-05-20 16:30
 tags:
   - typescript
   - javascript
