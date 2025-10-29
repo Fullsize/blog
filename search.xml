@@ -301,6 +301,33 @@
     
     
     <entry>
+      <title>预检请求</title>
+      <link href="/2025/03/27/code/javascript/yu-jian-qing-qiu/"/>
+      <url>/2025/03/27/code/javascript/yu-jian-qing-qiu/</url>
+      
+        <content type="html"><![CDATA[<h1 id="预检请求"><a href="#预检请求" class="headerlink" title="预检请求"></a>预检请求</h1><p><a href="https://developer.mozilla.org/zh-CN/docs/Glossary/CORS">CORS</a>  预检请求用于检查服务器是否支持 CORS 协议，并且是否允许使用特定的方法和标头。</p><p>浏览器会自动发送 <code>OPTIONS</code> 预检请求，主要在以下情况下：</p><ul><li><strong>使用了非简单请求</strong>（即非 <code>GET</code>、<code>POST</code>（仅限 <code>application/x-www-form-urlencoded</code>、<code>multipart/form-data</code>、<code>text/plain</code>）、<code>HEAD</code>）。</li><li><strong>设置了自定义请求头</strong>（如 <code>Authorization</code>、<code>Content-Type: application/json</code>）。</li><li><strong>跨域请求涉及 credentials（如 <code>withCredentials: true</code>）</strong>。</li><li><strong>使用了 PUT、DELETE、PATCH 等方法</strong>。</li></ul><h2 id="服务器正常响应-options-请求"><a href="#服务器正常响应-options-请求" class="headerlink" title="服务器正常响应 options 请求"></a>服务器正常响应 options 请求</h2><pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx">res<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>  <span class="token string-property property">"Access-Control-Allow-Origin"</span><span class="token operator">:</span> <span class="token string">"*"</span><span class="token punctuation">,</span> <span class="token comment">// 允许的来源</span>  <span class="token string-property property">"Access-Control-Allow-Methods"</span><span class="token operator">:</span> <span class="token string">"GET, POST, PUT, DELETE, OPTIONS"</span><span class="token punctuation">,</span> <span class="token comment">// 允许的方法</span>  <span class="token string-property property">"Access-Control-Allow-Headers"</span><span class="token operator">:</span> <span class="token string">"Content-Type, Authorization"</span><span class="token punctuation">,</span> <span class="token comment">// 允许的请求头</span>  <span class="token string-property property">"Access-Control-Allow-Credentials"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span> <span class="token comment">// 允许携带 Cookie</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul><li>浏览器会自动发送 <code>OPTIONS</code> 预检请求来检查 CORS 规则。</li><li>服务器需要正确返回 <code>Access-Control-Allow-Origin</code> 等 CORS 头信息。</li><li>通过<strong>使用简单请求</strong>、<strong>避免自定义头</strong>，可以减少 <code>OPTIONS</code> 预检请求的触发。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 深入 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> header </tag>
+            
+            <tag> header options </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>中高级前端常见面试题</title>
       <link href="/2025/01/10/code/chang-jian-mian-shi-ti/"/>
       <url>/2025/01/10/code/chang-jian-mian-shi-ti/</url>

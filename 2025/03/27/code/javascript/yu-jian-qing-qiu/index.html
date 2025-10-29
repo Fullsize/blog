@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="ajax 封装, 无涯">
+    <meta name="keywords" content="预检请求, 无涯">
     <meta name="description" content="我将会在这里分享学习到的知识，工作上的问题，生活中的感悟">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>ajax 封装 | 无涯</title>
+    <title>预检请求 | 无涯</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -288,12 +288,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">ajax 封装</h1>
+                    <h1 class="description center-align post-title">预检请求</h1>
                 </div>
             </div>
         </div>
@@ -409,8 +409,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/ajax/">
-                                <span class="chip bg-color">ajax</span>
+                            <a href="/tags/header/">
+                                <span class="chip bg-color">header</span>
+                            </a>
+                        
+                            <a href="/tags/header-options/">
+                                <span class="chip bg-color">header options</span>
                             </a>
                         
                     </div>
@@ -421,8 +425,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%9F%BA%E7%A1%80/" class="post-category">
-                                基础
+                            <a href="/categories/%E6%B7%B1%E5%85%A5/" class="post-category">
+                                深入
                             </a>
                         
                     </div>
@@ -445,7 +449,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 
@@ -470,134 +474,26 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="ajax-封装"><a href="#ajax-封装" class="headerlink" title="ajax 封装"></a>ajax 封装</h1><p>一个完整的 <strong>AJAX（Asynchronous JavaScript and XML）</strong> 请求通常涉及以下几个步骤：</p>
-<ol>
-<li><strong>创建 <code>XMLHttpRequest</code> 对象</strong></li>
-<li><strong>配置请求方法和 URL</strong></li>
-<li><strong>设置请求头（可选）</strong></li>
-<li><strong>监听 <code>readystatechange</code> 事件或 <code>onload</code> 事件</strong></li>
-<li><strong>发送请求</strong></li>
-<li><strong>处理服务器响应</strong></li>
-</ol>
-<hr>
-<h2 id="完整示例"><a href="#完整示例" class="headerlink" title="完整示例"></a>完整示例</h2><pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">function</span> <span class="token function">ajaxRequest</span><span class="token punctuation">(</span><span class="token parameter">method<span class="token punctuation">,</span> url<span class="token punctuation">,</span> data <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">,</span> callback</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token comment">// 1. 创建 XMLHttpRequest 对象</span>
-  <span class="token keyword">const</span> xhr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XMLHttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-  <span class="token comment">// 2. 配置请求 (GET 或 POST)</span>
-  xhr<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span>method<span class="token punctuation">,</span> url<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-  <span class="token comment">// 3. 设置请求头（如果是 POST 请求，需要设置 Content-Type）</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>method <span class="token operator">===</span> <span class="token string">"POST"</span> <span class="token operator">&amp;&amp;</span> data<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    xhr<span class="token punctuation">.</span><span class="token function">setRequestHeader</span><span class="token punctuation">(</span><span class="token string">"Content-Type"</span><span class="token punctuation">,</span> <span class="token string">"application/json"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">&#125;</span>
-
-  <span class="token comment">// 4. 监听请求状态变化</span>
-  xhr<span class="token punctuation">.</span><span class="token function-variable function">onreadystatechange</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>xhr<span class="token punctuation">.</span>readyState <span class="token operator">===</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-      <span class="token comment">// 请求完成</span>
-      <span class="token keyword">if</span> <span class="token punctuation">(</span>xhr<span class="token punctuation">.</span>status <span class="token operator">>=</span> <span class="token number">200</span> <span class="token operator">&amp;&amp;</span> xhr<span class="token punctuation">.</span>status <span class="token operator">&lt;</span> <span class="token number">300</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token comment">// 解析 JSON 响应</span>
-        <span class="token keyword">const</span> response <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>xhr<span class="token punctuation">.</span>responseText<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token function">callback</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> response<span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-        <span class="token function">callback</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Error: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>xhr<span class="token punctuation">.</span>status<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string"> </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>xhr<span class="token punctuation">.</span>statusText<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-
-  <span class="token comment">// 5. 发送请求</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>method <span class="token operator">===</span> <span class="token string">"POST"</span> <span class="token operator">&amp;&amp;</span> data<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    xhr<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-    xhr<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token comment">// **调用示例**</span>
-<span class="token comment">// GET 请求</span>
-<span class="token function">ajaxRequest</span><span class="token punctuation">(</span>
-  <span class="token string">"GET"</span><span class="token punctuation">,</span>
-  <span class="token string">"https://jsonplaceholder.typicode.com/posts/1"</span><span class="token punctuation">,</span>
-  <span class="token keyword">null</span><span class="token punctuation">,</span>
-  <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-      console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"GET Response:"</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-  <span class="token punctuation">&#125;</span>
-<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token comment">// POST 请求</span>
-<span class="token function">ajaxRequest</span><span class="token punctuation">(</span>
-  <span class="token string">"POST"</span><span class="token punctuation">,</span>
-  <span class="token string">"https://jsonplaceholder.typicode.com/posts"</span><span class="token punctuation">,</span>
-  <span class="token punctuation">&#123;</span> <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">"AJAX Test"</span><span class="token punctuation">,</span> <span class="token literal-property property">body</span><span class="token operator">:</span> <span class="token string">"This is a test"</span><span class="token punctuation">,</span> <span class="token literal-property property">userId</span><span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-  <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-      console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"POST Response:"</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-  <span class="token punctuation">&#125;</span>
-<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="解释"><a href="#解释" class="headerlink" title="解释"></a><strong>解释</strong></h3><ol>
-<li><code>XMLHttpRequest</code> 是用于发送 HTTP 请求的 JavaScript 对象。</li>
-<li><code>xhr.open(method, url, async)</code> 配置请求：<ul>
-<li><code>method</code>: <code>GET</code> 或 <code>POST</code></li>
-<li><code>url</code>: 请求地址</li>
-<li><code>async</code>: 是否异步（一般为 <code>true</code>）</li>
+                <h1 id="预检请求"><a href="#预检请求" class="headerlink" title="预检请求"></a>预检请求</h1><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Glossary/CORS">CORS</a>  预检请求用于检查服务器是否支持 CORS 协议，并且是否允许使用特定的方法和标头。</p>
+<p>浏览器会自动发送 <code>OPTIONS</code> 预检请求，主要在以下情况下：</p>
+<ul>
+<li><strong>使用了非简单请求</strong>（即非 <code>GET</code>、<code>POST</code>（仅限 <code>application/x-www-form-urlencoded</code>、<code>multipart/form-data</code>、<code>text/plain</code>）、<code>HEAD</code>）。</li>
+<li><strong>设置了自定义请求头</strong>（如 <code>Authorization</code>、<code>Content-Type: application/json</code>）。</li>
+<li><strong>跨域请求涉及 credentials（如 <code>withCredentials: true</code>）</strong>。</li>
+<li><strong>使用了 PUT、DELETE、PATCH 等方法</strong>。</li>
 </ul>
-</li>
-<li><code>xhr.setRequestHeader</code> 设置 HTTP 头（POST 请求时需要 <code>Content-Type</code>）</li>
-<li><code>xhr.onreadystatechange</code> 监听状态变化，<code>readyState === 4</code> 表示请求完成。</li>
-<li><code>xhr.status</code> 检测 HTTP 状态码：<ul>
-<li><strong>200~299</strong> 说明请求成功</li>
-<li>其他状态表示错误，如 <strong>404（未找到）</strong>，<strong>500（服务器错误）</strong> 等</li>
+<h2 id="服务器正常响应-options-请求"><a href="#服务器正常响应-options-请求" class="headerlink" title="服务器正常响应 options 请求"></a>服务器正常响应 options 请求</h2><pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx">res<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  <span class="token string-property property">"Access-Control-Allow-Origin"</span><span class="token operator">:</span> <span class="token string">"*"</span><span class="token punctuation">,</span> <span class="token comment">// 允许的来源</span>
+  <span class="token string-property property">"Access-Control-Allow-Methods"</span><span class="token operator">:</span> <span class="token string">"GET, POST, PUT, DELETE, OPTIONS"</span><span class="token punctuation">,</span> <span class="token comment">// 允许的方法</span>
+  <span class="token string-property property">"Access-Control-Allow-Headers"</span><span class="token operator">:</span> <span class="token string">"Content-Type, Authorization"</span><span class="token punctuation">,</span> <span class="token comment">// 允许的请求头</span>
+  <span class="token string-property property">"Access-Control-Allow-Credentials"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span> <span class="token comment">// 允许携带 Cookie</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>浏览器会自动发送 <code>OPTIONS</code> 预检请求来检查 CORS 规则。</li>
+<li>服务器需要正确返回 <code>Access-Control-Allow-Origin</code> 等 CORS 头信息。</li>
+<li>通过<strong>使用简单请求</strong>、<strong>避免自定义头</strong>，可以减少 <code>OPTIONS</code> 预检请求的触发。</li>
 </ul>
-</li>
-<li><code>xhr.send(data)</code> 发送数据：<ul>
-<li><code>GET</code> 请求时，<code>data</code> 为空</li>
-<li><code>POST</code> 请求时，需要 <code>JSON.stringify(data)</code></li>
-</ul>
-</li>
-</ol>
-<h3 id="AJAX-请求状态-readyState"><a href="#AJAX-请求状态-readyState" class="headerlink" title="AJAX 请求状态 (readyState)"></a><strong>AJAX 请求状态 (<code>readyState</code>)</strong></h3><table>
-<thead>
-<tr>
-<th>值</th>
-<th>状态</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>0</td>
-<td>UNSENT</td>
-<td>XMLHttpRequest 已创建，但未调用 <code>open()</code></td>
-</tr>
-<tr>
-<td>1</td>
-<td>OPENED</td>
-<td><code>open()</code> 方法已调用</td>
-</tr>
-<tr>
-<td>2</td>
-<td>HEADERS_RECEIVED</td>
-<td>服务器已返回 HTTP 头信息</td>
-</tr>
-<tr>
-<td>3</td>
-<td>LOADING</td>
-<td>数据正在下载</td>
-</tr>
-<tr>
-<td>4</td>
-<td>DONE</td>
-<td>请求完成，数据传输结束</td>
-</tr>
-</tbody></table>
 
                 
             </div>
@@ -624,7 +520,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://fullsize.online/2025/03/27/code/javascript/ajax-feng-zhuang/">http://fullsize.online/2025/03/27/code/javascript/ajax-feng-zhuang/</a>
+                    <a href="http://fullsize.online/2025/03/27/code/javascript/yu-jian-qing-qiu/">http://fullsize.online/2025/03/27/code/javascript/yu-jian-qing-qiu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -662,8 +558,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/ajax/">
-                                    <span class="chip bg-color">ajax</span>
+                                <a href="/tags/header/">
+                                    <span class="chip bg-color">header</span>
+                                </a>
+                            
+                                <a href="/tags/header-options/">
+                                    <span class="chip bg-color">header options</span>
                                 </a>
                             
                         </div>
@@ -711,13 +611,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2025/03/28/code/javascript/zi-fu-chuan-qu-chu-duo-yu-de-kong-ge/">
+                <a href="/2025/03/27/code/javascript/ajax-feng-zhuang/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="字符串去除多余的空格">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="ajax 封装">
                         
-                        <span class="card-title">字符串去除多余的空格</span>
+                        <span class="card-title">ajax 封装</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -728,7 +628,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2025-03-28
+                            <i class="far fa-clock fa-fw icon-date"></i>2025-03-27
                         </span>
                         <span class="publish-author">
                             
@@ -745,8 +645,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/string/">
-                        <span class="chip bg-color">string</span>
+                    <a href="/tags/ajax/">
+                        <span class="chip bg-color">ajax</span>
                     </a>
                     
                 </div>
@@ -760,13 +660,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2025/03/27/code/javascript/yu-jian-qing-qiu/">
+                <a href="/2025/01/10/code/chang-jian-mian-shi-ti/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="预检请求">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="中高级前端常见面试题">
                         
-                        <span class="card-title">预检请求</span>
+                        <span class="card-title">中高级前端常见面试题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -777,14 +677,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-03-27
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-01-11
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%B7%B1%E5%85%A5/" class="post-category">
-                                    深入
+                            <a href="/categories/%E9%9D%A2%E8%AF%95/" class="post-category">
+                                    面试
                                 </a>
                             
                             
@@ -794,12 +694,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/header/">
-                        <span class="chip bg-color">header</span>
-                    </a>
-                    
-                    <a href="/tags/header-options/">
-                        <span class="chip bg-color">header options</span>
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
                     </a>
                     
                 </div>
