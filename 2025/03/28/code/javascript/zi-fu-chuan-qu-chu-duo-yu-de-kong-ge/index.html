@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="typescript的高阶用法, 无涯">
+    <meta name="keywords" content="字符串去除多余的空格, 无涯">
     <meta name="description" content="我将会在这里分享学习到的知识，工作上的问题，生活中的感悟">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>typescript的高阶用法 | 无涯</title>
+    <title>字符串去除多余的空格 | 无涯</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -288,12 +288,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">typescript的高阶用法</h1>
+                    <h1 class="description center-align post-title">字符串去除多余的空格</h1>
                 </div>
             </div>
         </div>
@@ -409,12 +409,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/javascript/">
-                                <span class="chip bg-color">javascript</span>
-                            </a>
-                        
-                            <a href="/tags/typescript/">
-                                <span class="chip bg-color">typescript</span>
+                            <a href="/tags/string/">
+                                <span class="chip bg-color">string</span>
                             </a>
                         
                     </div>
@@ -425,12 +421,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category">
-                                技术
-                            </a>
-                        
-                            <a href="/categories/%E6%8A%80%E6%9C%AF/%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                学习
+                            <a href="/categories/%E5%9F%BA%E7%A1%80/" class="post-category">
+                                基础
                             </a>
                         
                     </div>
@@ -442,7 +434,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-05-20
+                    2025-03-28
                 </div>
                 
 
@@ -453,7 +445,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    1 分
                 </div>
                 
 
@@ -478,129 +470,11 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>记录和学习一些常用或需要了解的用法,下面是一些 TypeScript 的高级用法及其示例：</p>
-<h3 id="1-泛型-Generics"><a href="#1-泛型-Generics" class="headerlink" title="1. 泛型 (Generics)"></a>1. 泛型 (Generics)</h3><p>泛型允许你定义函数、类或接口时，不指定具体的类型，而是使用类型参数。这样可以使代码更加灵活和可重用。</p>
-<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">function</span> <span class="token generic-function"><span class="token function">identity</span><span class="token generic class-name"><span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">></span></span></span><span class="token punctuation">(</span>arg<span class="token operator">:</span> <span class="token constant">T</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token constant">T</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">return</span> arg<span class="token punctuation">;</span>
+                <h1 id="字符串去除多余的空格"><a href="#字符串去除多余的空格" class="headerlink" title="字符串去除多余的空格"></a>字符串去除多余的空格</h1><pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">function</span> <span class="token function">trimExtraSpaces</span><span class="token punctuation">(</span><span class="token parameter">str</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">return</span> str<span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\s+</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span>
 
-<span class="token keyword">let</span> output1 <span class="token operator">=</span> <span class="token generic-function"><span class="token function">identity</span><span class="token generic class-name"><span class="token operator">&lt;</span><span class="token builtin">string</span><span class="token operator">></span></span></span><span class="token punctuation">(</span><span class="token string">"Hello TypeScript"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">let</span> output2 <span class="token operator">=</span> <span class="token generic-function"><span class="token function">identity</span><span class="token generic class-name"><span class="token operator">&lt;</span><span class="token builtin">number</span><span class="token operator">></span></span></span><span class="token punctuation">(</span><span class="token number">42</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="2-交叉类型-Intersection-Types"><a href="#2-交叉类型-Intersection-Types" class="headerlink" title="2. 交叉类型 (Intersection Types)"></a>2. 交叉类型 (Intersection Types)</h3><p>交叉类型用于将多个类型合并为一个类型，表示一个对象可以同时拥有这些类型的所有成员。</p>
-<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">interface</span> <span class="token class-name">Person</span> <span class="token punctuation">&#123;</span>
-  name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token keyword">interface</span> <span class="token class-name">Employee</span> <span class="token punctuation">&#123;</span>
-  employeeId<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token keyword">type</span> <span class="token class-name">EmployeePerson</span> <span class="token operator">=</span> Person <span class="token operator">&amp;</span> Employee<span class="token punctuation">;</span>
-
-<span class="token keyword">let</span> employee<span class="token operator">:</span> EmployeePerson <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-  name<span class="token operator">:</span> <span class="token string">"John"</span><span class="token punctuation">,</span>
-  employeeId<span class="token operator">:</span> <span class="token number">1234</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="3-联合类型-Union-Types"><a href="#3-联合类型-Union-Types" class="headerlink" title="3. 联合类型 (Union Types)"></a>3. 联合类型 (Union Types)</h3><p>联合类型允许一个值可以是几种类型之一。</p>
-<pre class="line-numbers language-tsx" data-language="tsx"><code class="language-tsx"><span class="token keyword">function</span> <span class="token function">format</span><span class="token punctuation">(</span>input<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token operator">|</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> input <span class="token operator">===</span> <span class="token string">"string"</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">return</span> input<span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">return</span> input<span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="4-类型守卫-Type-Guards"><a href="#4-类型守卫-Type-Guards" class="headerlink" title="4. 类型守卫 (Type Guards)"></a>4. 类型守卫 (Type Guards)</h3><p>类型守卫用于在运行时判断变量的类型，从而在代码中使用特定类型的方法和属性。</p>
-<pre class="line-numbers language-tsx" data-language="tsx"><code class="language-tsx"><span class="token keyword">function</span> <span class="token function">isString</span><span class="token punctuation">(</span>value<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">)</span><span class="token operator">:</span> value <span class="token keyword">is</span> <span class="token builtin">string</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">return</span> <span class="token keyword">typeof</span> value <span class="token operator">===</span> <span class="token string">"string"</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token keyword">function</span> <span class="token function">example</span><span class="token punctuation">(</span>input<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token operator">|</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isString</span><span class="token punctuation">(</span>input<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>input<span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>input<span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="5-映射类型-Mapped-Types"><a href="#5-映射类型-Mapped-Types" class="headerlink" title="5. 映射类型 (Mapped Types)"></a>5. 映射类型 (Mapped Types)</h3><p>映射类型允许你基于已有类型创建新类型，常用于转换对象属性的类型。</p>
-<pre class="line-numbers language-tsx" data-language="tsx"><code class="language-tsx"><span class="token keyword">type</span> <span class="token class-name">ReadOnly<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">></span></span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">readonly</span> <span class="token punctuation">[</span><span class="token constant">P</span> <span class="token keyword">in</span> <span class="token keyword">keyof</span> <span class="token constant">T</span><span class="token punctuation">]</span><span class="token operator">:</span> <span class="token constant">T</span><span class="token punctuation">[</span><span class="token constant">P</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-
-<span class="token keyword">interface</span> <span class="token class-name">Person</span> <span class="token punctuation">&#123;</span>
-  name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
-  age<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token keyword">type</span> <span class="token class-name">ReadOnlyPerson</span> <span class="token operator">=</span> ReadOnly<span class="token operator">&lt;</span>Person<span class="token operator">></span><span class="token punctuation">;</span>
-
-<span class="token keyword">let</span> person<span class="token operator">:</span> ReadOnlyPerson <span class="token operator">=</span> <span class="token punctuation">&#123;</span> name<span class="token operator">:</span> <span class="token string">"Alice"</span><span class="token punctuation">,</span> age<span class="token operator">:</span> <span class="token number">30</span> <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-<span class="token comment">// person.age = 31; // Error: Cannot assign to 'age' because it is a read-only property.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="6-条件类型-Conditional-Types"><a href="#6-条件类型-Conditional-Types" class="headerlink" title="6. 条件类型 (Conditional Types)"></a>6. 条件类型 (Conditional Types)</h3><p>条件类型根据条件表达式选择一种类型。</p>
-<pre class="line-numbers language-tsx" data-language="tsx"><code class="language-tsx"><span class="token keyword">type</span> <span class="token class-name">TypeName<span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">></span></span> <span class="token operator">=</span> <span class="token constant">T</span> <span class="token keyword">extends</span> <span class="token class-name"><span class="token builtin">string</span></span>
-  <span class="token operator">?</span> <span class="token string">"string"</span>
-  <span class="token operator">:</span> <span class="token constant">T</span> <span class="token keyword">extends</span> <span class="token class-name"><span class="token builtin">number</span></span>
-  <span class="token operator">?</span> <span class="token string">"number"</span>
-  <span class="token operator">:</span> <span class="token constant">T</span> <span class="token keyword">extends</span> <span class="token class-name"><span class="token builtin">boolean</span></span>
-  <span class="token operator">?</span> <span class="token string">"boolean"</span>
-  <span class="token operator">:</span> <span class="token string">"object"</span><span class="token punctuation">;</span>
-
-<span class="token keyword">type</span> <span class="token class-name"><span class="token constant">T0</span></span> <span class="token operator">=</span> TypeName<span class="token operator">&lt;</span><span class="token builtin">string</span><span class="token operator">></span><span class="token punctuation">;</span> <span class="token comment">// "string"</span>
-<span class="token keyword">type</span> <span class="token class-name"><span class="token constant">T1</span></span> <span class="token operator">=</span> TypeName<span class="token operator">&lt;</span><span class="token builtin">number</span><span class="token operator">></span><span class="token punctuation">;</span> <span class="token comment">// "number"</span>
-<span class="token keyword">type</span> <span class="token class-name"><span class="token constant">T2</span></span> <span class="token operator">=</span> TypeName<span class="token operator">&lt;</span><span class="token builtin">boolean</span><span class="token operator">></span><span class="token punctuation">;</span> <span class="token comment">// "boolean"</span>
-<span class="token keyword">type</span> <span class="token class-name"><span class="token constant">T3</span></span> <span class="token operator">=</span> TypeName<span class="token operator">&lt;</span>object<span class="token operator">></span><span class="token punctuation">;</span> <span class="token comment">// "object"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="7-高级类型推断"><a href="#7-高级类型推断" class="headerlink" title="7. 高级类型推断"></a>7. 高级类型推断</h3><p>TypeScript 的类型推断能力非常强大，可以根据上下文自动推断出复杂类型。</p>
-<pre class="line-numbers language-tsx" data-language="tsx"><code class="language-tsx"><span class="token keyword">function</span> <span class="token generic-function"><span class="token function">makeTuple</span><span class="token generic class-name"><span class="token operator">&lt;</span><span class="token constant">T</span><span class="token punctuation">,</span> <span class="token constant">U</span><span class="token operator">></span></span></span><span class="token punctuation">(</span>first<span class="token operator">:</span> <span class="token constant">T</span><span class="token punctuation">,</span> second<span class="token operator">:</span> <span class="token constant">U</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">return</span> <span class="token punctuation">[</span>first<span class="token punctuation">,</span> second<span class="token punctuation">]</span> <span class="token keyword">as</span> <span class="token punctuation">[</span><span class="token constant">T</span><span class="token punctuation">,</span> <span class="token constant">U</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token keyword">let</span> tuple <span class="token operator">=</span> <span class="token function">makeTuple</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">,</span> <span class="token number">42</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [string, number]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="8-模板字面量类型-Template-Literal-Types"><a href="#8-模板字面量类型-Template-Literal-Types" class="headerlink" title="8. 模板字面量类型 (Template Literal Types)"></a>8. 模板字面量类型 (Template Literal Types)</h3><p>模板字面量类型允许通过模板字符串创建类型。</p>
-<pre class="line-numbers language-tsx" data-language="tsx"><code class="language-tsx"><span class="token keyword">type</span> <span class="token class-name">Color</span> <span class="token operator">=</span> <span class="token string">"red"</span> <span class="token operator">|</span> <span class="token string">"green"</span> <span class="token operator">|</span> <span class="token string">"blue"</span><span class="token punctuation">;</span>
-<span class="token keyword">type</span> <span class="token class-name">Brightness</span> <span class="token operator">=</span> <span class="token string">"light"</span> <span class="token operator">|</span> <span class="token string">"dark"</span><span class="token punctuation">;</span>
-
-<span class="token keyword">type</span> <span class="token class-name">Theme</span> <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>Color<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>Brightness<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
-
-<span class="token keyword">let</span> theme<span class="token operator">:</span> Theme<span class="token punctuation">;</span>
-theme <span class="token operator">=</span> <span class="token string">"red-light"</span><span class="token punctuation">;</span> <span class="token comment">// valid</span>
-theme <span class="token operator">=</span> <span class="token string">"blue-dark"</span><span class="token punctuation">;</span> <span class="token comment">// valid</span>
-<span class="token comment">// theme = "yellow-light"; // Error</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="9-索引类型和查找类型"><a href="#9-索引类型和查找类型" class="headerlink" title="9. 索引类型和查找类型"></a>9. 索引类型和查找类型</h3><p>索引类型用于访问另一种类型的属性。</p>
-<pre class="line-numbers language-tsx" data-language="tsx"><code class="language-tsx"><span class="token keyword">interface</span> <span class="token class-name">Person</span> <span class="token punctuation">&#123;</span>
-  name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
-  age<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token keyword">type</span> <span class="token class-name">PersonName</span> <span class="token operator">=</span> Person<span class="token punctuation">[</span><span class="token string">"name"</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// string</span>
-<span class="token keyword">type</span> <span class="token class-name">PersonProperties</span> <span class="token operator">=</span> <span class="token keyword">keyof</span> Person<span class="token punctuation">;</span> <span class="token comment">// "name" | "age"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="10-Utility-Types"><a href="#10-Utility-Types" class="headerlink" title="10. Utility Types"></a>10. Utility Types</h3><p>TypeScript 提供了一些内置的实用类型，可以简化常见的类型操作。</p>
-<pre class="line-numbers language-tsx" data-language="tsx"><code class="language-tsx"><span class="token keyword">interface</span> <span class="token class-name">Person</span> <span class="token punctuation">&#123;</span>
-  name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
-  age<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
-  address<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token comment">// Partial: 将所有属性设为可选</span>
-<span class="token keyword">type</span> <span class="token class-name">PartialPerson</span> <span class="token operator">=</span> Partial<span class="token operator">&lt;</span>Person<span class="token operator">></span><span class="token punctuation">;</span>
-
-<span class="token comment">// Required: 将所有属性设为必需</span>
-<span class="token keyword">type</span> <span class="token class-name">RequiredPerson</span> <span class="token operator">=</span> Required<span class="token operator">&lt;</span>Person<span class="token operator">></span><span class="token punctuation">;</span>
-
-<span class="token comment">// Readonly: 将所有属性设为只读</span>
-<span class="token keyword">type</span> <span class="token class-name">ReadonlyPerson</span> <span class="token operator">=</span> Readonly<span class="token operator">&lt;</span>Person<span class="token operator">></span><span class="token punctuation">;</span>
-
-<span class="token comment">// Pick: 选择特定属性</span>
-<span class="token keyword">type</span> <span class="token class-name">PersonNameAndAge</span> <span class="token operator">=</span> Pick<span class="token operator">&lt;</span>Person<span class="token punctuation">,</span> <span class="token string">"name"</span> <span class="token operator">|</span> <span class="token string">"age"</span><span class="token operator">></span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>这些高级用法使得 TypeScript 能够表达更复杂的类型逻辑，增强类型检查的能力，从而提高代码的安全性和可维护性。</p>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">trimExtraSpaces</span><span class="token punctuation">(</span><span class="token string">"  Hello    World!   "</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "Hello World!"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -627,7 +501,7 @@ theme <span class="token operator">=</span> <span class="token string">"blue-dar
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://fullsize.online/2024/05/19/code/typescript-de-gao-jie-yong-fa/">http://fullsize.online/2024/05/19/code/typescript-de-gao-jie-yong-fa/</a>
+                    <a href="http://fullsize.online/2025/03/28/code/javascript/zi-fu-chuan-qu-chu-duo-yu-de-kong-ge/">http://fullsize.online/2025/03/28/code/javascript/zi-fu-chuan-qu-chu-duo-yu-de-kong-ge/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -665,12 +539,8 @@ theme <span class="token operator">=</span> <span class="token string">"blue-dar
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/javascript/">
-                                    <span class="chip bg-color">javascript</span>
-                                </a>
-                            
-                                <a href="/tags/typescript/">
-                                    <span class="chip bg-color">typescript</span>
+                                <a href="/tags/string/">
+                                    <span class="chip bg-color">string</span>
                                 </a>
                             
                         </div>
@@ -718,13 +588,13 @@ theme <span class="token operator">=</span> <span class="token string">"blue-dar
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/06/14/code/miniconda-an-zhuang-shi-yong/">
+                <a href="/2025/04/02/code/javascript/proformance/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Miniconda安装使用">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="proformance api 使用">
                         
-                        <span class="card-title">Miniconda安装使用</span>
+                        <span class="card-title">proformance api 使用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -735,18 +605,18 @@ theme <span class="token operator">=</span> <span class="token string">"blue-dar
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-06-14
+                            <i class="far fa-clock fa-fw icon-date"></i>2025-04-02
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category">
-                                    技术
+                            <a href="/categories/%E6%B7%B1%E5%85%A5/" class="post-category">
+                                    深入
                                 </a>
                             
-                            <a href="/categories/%E6%8A%80%E6%9C%AF/%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    学习
+                            <a href="/categories/%E6%B7%B1%E5%85%A5/%E8%B0%83%E8%AF%95/" class="post-category">
+                                    调试
                                 </a>
                             
                             
@@ -756,12 +626,8 @@ theme <span class="token operator">=</span> <span class="token string">"blue-dar
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
-                    </a>
-                    
-                    <a href="/tags/Miniconda/">
-                        <span class="chip bg-color">Miniconda</span>
+                    <a href="/tags/proformance/">
+                        <span class="chip bg-color">proformance</span>
                     </a>
                     
                 </div>
@@ -775,13 +641,13 @@ theme <span class="token operator">=</span> <span class="token string">"blue-dar
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/05/14/code/javascript/css-yu-bian-yi-he-hou-bian-yi-de-qu-bie/">
+                <a href="/2025/03/27/code/javascript/ajax-feng-zhuang/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="CSS 预编译和后编译的区别">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="ajax 封装">
                         
-                        <span class="card-title">CSS 预编译和后编译的区别</span>
+                        <span class="card-title">ajax 封装</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -792,18 +658,14 @@ theme <span class="token operator">=</span> <span class="token string">"blue-dar
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-03-27
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category">
-                                    技术
-                                </a>
-                            
-                            <a href="/categories/%E6%8A%80%E6%9C%AF/%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    学习
+                            <a href="/categories/%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    基础
                                 </a>
                             
                             
@@ -813,8 +675,8 @@ theme <span class="token operator">=</span> <span class="token string">"blue-dar
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/css/">
-                        <span class="chip bg-color">css</span>
+                    <a href="/tags/ajax/">
+                        <span class="chip bg-color">ajax</span>
                     </a>
                     
                 </div>
