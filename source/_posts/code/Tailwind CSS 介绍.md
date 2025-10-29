@@ -2,7 +2,7 @@
 title: Tailwind CSS 介绍
 tags:
   - javascript
-  - 库
+  - Tailwind CSS
 categories:
   - 技术
   - 学习

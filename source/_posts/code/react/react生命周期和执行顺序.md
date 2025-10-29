@@ -4,7 +4,6 @@ date: 2020-12-01
 tags:
   - javascript
   - react
-  - 基础
 categories:
   - 技术
   - 学习

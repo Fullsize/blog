@@ -3,6 +3,7 @@ title: firebase 登录方法封装
 date: 2025-6-25 18:55
 tags:
   - javascript
+  - firebase
 categories:
   - 技术
   - 学习

@@ -4,7 +4,6 @@ date: 2024-11-18
 tags:
   - javascript
   - react
-  - 基础
 categories:
   - 技术
   - 学习

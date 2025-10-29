@@ -3,7 +3,7 @@ title: header带有中文参数的问题
 date: 2020-12-01
 tags:
   - javascript
-  - 基础
+  - request header
 categories:
   - 技术
   - 学习

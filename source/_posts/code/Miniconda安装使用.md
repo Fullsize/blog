@@ -3,7 +3,7 @@ title: Miniconda安装使用
 date: 2024-6-14 21:20
 tags:
   - python
-  - 库
+  - Miniconda
 categories:
   - 技术
   - 学习

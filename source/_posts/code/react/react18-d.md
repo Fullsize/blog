@@ -3,7 +3,7 @@ title: React 18 更新内容
 tags:
   - javascript
   - react
-  - 基础
+  - React 18
 categories:
   - 技术
   - 学习

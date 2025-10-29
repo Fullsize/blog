@@ -2,9 +2,8 @@
 title: 常用的react hooks
 date: 2024-02-23
 tags:
-  - javascript
   - react
-  - 基础
+  - react hooks
 categories:
   - 技术
   - 学习
