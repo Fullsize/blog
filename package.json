@@ -6,7 +6,9 @@
     "build": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
-    "dev": "hexo server"
+    "dev": "hexo server",
+    "sync:notion": "node tools/notion-sync.js",
+    "test": "node --test tests/*.test.js"
   },
   "hexo": {
     "version": "7.3.0"
