@@ -1,0 +1,1017 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="fullsize">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="使用 Ventoy 安装 Debian + Windows 双系统指南">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用 Ventoy 安装 Debian + Windows 双系统指南">
+<meta property="og:url" content="https://blog.fullsize.cn/2026/03/23/notion/shi-yong-ventoy-an-zhuang-debian-windows-shuang-xi-tong-zhi-nan/index.html">
+<meta property="og:site_name" content="无涯">
+<meta property="og:description" content="使用 Ventoy 安装 Debian + Windows 双系统指南">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-03-23T01:45:00.000Z">
+<meta property="article:modified_time" content="2026-04-09T11:43:37.543Z">
+<meta property="article:author" content="fullsize">
+<meta property="article:tag" content="system">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>使用 Ventoy 安装 Debian + Windows 双系统指南 - 无涯</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"blog.fullsize.cn","root":"/","version":"1.9.9","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"expand_all":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"openkounter":{"server_url":"https://open-kounter.mintimate.cn","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content (desktop) -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile grid menu overlay -->
+<div id="mobile-grid-menu" class="d-lg-none">
+  <div class="mobile-grid-menu-inner">
+    <div class="container">
+      <div class="row">
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-home-fill"></i>
+                  <span>首页</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/archives/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-archive-fill"></i>
+                  <span>归档</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/categories/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-category-fill"></i>
+                  <span>分类</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/tags/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-tags-fill"></i>
+                  <span>标签</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/about/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-user-fill"></i>
+                  <span>关于</span>
+                </div>
+              </a>
+            </div>
+          
+        
+        
+          <div class="col-4 mobile-grid-cell" id="mobile-search-btn">
+            <a href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <div class="mobile-grid-item">
+                <i class="iconfont icon-search"></i>
+                <span>搜索</span>
+              </div>
+            </a>
+          </div>
+        
+        
+          <div class="col-4 mobile-grid-cell" id="mobile-color-toggle-btn"
+               data-label-light="开灯"
+               data-label-dark="关灯">
+            <a href="javascript:;" aria-label="Color Toggle">
+              <div class="mobile-grid-item">
+                <i class="iconfont icon-dark" id="mobile-color-toggle-icon"></i>
+                <span id="mobile-color-toggle-label">关灯</span>
+              </div>
+            </a>
+          </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="使用 Ventoy 安装 Debian + Windows 双系统指南"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2026-03-23 09:45" pubdate>
+          2026年3月23日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.3k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          20 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">使用 Ventoy 安装 Debian + Windows 双系统指南</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="使用-Ventoy-安装-Debian-Windows-双系统指南"><a href="#使用-Ventoy-安装-Debian-Windows-双系统指南" class="headerlink" title="使用 Ventoy 安装 Debian + Windows 双系统指南"></a>使用 Ventoy 安装 Debian + Windows 双系统指南</h1><blockquote>
+<p>适用场景：在同一台电脑上安装 Windows 和 Debian，使用 Ventoy 制作启动盘。</p>
+</blockquote>
+<hr>
+<h2 id="一、准备工作"><a href="#一、准备工作" class="headerlink" title="一、准备工作"></a>一、准备工作</h2><h3 id="1-1-所需材料"><a href="#1-1-所需材料" class="headerlink" title="1.1 所需材料"></a>1.1 所需材料</h3><ul>
+<li><p>U 盘（建议 ≥ 16GB，速度越快越好）</p>
+</li>
+<li><p>Windows ISO 镜像（建议从微软官网下载）</p>
+</li>
+<li><p>Debian ISO 镜像（建议 <code>netinst</code> 或完整 DVD 版）</p>
+</li>
+<li><p>Ventoy 工具（<a target="_blank" rel="noopener" href="https://www.ventoy.net/">https://www.ventoy.net</a>）</p>
+</li>
+</ul>
+<h3 id="1-2-确认固件类型"><a href="#1-2-确认固件类型" class="headerlink" title="1.2 确认固件类型"></a>1.2 确认固件类型</h3><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 在 Linux 下查看是否支持 UEFI</span>
+<span class="token function">ls</span> /sys/firmware/efi<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
+
+<ul>
+<li><p>存在该目录 → <strong>UEFI 模式</strong>（现代电脑主流）</p>
+</li>
+<li><p>不存在 → <strong>Legacy BIOS 模式</strong></p>
+</li>
+</ul>
+<blockquote>
+<p>⚠️ <strong>关键原则</strong>：Windows 和 Debian 必须使用<strong>相同的启动模式</strong>（同为 UEFI 或同为 Legacy），否则引导会出问题。</p>
+</blockquote>
+<hr>
+<h2 id="二、安装顺序（重要！）"><a href="#二、安装顺序（重要！）" class="headerlink" title="二、安装顺序（重要！）"></a>二、安装顺序（重要！）</h2><figure><div class="code-wrapper"><pre class="line-numbers language-plain" data-language="plain"><div class="caption"><span>text</span></div><code class="language-plain">推荐顺序：先装 Windows → 再装 Debian<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+
+<ul>
+<li><p>Windows 安装程序会覆盖 MBR&#x2F;EFI 分区，可能破坏 Grub</p>
+</li>
+<li><p>Debian 的 Grub 能自动检测并添加 Windows 启动项</p>
+</li>
+<li><p>先装 Linux 后装 Windows，需要额外修复 Grub</p>
+</li>
+</ul>
+<hr>
+<h2 id="三、Ventoy-制作启动盘"><a href="#三、Ventoy-制作启动盘" class="headerlink" title="三、Ventoy 制作启动盘"></a>三、Ventoy 制作启动盘</h2><h3 id="3-1-安装-Ventoy-到-U-盘"><a href="#3-1-安装-Ventoy-到-U-盘" class="headerlink" title="3.1 安装 Ventoy 到 U 盘"></a>3.1 安装 Ventoy 到 U 盘</h3><ol>
+<li><p>下载 Ventoy，解压后运行 <code>Ventoy2Disk.exe</code>（Windows）或 <code>./VentoyGUI.x86_64</code>（Linux）</p>
+</li>
+<li><p>选择 U 盘，注意分区类型：</p>
+</li>
+</ol>
+<ul>
+<li><p>UEFI 模式 → 选 <strong>GPT</strong></p>
+</li>
+<li><p>Legacy BIOS → 选 <strong>MBR</strong></p>
+</li>
+</ul>
+<ol>
+<li>点击安装，U 盘会被格式化，分为 Ventoy 引导区 + 数据区</li>
+</ol>
+<h3 id="3-2-添加-ISO"><a href="#3-2-添加-ISO" class="headerlink" title="3.2 添加 ISO"></a>3.2 添加 ISO</h3><p>直接将 ISO 文件复制到 U 盘数据分区根目录即可：</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-plain" data-language="plain"><div class="caption"><span>text</span></div><code class="language-plain">U盘/
+├── Win11_23H2_Chinese_x64.iso
+└── debian-12.x.x-amd64-netinst.iso<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></figure>
+
+<blockquote>
+<p>✅ Ventoy 会在启动时列出所有 ISO，无需任何配置</p>
+</blockquote>
+<hr>
+<h2 id="四、磁盘分区规划"><a href="#四、磁盘分区规划" class="headerlink" title="四、磁盘分区规划"></a>四、磁盘分区规划</h2><h3 id="4-1-UEFI-GPT-分区方案（推荐）"><a href="#4-1-UEFI-GPT-分区方案（推荐）" class="headerlink" title="4.1 UEFI + GPT 分区方案（推荐）"></a>4.1 UEFI + GPT 分区方案（推荐）</h3><blockquote>
+<p>⚠️ EFI 分区只需要一个，Windows 和 Debian 共用同一个 ESP</p>
+</blockquote>
+<h3 id="4-2-Legacy-BIOS-MBR-分区方案"><a href="#4-2-Legacy-BIOS-MBR-分区方案" class="headerlink" title="4.2 Legacy BIOS + MBR 分区方案"></a>4.2 Legacy BIOS + MBR 分区方案</h3><ul>
+<li><p>MBR 最多支持 4 个主分区，建议用扩展分区</p>
+</li>
+<li><p>Windows 需要一个主分区</p>
+</li>
+<li><p>Debian 可安装在逻辑分区中</p>
+</li>
+</ul>
+<hr>
+<h2 id="五、安装-Windows"><a href="#五、安装-Windows" class="headerlink" title="五、安装 Windows"></a>五、安装 Windows</h2><ol>
+<li><p>重启，从 Ventoy U 盘启动，选择 Windows ISO</p>
+</li>
+<li><p>进入安装界面，选择”自定义安装”</p>
+</li>
+<li><p>手动创建&#x2F;选择分区（建议先只建 EFI + Windows 分区，留出 Debian 的空间）</p>
+</li>
+<li><p>完成安装，激活 Windows</p>
+</li>
+</ol>
+<blockquote>
+<p>⚠️ <strong>注意</strong>：Windows 安装时不要占用全部磁盘空间，提前留出 Debian 的空间（至少 30GB）</p>
+</blockquote>
+<hr>
+<h2 id="六、安装-Debian"><a href="#六、安装-Debian" class="headerlink" title="六、安装 Debian"></a>六、安装 Debian</h2><h3 id="6-1-启动-Debian-安装程序"><a href="#6-1-启动-Debian-安装程序" class="headerlink" title="6.1 启动 Debian 安装程序"></a>6.1 启动 Debian 安装程序</h3><ol>
+<li><p>重启，从 Ventoy 选择 Debian ISO</p>
+</li>
+<li><p>选择 <code>Graphical Install</code> 或 <code>Install</code></p>
+</li>
+</ol>
+<h3 id="6-2-关键分区步骤"><a href="#6-2-关键分区步骤" class="headerlink" title="6.2 关键分区步骤"></a>6.2 关键分区步骤</h3><ul>
+<li><p>选择”手动分区”</p>
+</li>
+<li><p>使用 Windows 留出的空闲空间创建：</p>
+<ul>
+<li><p><code>/</code>（根分区，ext4）</p>
+</li>
+<li><p><code>swap</code>（可选）</p>
+</li>
+<li><p><code>/home</code>（可选，ext4）</p>
+</li>
+</ul>
+</li>
+<li><p><strong>不要格式化 EFI 分区</strong>，只需挂载到 <code>/boot/efi</code></p>
+</li>
+</ul>
+<h3 id="6-3-Grub-安装位置"><a href="#6-3-Grub-安装位置" class="headerlink" title="6.3 Grub 安装位置"></a>6.3 Grub 安装位置</h3><ul>
+<li><p>UEFI 模式：安装到 EFI 分区（自动检测）</p>
+</li>
+<li><p>Legacy 模式：安装到磁盘 MBR（如 <code>/dev/sda</code>），<strong>不要安装到某个分区</strong></p>
+</li>
+</ul>
+<hr>
+<h2 id="七、常见问题与注意事项"><a href="#七、常见问题与注意事项" class="headerlink" title="七、常见问题与注意事项"></a>七、常见问题与注意事项</h2><h3 id="⚠️-安全启动（Secure-Boot）"><a href="#⚠️-安全启动（Secure-Boot）" class="headerlink" title="⚠️ 安全启动（Secure Boot）"></a>⚠️ 安全启动（Secure Boot）</h3><ul>
+<li><p>Windows 默认开启 Secure Boot</p>
+</li>
+<li><p>Debian 支持 Secure Boot，但某些配置可能有问题</p>
+</li>
+<li><p>建议在 BIOS 中<strong>暂时关闭 Secure Boot</strong> 安装 Debian，安装完成后再视情况开启</p>
+</li>
+</ul>
+<h3 id="⚠️-快速启动（Fast-Startup）"><a href="#⚠️-快速启动（Fast-Startup）" class="headerlink" title="⚠️ 快速启动（Fast Startup）"></a>⚠️ 快速启动（Fast Startup）</h3><p>Windows 的快速启动会导致 NTFS 分区被锁定，Debian 无法挂载 Windows 分区：</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-plain" data-language="plain"><div class="caption"><span>text</span></div><code class="language-plain">控制面板 → 电源选项 → 选择电源按钮的功能 → 关闭快速启动<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+
+<h3 id="⚠️-BitLocker"><a href="#⚠️-BitLocker" class="headerlink" title="⚠️ BitLocker"></a>⚠️ BitLocker</h3><ul>
+<li><p>若 Windows 开启了 BitLocker，切换系统可能触发恢复密钥验证</p>
+</li>
+<li><p>建议安装双系统前暂停 BitLocker</p>
+</li>
+</ul>
+<h3 id="⚠️-时钟问题"><a href="#⚠️-时钟问题" class="headerlink" title="⚠️ 时钟问题"></a>⚠️ 时钟问题</h3><p>Windows 使用本地时间，Linux 使用 UTC，双系统时钟会出现 ±8 小时偏差：</p>
+<p><strong>方案一（推荐）：让 Linux 也用本地时间</strong></p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> timedatectl set-local-rtc <span class="token number">1</span> --adjust-system-clock<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
+
+<p><strong>方案二：让 Windows 用 UTC（需改注册表）</strong></p>
+<h3 id="⚠️-Windows-更新覆盖-Grub"><a href="#⚠️-Windows-更新覆盖-Grub" class="headerlink" title="⚠️ Windows 更新覆盖 Grub"></a>⚠️ Windows 更新覆盖 Grub</h3><p>Windows 大版本更新有时会覆盖 EFI 引导项，导致无法进入 Debian。</p>
+<p>修复方法（用 Debian Live ISO 进入系统后）：</p>
+<figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">mount</span> /dev/sdaX /mnt          <span class="token comment"># 挂载根分区</span>
+<span class="token function">sudo</span> <span class="token function">mount</span> /dev/sda1 /mnt/boot/efi <span class="token comment"># 挂载 EFI 分区</span>
+<span class="token function">sudo</span> grub-install <span class="token parameter variable">--target</span><span class="token operator">=</span>x86_64-efi --efi-directory<span class="token operator">=</span>/mnt/boot/efi
+<span class="token function">sudo</span> <span class="token function">update-grub</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
+
+<h3 id="⚠️-NVME-Windows-驱动"><a href="#⚠️-NVME-Windows-驱动" class="headerlink" title="⚠️ NVME + Windows 驱动"></a>⚠️ NVME + Windows 驱动</h3><p>部分电脑需要在 Windows 安装时手动加载 NVME 驱动，否则安装程序识别不到硬盘。</p>
+<hr>
+<h2 id="八、Ventoy-特别注意事项"><a href="#八、Ventoy-特别注意事项" class="headerlink" title="八、Ventoy 特别注意事项"></a>八、Ventoy 特别注意事项</h2><hr>
+<h2 id="九、安装后验证清单"><a href="#九、安装后验证清单" class="headerlink" title="九、安装后验证清单"></a>九、安装后验证清单</h2><p>重启后 Grub 菜单显示 Windows 和 Debian 两个选项</p>
+<p>两个系统均能正常进入</p>
+<p>Windows 时间显示正常</p>
+<p>Debian 可以识别并（只读）挂载 Windows 分区</p>
+<p>网络、声卡、显卡等硬件驱动正常</p>
+<hr>
+<h2 id="十、参考资源"><a href="#十、参考资源" class="headerlink" title="十、参考资源"></a>十、参考资源</h2><ul>
+<li><p>Ventoy 官方文档：<a target="_blank" rel="noopener" href="https://www.ventoy.net/cn/doc_start.html">https://www.ventoy.net/cn/doc_start.html</a></p>
+</li>
+<li><p>Debian 安装手册：<a target="_blank" rel="noopener" href="https://www.debian.org/releases/stable/amd64/">https://www.debian.org/releases/stable/amd64/</a></p>
+</li>
+<li><p>ArchWiki 双系统指南（通用性强）：<a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Dual_boot_with_Windows">https://wiki.archlinux.org/title/Dual_boot_with_Windows</a></p>
+</li>
+</ul>
+<hr>
+<blockquote>
+<p>💡 <strong>最后提示</strong>：操作前务必备份重要数据，分区操作有数据丢失风险。</p>
+</blockquote>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/system/" class="category-chain-item">system</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/system/" class="print-no-link">#system</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>使用 Ventoy 安装 Debian + Windows 双系统指南</div>
+      <div>https://blog.fullsize.cn/2026/03/23/notion/shi-yong-ventoy-an-zhuang-debian-windows-shuang-xi-tong-zhi-nan/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>fullsize</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2026年3月23日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2026/03/23/notion/zai-debian-shang-yong-ollama-pao-qwen3-5-rtx-4070/" title="在 Debian 上用 Ollama 跑 Qwen3.5（RTX 4070）">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">在 Debian 上用 Ollama 跑 Qwen3.5（RTX 4070）</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2026/03/19/notion/web-gua-pei-rtl-yu-yan-de-fang-an/" title="web 适配RTL语言的方案">
+                        <span class="hidden-mobile">web 适配RTL语言的方案</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    function isExpandAllEnabled() {
+      return CONFIG.toc && CONFIG.toc.expand_all === true;
+    }
+    function expandAllToc() {
+      if (!isExpandAllEnabled()) { return; }
+      jQuery('#toc-body .tocbot-is-collapsed').removeClass('tocbot-is-collapsed');
+    }
+    function updateTocToggle($li, $childList) {
+      var $toggle = $li.children('.toc-toggle');
+      if ($toggle.length === 0) { return; }
+      var collapsed = $childList.hasClass('tocbot-is-collapsed');
+      $toggle
+        .toggleClass('toc-toggle-collapsed', collapsed)
+        .toggleClass('toc-toggle-expanded', !collapsed);
+    }
+    function bindTocToggle() {
+      if (!isExpandAllEnabled()) { return; }
+      jQuery('#toc-body .toc-list-item').each(function() {
+        var $li = jQuery(this);
+        var $childList = $li.children('ol');
+        if ($childList.length === 0) {
+          if ($li.children('.toc-toggle').length === 0) {
+            $li.prepend('<span class="toc-toggle toc-toggle-placeholder" aria-hidden="true">›</span>');
+          }
+          return;
+        }
+
+        if ($li.children('.toc-toggle').length === 0) {
+          $li.prepend('<span class="toc-toggle toc-toggle-expanded" aria-hidden="true">›</span>');
+        }
+        updateTocToggle($li, $childList);
+      });
+      jQuery('#toc-body').off('click.tocToggle').on('click.tocToggle', '.toc-toggle', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var $li = jQuery(this).parent('.toc-list-item');
+        var $childList = $li.children('ol');
+        if ($childList.length === 0) { return; }
+        $childList.toggleClass('tocbot-is-collapsed');
+        updateTocToggle($li, $childList);
+      });
+      if (!window.__tocToggleObserver) {
+        window.__tocToggleObserver = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            if (mutation.type !== 'attributes' || mutation.attributeName !== 'class') { return; }
+            var $list = jQuery(mutation.target);
+            var $li = $list.parent('.toc-list-item');
+            if ($li.length === 0) { return; }
+            updateTocToggle($li, $list);
+          });
+        });
+        jQuery('#toc-body ol').each(function() {
+          window.__tocToggleObserver.observe(this, { attributes: true });
+        });
+      }
+    }
+    var tocConfig = Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc);
+    if (isExpandAllEnabled()) {
+      tocConfig.collapseDepth = 6;
+    }
+    window.tocbot.init(tocConfig);
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+    expandAllToc();
+    bindTocToggle();
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+        expandAllToc();
+        bindTocToggle();
+      }
+    });
+  });
+</script>
+
+
+  <script  src="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js" ></script>
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
