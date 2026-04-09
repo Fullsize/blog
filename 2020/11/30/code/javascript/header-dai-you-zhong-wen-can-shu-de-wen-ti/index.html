@@ -47,6 +47,8 @@
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
 
+  <link  rel="stylesheet" href="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+
   <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
 
@@ -101,7 +103,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>Fluid</strong>
+      <strong>blog</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -392,8 +394,8 @@
 <h3 id="服务器解析问题："><a href="#服务器解析问题：" class="headerlink" title="服务器解析问题："></a>服务器解析问题：</h3><p>服务器解析 URL 时，通常会将其解码为指定的编码格式（如 UTF-8）。如果未进行正确的编码处理，可能会出现乱码或错误。</p>
 <h2 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h2><h3 id="URL-编码："><a href="#URL-编码：" class="headerlink" title="URL 编码："></a>URL 编码：</h3><p>使用 URL encoding（百分号编码）将中文字符转换为可传输的 ASCII 格式。例如：<br>中文字符<code>你好</code> → <code>%E4%BD%A0%E5%A5%BD</code><br>在前端可以使用 <code>encodeURIComponent</code> 进行编码，后端使用相应的解码函数解析。</p>
 <p>示例：</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> param <span class="token operator">=</span> <span class="token string">"你好"</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> encodedParam <span class="token operator">=</span> <span class="token function">encodeURIComponent</span><span class="token punctuation">(</span>param<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 输出 "%E4%BD%A0%E5%A5%BD"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<figure><div class="code-wrapper"><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> param <span class="token operator">=</span> <span class="token string">"你好"</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> encodedParam <span class="token operator">=</span> <span class="token function">encodeURIComponent</span><span class="token punctuation">(</span>param<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 输出 "%E4%BD%A0%E5%A5%BD"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></figure>
 
 <h3 id="设置字符集："><a href="#设置字符集：" class="headerlink" title="设置字符集："></a>设置字符集：</h3><p>确保客户端和服务器端使用一致的字符集（如 UTF-8），以避免因编码不匹配导致的问题。</p>
 <h3 id="POST-请求中的-Body-参数："><a href="#POST-请求中的-Body-参数：" class="headerlink" title="POST 请求中的 Body 参数："></a>POST 请求中的 Body 参数：</h3><p>如果参数包含大量中文，建议使用 POST 方法，将参数放在请求体中，而不是 URL 中。请求体可以直接传递原始字符串，避免编码问题。</p>
@@ -497,9 +499,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/11/30/code/react/react-zu-jian-chuan-can-fang-shi/" title="react组件传参方式">
+                      <a href="/2020/12/07/code/react/react-key-de-zuo-yong/" title="react key的作用">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">react组件传参方式</span>
+                        <span class="hidden-mobile">react key的作用</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -794,6 +796,8 @@
   });
 </script>
 
+
+  <script  src="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js" ></script>
 
   <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
 

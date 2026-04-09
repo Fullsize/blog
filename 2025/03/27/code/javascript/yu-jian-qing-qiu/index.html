@@ -47,6 +47,8 @@
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
 
+  <link  rel="stylesheet" href="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+
   <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
 
@@ -101,7 +103,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>Fluid</strong>
+      <strong>blog</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -392,12 +394,12 @@
 <li><strong>跨域请求涉及 credentials（如 <code>withCredentials: true</code>）</strong>。</li>
 <li><strong>使用了 PUT、DELETE、PATCH 等方法</strong>。</li>
 </ul>
-<h2 id="服务器正常响应-options-请求"><a href="#服务器正常响应-options-请求" class="headerlink" title="服务器正常响应 options 请求"></a>服务器正常响应 options 请求</h2><pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx">res<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+<h2 id="服务器正常响应-options-请求"><a href="#服务器正常响应-options-请求" class="headerlink" title="服务器正常响应 options 请求"></a>服务器正常响应 options 请求</h2><figure><div class="code-wrapper"><pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx">res<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
   <span class="token string-property property">"Access-Control-Allow-Origin"</span><span class="token operator">:</span> <span class="token string">"*"</span><span class="token punctuation">,</span> <span class="token comment">// 允许的来源</span>
   <span class="token string-property property">"Access-Control-Allow-Methods"</span><span class="token operator">:</span> <span class="token string">"GET, POST, PUT, DELETE, OPTIONS"</span><span class="token punctuation">,</span> <span class="token comment">// 允许的方法</span>
   <span class="token string-property property">"Access-Control-Allow-Headers"</span><span class="token operator">:</span> <span class="token string">"Content-Type, Authorization"</span><span class="token punctuation">,</span> <span class="token comment">// 允许的请求头</span>
   <span class="token string-property property">"Access-Control-Allow-Credentials"</span><span class="token operator">:</span> <span class="token string">"true"</span><span class="token punctuation">,</span> <span class="token comment">// 允许携带 Cookie</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
 
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
 <li>浏览器会自动发送 <code>OPTIONS</code> 预检请求来检查 CORS 规则。</li>
@@ -496,9 +498,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/03/27/notion/yu-jian-qing-qiu/" title="预检请求">
+                      <a href="/2025/03/27/code/javascript/ajax-feng-zhuang/" title="ajax 封装">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">预检请求</span>
+                        <span class="hidden-mobile">ajax 封装</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -506,8 +508,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/03/20/notion/css-in-js/" title="css in js">
-                        <span class="hidden-mobile">css in js</span>
+                      <a href="/2025/03/20/code/react/react19-de-gai-jin-he-xin-gong-neng/" title="react19 的改进和新功能">
+                        <span class="hidden-mobile">react19 的改进和新功能</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -793,6 +795,8 @@
   });
 </script>
 
+
+  <script  src="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js" ></script>
 
   <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
 

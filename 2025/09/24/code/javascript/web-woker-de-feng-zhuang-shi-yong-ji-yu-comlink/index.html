@@ -46,6 +46,8 @@
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
 
+  <link  rel="stylesheet" href="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+
   <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
 
@@ -100,7 +102,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>Fluid</strong>
+      <strong>blog</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -384,10 +386,10 @@
               <div class="markdown-body">
                 
                 <h1 id="web-woker-的封装使用（基于-comlink）"><a href="#web-woker-的封装使用（基于-comlink）" class="headerlink" title="web woker 的封装使用（基于 comlink）"></a>web woker 的封装使用（基于 comlink）</h1><p>因为工作工程中需要处理大数据量数据，导致主线程被卡住，页面长时间无响应，导致体验不好，所以使用 web worker 开多线程处理数据；但是原生的 web worker 使用过于繁琐，读取困难，使用了 google 开源的 comlink 库，基于 Promise 的 web worker 封装，使用简单，易读。</p>
-<h2 id="使用-comlink-库"><a href="#使用-comlink-库" class="headerlink" title="使用 comlink 库"></a>使用 comlink 库</h2><pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx">npm install comlink<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="使用-comlink-库"><a href="#使用-comlink-库" class="headerlink" title="使用 comlink 库"></a>使用 comlink 库</h2><figure><div class="code-wrapper"><pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx">npm install comlink<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
 
 <h2 id="创建-Worker-文件"><a href="#创建-Worker-文件" class="headerlink" title="创建 Worker 文件"></a>创建 Worker 文件</h2><p>假设文件名 <code>request.worker.js</code>：</p>
-<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> Comlink <span class="token keyword">from</span> <span class="token string">"comlink"</span><span class="token punctuation">;</span>
+<figure><div class="code-wrapper"><pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> Comlink <span class="token keyword">from</span> <span class="token string">"comlink"</span><span class="token punctuation">;</span>
 
 <span class="token comment">// 这里是封装的请求函数</span>
 <span class="token keyword">const</span> api <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
@@ -413,9 +415,9 @@
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
 
 <span class="token comment">// 暴露到主线程</span>
-Comlink<span class="token punctuation">.</span><span class="token function">expose</span><span class="token punctuation">(</span>api<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+Comlink<span class="token punctuation">.</span><span class="token function">expose</span><span class="token punctuation">(</span>api<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
 
-<h2 id="主线程调用"><a href="#主线程调用" class="headerlink" title="主线程调用"></a>主线程调用</h2><pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> Comlink <span class="token keyword">from</span> <span class="token string">"comlink"</span><span class="token punctuation">;</span>
+<h2 id="主线程调用"><a href="#主线程调用" class="headerlink" title="主线程调用"></a>主线程调用</h2><figure><div class="code-wrapper"><pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> Comlink <span class="token keyword">from</span> <span class="token string">"comlink"</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> RequestWorker <span class="token keyword">from</span> <span class="token string">"./request.worker.js?worker"</span><span class="token punctuation">;</span> <span class="token comment">// Vite/webpack 需要 ?worker</span>
 
 <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -442,7 +444,7 @@ Comlink<span class="token punctuation">.</span><span class="token function">expo
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span>
 
-<span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
 
                 
               </div>
@@ -540,9 +542,9 @@ Comlink<span class="token punctuation">.</span><span class="token function">expo
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/10/10/notion/react-use-shi-yong/" title="React.use使用">
+                      <a href="/2025/10/10/code/react/react-use-shi-yong/" title="React use使用">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">React.use使用</span>
+                        <span class="hidden-mobile">React use使用</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -550,8 +552,8 @@ Comlink<span class="token punctuation">.</span><span class="token function">expo
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/09/24/notion/web-woker-de-feng-zhuang-shi-yong-ji-yu-comlink/" title="web woker 的封装使用（基于comlink）">
-                        <span class="hidden-mobile">web woker 的封装使用（基于comlink）</span>
+                      <a href="/2025/06/25/code/javascript/firebase-deng-lu-fang-fa-feng-zhuang/" title="firebase 登录方法封装">
+                        <span class="hidden-mobile">firebase 登录方法封装</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -837,6 +839,8 @@ Comlink<span class="token punctuation">.</span><span class="token function">expo
   });
 </script>
 
+
+  <script  src="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js" ></script>
 
   <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
 

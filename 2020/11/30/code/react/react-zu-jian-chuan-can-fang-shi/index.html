@@ -47,6 +47,8 @@
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
 
+  <link  rel="stylesheet" href="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+
   <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
 
@@ -101,7 +103,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>Fluid</strong>
+      <strong>blog</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -386,7 +388,7 @@
                 
                 <p>在 React 中，组件之间传递参数有几种常见的方式：</p>
 <p><strong>Props 传递：</strong> 这是 React 中最常见的方式。你可以通过在组件的声明中传递 props 属性来传递参数。父组件可以向子组件传递数据，子组件通过 props 对象接收这些数据。例如：</p>
-<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token comment">// ParentComponent.js</span>
+<figure><div class="code-wrapper"><pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token comment">// ParentComponent.js</span>
 <span class="token keyword">import</span> ChildComponent <span class="token keyword">from</span> <span class="token string">"./ChildComponent"</span><span class="token punctuation">;</span>
 
 <span class="token keyword">function</span> <span class="token function">ParentComponent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -401,7 +403,7 @@
       </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><span class="token plain-text">Age: </span><span class="token punctuation">&#123;</span>props<span class="token punctuation">.</span>age<span class="token punctuation">&#125;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><span class="token plain-text">
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
   <span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
 
 <ol>
 <li><strong>State 管理：</strong> 你可以在组件内部使用 <strong><code>state</code></strong> 来管理数据，并通过 <strong><code>props</code></strong> 将这些数据传递给子组件。当父组件的状态发生变化时，会重新渲染子组件。这在需要在父组件中修改数据并通知子组件更新时很有用。</li>
@@ -518,8 +520,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/11/30/code/javascript/header-dai-you-zhong-wen-can-shu-de-wen-ti/" title="header带有中文参数的问题">
-                        <span class="hidden-mobile">header带有中文参数的问题</span>
+                      <a href="/2020/11/26/code/javascript/js-dui-xiang-dui-bi-shi-fou-xiang-deng/" title="js 对象对比是否相等">
+                        <span class="hidden-mobile">js 对象对比是否相等</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -805,6 +807,8 @@
   });
 </script>
 
+
+  <script  src="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js" ></script>
 
   <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
 

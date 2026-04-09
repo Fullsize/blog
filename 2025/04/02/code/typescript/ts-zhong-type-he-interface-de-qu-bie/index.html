@@ -46,6 +46,8 @@
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
 
+  <link  rel="stylesheet" href="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+
   <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
 
@@ -100,7 +102,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>Fluid</strong>
+      <strong>blog</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -384,14 +386,14 @@
               <div class="markdown-body">
                 
                 <h1 id="ts-中-type-和-interface-的区别"><a href="#ts-中-type-和-interface-的区别" class="headerlink" title="ts 中 type 和 interface 的区别"></a>ts 中 type 和 interface 的区别</h1><p><code>type</code> 可以用于<strong>基本类型、联合类型、元组</strong>，但 <code>interface</code> 不能：</p>
-<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token comment">// ✅ type 支持联合类型</span>
+<figure><div class="code-wrapper"><pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token comment">// ✅ type 支持联合类型</span>
 type <span class="token constant">ID</span> <span class="token operator">=</span> string <span class="token operator">|</span> number<span class="token punctuation">;</span>
 
 <span class="token comment">// ✅ type 支持元组</span>
 type Point <span class="token operator">=</span> <span class="token punctuation">[</span>number<span class="token punctuation">,</span> number<span class="token punctuation">]</span><span class="token punctuation">;</span>
 
 <span class="token comment">// ❌ interface 不能直接定义联合类型</span>
-<span class="token comment">// interface ID = string | number; // Error</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment">// interface ID = string | number; // Error</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
 
 <h3 id="什么时候用-interface？"><a href="#什么时候用-interface？" class="headerlink" title="什么时候用 interface？"></a><strong>什么时候用 <code>interface</code>？</strong></h3><ul>
 <li>需要自动合并 (<code>declaration merging</code>)</li>
@@ -494,9 +496,9 @@ type Point <span class="token operator">=</span> <span class="token punctuation"
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/04/02/notion/hui-su-suan-fa/" title="回溯算法">
+                      <a href="/2025/06/25/code/javascript/web-lu-yin-feng-zhuang/" title="web 录音封装">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">回溯算法</span>
+                        <span class="hidden-mobile">web 录音封装</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -504,8 +506,8 @@ type Point <span class="token operator">=</span> <span class="token punctuation"
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/04/02/notion/ts-zhong-type-he-interface-de-qu-bie/" title="ts中type和interface的区别">
-                        <span class="hidden-mobile">ts中type和interface的区别</span>
+                      <a href="/2025/04/02/code/javascript/proformance/" title="proformance api 使用">
+                        <span class="hidden-mobile">proformance api 使用</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -791,6 +793,8 @@ type Point <span class="token operator">=</span> <span class="token punctuation"
   });
 </script>
 
+
+  <script  src="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js" ></script>
 
   <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
 

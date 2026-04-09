@@ -47,6 +47,8 @@
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
 
+  <link  rel="stylesheet" href="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+
   <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
 
@@ -101,7 +103,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>Fluid</strong>
+      <strong>blog</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -384,7 +386,7 @@
             
               <div class="markdown-body">
                 
-                <h2 id="store-ts"><a href="#store-ts" class="headerlink" title="store.ts"></a>store.ts</h2><pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> create <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'zustand'</span>
+                <h2 id="store-ts"><a href="#store-ts" class="headerlink" title="store.ts"></a>store.ts</h2><figure><div class="code-wrapper"><pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> create <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'zustand'</span>
 <span class="token keyword">import</span> <span class="token punctuation">&#123;</span> persist <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'zustand/middleware'</span>
 <span class="token keyword">import</span> storage <span class="token keyword">from</span> <span class="token string">'@/utils/storage'</span>
 
@@ -419,9 +421,9 @@ const useBearStore = create</span><span class="token tag"><span class="token tag
 )
 
 export default useBearStore
-</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
 
-<h2 id="storage-ts"><a href="#storage-ts" class="headerlink" title="storage.ts"></a>storage.ts</h2><pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">import</span> localforage <span class="token keyword">from</span> <span class="token string">"localforage"</span><span class="token punctuation">;</span>
+<h2 id="storage-ts"><a href="#storage-ts" class="headerlink" title="storage.ts"></a>storage.ts</h2><figure><div class="code-wrapper"><pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">import</span> localforage <span class="token keyword">from</span> <span class="token string">"localforage"</span><span class="token punctuation">;</span>
 
 <span class="token comment">// 配置 localforage 实例</span>
 <span class="token keyword">const</span> storage <span class="token operator">=</span> localforage<span class="token punctuation">.</span><span class="token function">createInstance</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
@@ -461,9 +463,9 @@ export default </span><span class="token punctuation">&#123;</span>
   setItem<span class="token punctuation">,</span>
   removeItem<span class="token punctuation">,</span>
 <span class="token punctuation">&#125;</span><span class="token plain-text">;
-</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
 
-<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token string">"use client"</span><span class="token punctuation">;</span>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><figure><div class="code-wrapper"><pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token string">"use client"</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span> useEffect <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token punctuation">&#123;</span> useSetState <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">"react-use"</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> useBearStore <span class="token keyword">from</span> <span class="token string">"@/store/useGobal"</span><span class="token punctuation">;</span>
@@ -488,7 +490,7 @@ export default </span><span class="token punctuation">&#123;</span>
       </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><span class="token plain-text">
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
   <span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
 
                 
               </div>
@@ -598,8 +600,8 @@ export default </span><span class="token punctuation">&#123;</span>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/10/10/notion/localforage-jian-hua-feng-zhuang/" title="localforage 简化封装">
-                        <span class="hidden-mobile">localforage 简化封装</span>
+                      <a href="/2025/10/10/code/react/react-use-shi-yong/" title="React use使用">
+                        <span class="hidden-mobile">React use使用</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -885,6 +887,8 @@ export default </span><span class="token punctuation">&#123;</span>
   });
 </script>
 
+
+  <script  src="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js" ></script>
 
   <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
 

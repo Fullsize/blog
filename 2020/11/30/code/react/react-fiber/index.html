@@ -50,6 +50,8 @@
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
 
+  <link  rel="stylesheet" href="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+
   <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
 
@@ -104,7 +106,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>Fluid</strong>
+      <strong>blog</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -397,12 +399,12 @@
 </ul>
 <p>react 团队重写了 Reconciler 层，即组件生命周期和 diff 算法，react 团队命名为<code>fiber Reconciler</code>，建立了自己的组件调用栈，让 diff 计算可打断。</p>
 <p>Fiber 其实实指的一种数据结构，它可以用一个纯 js 对象来表示:</p>
-<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">const</span> fiber<span class="token operator">=</span><span class="token punctuation">&#123;</span>
+<figure><div class="code-wrapper"><pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">const</span> fiber<span class="token operator">=</span><span class="token punctuation">&#123;</span>
 	stateNode<span class="token punctuation">,</span> <span class="token comment">// 节点实例</span>
 	child<span class="token punctuation">,</span>     <span class="token comment">// 子节点</span>
 	sibing<span class="token punctuation">,</span>    <span class="token comment">// 兄弟节点</span>
 	<span class="token keyword">return</span>    <span class="token comment">// 父节点</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
 
 <p>为了区分，以前的 Reconiler 被命名为<code>Stack Reconiler</code> 。Stack Reconciler 运作的过程是不能被打断的，必须一条道走到黑：<br><img src="https://segmentfault.com/img/bVboIrF?w=1556&h=602" srcset="/img/loading.gif" lazyload alt="示例1.png"><br>而 Fiber Reconiler 每执行一段时间，就会将控制权交回浏览器，可以分端执行：</p>
 <p><img src="https://segmentfault.com/img/bVboJj4?w=1472&h=578" srcset="/img/loading.gif" lazyload alt="示例2.png"></p>
@@ -515,8 +517,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/11/27/notion/esbuild/" title="esbuild">
-                        <span class="hidden-mobile">esbuild</span>
+                      <a href="/2020/11/30/code/react/react-sheng-ming-zhou-qi-he-zhi-xing-shun-xu/" title="react生命周期和执行顺序">
+                        <span class="hidden-mobile">react生命周期和执行顺序</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -802,6 +804,8 @@
   });
 </script>
 
+
+  <script  src="https://lib.baomitu.com/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js" ></script>
 
   <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
 
