@@ -9,7 +9,7 @@ module.exports = {
     slug: "Slug",
     status: "Status",
     date: "Created time",
-    tags: "Tags",
+    tags: "Type",
     categories: "Type",
     description: "Summary",
   },
