@@ -3,7 +3,7 @@ module.exports = {
   outputDir: "source/_posts/notion",
   assetDir: "source/images/notion",
   assetPublicDir: "images/notion",
-  publishStatusValues: ["done🙌🏻"],
+  publishStatusValues: ["done", "Done", "已发布", "done🙌🏻"],
   propertyMap: {
     title: "__title__",
     slug: "Slug",
