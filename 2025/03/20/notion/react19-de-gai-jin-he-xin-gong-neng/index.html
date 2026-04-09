@@ -1,530 +1,395 @@
-<!DOCTYPE HTML>
-<html lang="zh-CN">
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
 
 
 <head>
-    <meta charset="utf-8">
-    <meta name="keywords" content="react19的改进和新功能, 无涯">
-    <meta name="description" content="我将会在这里分享学习到的知识，工作上的问题，生活中的感悟">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="renderer" content="webkit|ie-stand|ie-comp">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="fullsize">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="react19新更新的特性和改进">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react19的改进和新功能">
+<meta property="og:url" content="https://blog.fullsize.cn/2025/03/20/notion/react19-de-gai-jin-he-xin-gong-neng/index.html">
+<meta property="og:site_name" content="无涯">
+<meta property="og:description" content="react19新更新的特性和改进">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-03-20T11:26:00.000Z">
+<meta property="article:modified_time" content="2026-04-09T08:37:26.943Z">
+<meta property="article:author" content="fullsize">
+<meta property="article:tag" content="基础">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>react19的改进和新功能 - 无涯</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
-    <title>react19的改进和新功能 | 无涯</title>
-    <link rel="icon" type="image/png" href="/blog/favicon.png">
 
-    <link rel="stylesheet" type="text/css" href="/blog/libs/awesome/css/all.css">
-    <link rel="stylesheet" type="text/css" href="/blog/libs/materialize/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="/blog/libs/aos/aos.css">
-    <link rel="stylesheet" type="text/css" href="/blog/libs/animate/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="/blog/libs/lightGallery/css/lightgallery.min.css">
-    <link rel="stylesheet" type="text/css" href="/blog/css/matery.css">
-    <link rel="stylesheet" type="text/css" href="/blog/css/my.css">
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
 
-    <script src="/blog/libs/jquery/jquery.min.js"></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
 
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"blog.fullsize.cn","root":"/","version":"1.9.9","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"expand_all":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"openkounter":{"server_url":"https://open-kounter.mintimate.cn","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
 <meta name="generator" content="Hexo 7.3.0"></head>
 
 
-
-
 <body>
-    <header class="navbar-fixed">
-    <nav id="headNav" class="bg-color nav-transparent">
-        <div id="navContainer" class="nav-wrapper container">
-            <div class="brand-logo">
-                <a href="/blog/" class="waves-effect waves-light">
-                    
-                    <img src="/blog/medias/logo.png" class="logo-img" alt="LOGO">
-                    
-                    <span class="logo-span">无涯</span>
-                </a>
-            </div>
-            
+  
 
-<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
-<ul class="right nav-menu">
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/blog/" class="waves-effect waves-light">
-      
-      <i class="fas fa-home" style="zoom: 0.6;"></i>
-      
-      <span>首页</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/blog/tags" class="waves-effect waves-light">
-      
-      <i class="fas fa-tags" style="zoom: 0.6;"></i>
-      
-      <span>标签</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/blog/categories" class="waves-effect waves-light">
-      
-      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
-      
-      <span>分类</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/blog/archives" class="waves-effect waves-light">
-      
-      <i class="fas fa-archive" style="zoom: 0.6;"></i>
-      
-      <span>归档</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/blog/about" class="waves-effect waves-light">
-      
-      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
-      
-      <span>关于</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/blog/contact" class="waves-effect waves-light">
-      
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
-      
-      <span>留言板</span>
-    </a>
-    
-  </li>
-  
-  <li>
-    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
-    </a>
-  </li>
-</ul>
-
-
-<div id="mobile-nav" class="side-nav sidenav">
-
-    <div class="mobile-head bg-color">
-        
-        <img src="/blog/medias/logo.png" class="logo-img circle responsive-img">
-        
-        <div class="logo-name">无涯</div>
-        <div class="logo-desc">
-            
-            我将会在这里分享学习到的知识，工作上的问题，生活中的感悟
-            
-        </div>
-    </div>
-
+  <header>
     
 
-    <ul class="menu-list mobile-menu-list">
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content (desktop) -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
         
-        <li class="m-nav-item">
-	  
-		<a href="/blog/" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-home"></i>
-			
-			首页
-		</a>
           
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/blog/tags" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-tags"></i>
-			
-			标签
-		</a>
           
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/blog/categories" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-bookmark"></i>
-			
-			分类
-		</a>
           
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/blog/archives" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-archive"></i>
-			
-			归档
-		</a>
           
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/blog/about" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-user-circle"></i>
-			
-			关于
-		</a>
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
           
-        </li>
         
-        <li class="m-nav-item">
-	  
-		<a href="/blog/contact" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-comments"></i>
-			
-			留言板
-		</a>
           
-        </li>
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
         
         
-        <li><div class="divider"></div></li>
-        <li>
-            <a href="https://github.com/Fullsize" class="waves-effect waves-light" target="_blank">
-                <i class="fab fa-github-square fa-fw"></i>Fork Me
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
             </a>
-        </li>
+          </li>
+          
         
-    </ul>
-</div>
-
-
-        </div>
-
         
-            <style>
-    .nav-transparent .github-corner {
-        display: none !important;
-    }
-
-    .github-corner {
-        position: absolute;
-        z-index: 10;
-        top: 0;
-        right: 0;
-        border: 0;
-        transform: scale(1.1);
-    }
-
-    .github-corner svg {
-        color: #0f9d58;
-        fill: #fff;
-        height: 64px;
-        width: 64px;
-    }
-
-    .github-corner:hover .octo-arm {
-        animation: a 0.56s ease-in-out;
-    }
-
-    .github-corner .octo-arm {
-        animation: none;
-    }
-
-    @keyframes a {
-        0%,
-        to {
-            transform: rotate(0);
-        }
-        20%,
-        60% {
-            transform: rotate(-25deg);
-        }
-        40%,
-        80% {
-            transform: rotate(10deg);
-        }
-    }
-</style>
-
-<a href="https://github.com/Fullsize" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
-   data-tooltip="Fork Me" data-position="left" data-delay="50">
-    <svg viewBox="0 0 250 250" aria-hidden="true">
-        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
-        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
-              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
-        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
-              fill="currentColor" class="octo-body"></path>
-    </svg>
-</a>
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
         
-    </nav>
-
-</header>
-
-    
-
-
-
-<div class="bg-cover pd-header post-cover" style="background-image: url('/blog/medias/featureimages/23.jpg')">
-    <div class="container" style="right: 0px;left: 0px;">
-        <div class="row">
-            <div class="col s12 m12 l12">
-                <div class="brand">
-                    <h1 class="description center-align post-title">react19的改进和新功能</h1>
-                </div>
-            </div>
-        </div>
+      </ul>
     </div>
+  </div>
+</nav>
+
+<!-- Mobile grid menu overlay -->
+<div id="mobile-grid-menu" class="d-lg-none">
+  <div class="mobile-grid-menu-inner">
+    <div class="container">
+      <div class="row">
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-home-fill"></i>
+                  <span>首页</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/archives/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-archive-fill"></i>
+                  <span>归档</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/categories/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-category-fill"></i>
+                  <span>分类</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/tags/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-tags-fill"></i>
+                  <span>标签</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/about/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-user-fill"></i>
+                  <span>关于</span>
+                </div>
+              </a>
+            </div>
+          
+        
+        
+          <div class="col-4 mobile-grid-cell" id="mobile-search-btn">
+            <a href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <div class="mobile-grid-item">
+                <i class="iconfont icon-search"></i>
+                <span>搜索</span>
+              </div>
+            </a>
+          </div>
+        
+        
+          <div class="col-4 mobile-grid-cell" id="mobile-color-toggle-btn"
+               data-label-light="开灯"
+               data-label-dark="关灯">
+            <a href="javascript:;" aria-label="Color Toggle">
+              <div class="mobile-grid-item">
+                <i class="iconfont icon-dark" id="mobile-color-toggle-icon"></i>
+                <span id="mobile-color-toggle-label">关灯</span>
+              </div>
+            </a>
+          </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="react19的改进和新功能"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-03-20 19:26" pubdate>
+          2025年3月20日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          18k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          147 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
 </div>
 
 
 
+</div>
 
-<main class="post-container content">
+  </header>
 
+  <main>
     
-    <link rel="stylesheet" href="/blog/libs/tocbot/tocbot.css">
-<style>
-    #articleContent h1::before,
-    #articleContent h2::before,
-    #articleContent h3::before,
-    #articleContent h4::before,
-    #articleContent h5::before,
-    #articleContent h6::before {
-        display: block;
-        content: " ";
-        height: 100px;
-        margin-top: -100px;
-        visibility: hidden;
-    }
+      
 
-    #articleContent :focus {
-        outline: none;
-    }
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
 
-    .toc-fixed {
-        position: fixed;
-        top: 64px;
-    }
+    </div>
 
-    .toc-widget {
-        width: 345px;
-        padding-left: 20px;
-    }
-
-    .toc-widget .toc-title {
-        padding: 35px 0 15px 17px;
-        font-size: 1.5rem;
-        font-weight: bold;
-        line-height: 1.5rem;
-    }
-
-    .toc-widget ol {
-        padding: 0;
-        list-style: none;
-    }
-
-    #toc-content {
-        padding-bottom: 30px;
-        overflow: auto;
-    }
-
-    #toc-content ol {
-        padding-left: 10px;
-    }
-
-    #toc-content ol li {
-        padding-left: 10px;
-    }
-
-    #toc-content .toc-link:hover {
-        color: #42b983;
-        font-weight: 700;
-        text-decoration: underline;
-    }
-
-    #toc-content .toc-link::before {
-        background-color: transparent;
-        max-height: 25px;
-
-        position: absolute;
-        right: 23.5vw;
-        display: block;
-    }
-
-    #toc-content .is-active-link {
-        color: #42b983;
-    }
-
-    #floating-toc-btn {
-        position: fixed;
-        right: 15px;
-        bottom: 76px;
-        padding-top: 15px;
-        margin-bottom: 0;
-        z-index: 998;
-    }
-
-    #floating-toc-btn .btn-floating {
-        width: 48px;
-        height: 48px;
-    }
-
-    #floating-toc-btn .btn-floating i {
-        line-height: 48px;
-        font-size: 1.4rem;
-    }
-</style>
-<div class="row">
-    <div id="main-content" class="col s12 m12 l9">
-        <!-- 文章内容详情 -->
-<div id="artDetail">
-    <div class="card">
-        <div class="card-content article-info">
-            <div class="row tag-cate">
-                <div class="col s7">
-                    
-                    <div class="article-tag">
-                        
-                            <a href="/blog/tags/%E5%9F%BA%E7%A1%80/">
-                                <span class="chip bg-color">基础</span>
-                            </a>
-                        
-                    </div>
-                    
-                </div>
-                <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/blog/categories/react/" class="post-category">
-                                react
-                            </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-
-            <div class="post-info">
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">react19的改进和新功能</h1>
+            
+            
+              <div class="markdown-body">
                 
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2025-03-20
-                </div>
-                
-
-                
-
-                
-
-                
-                <div class="info-break-policy">
-                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    26 分
-                </div>
-                
-
-                
-                    <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
-                        <span id="busuanzi_value_page_pv"></span>
-                    </div>
-				
-            </div>
-        </div>
-        <hr class="clearfix">
-
-        
-
-        
-        <!-- 代码块折行 -->
-        <style type="text/css">
-            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
-        </style>
-        
-
-        <div class="card-content article-card-content">
-            <div id="articleContent">
                 <h1 id="React-19-中的新功能"><a href="#React-19-中的新功能" class="headerlink" title="React 19 中的新功能"></a>React 19 中的新功能</h1><h1 id="Actions"><a href="#Actions" class="headerlink" title="Actions"></a>Actions</h1><p>在 React 应用中，一个常见的用例是执行数据变更，然后响应更新状态。例如，当用户提交一个表单来更改他们的名字，你会发起一个 API 请求，然后处理响应。在过去，你需要手动处理待定状态、错误、乐观更新和顺序请求。</p>
 <p>例如，你可以在 <code>useState</code> 中处理待定和错误状态：</p>
-<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">// 没有 Actions 之前</span>
-<span class="token keyword">function</span> <span class="token function">UpdateName</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">const</span> <span class="token punctuation">[</span>name<span class="token punctuation">,</span> setName<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">const</span> <span class="token punctuation">[</span>error<span class="token punctuation">,</span> setError<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">const</span> <span class="token punctuation">[</span>isPending<span class="token punctuation">,</span> setIsPending<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">const</span> <span class="token function-variable function">handleSubmit</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-    <span class="token function">setIsPending</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">const</span> error <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">updateName</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">setIsPending</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-      <span class="token function">setError</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token keyword">return</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token function">redirect</span><span class="token punctuation">(</span><span class="token string">"/path"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-  <span class="token keyword">return</span> <span class="token punctuation">(</span>
-    <span class="token operator">&lt;</span>div<span class="token operator">></span>
-      <span class="token operator">&lt;</span>input value<span class="token operator">=</span><span class="token punctuation">&#123;</span>name<span class="token punctuation">&#125;</span> onChange<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">setName</span><span class="token punctuation">(</span>event<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">&#125;</span> <span class="token operator">/</span><span class="token operator">></span>
-      <span class="token operator">&lt;</span>button onClick<span class="token operator">=</span><span class="token punctuation">&#123;</span>handleSubmit<span class="token punctuation">&#125;</span> disabled<span class="token operator">=</span><span class="token punctuation">&#123;</span>isPending<span class="token punctuation">&#125;</span><span class="token operator">></span>
-        Update
-      <span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span>
-      <span class="token punctuation">&#123;</span>error <span class="token operator">&amp;&amp;</span> <span class="token operator">&lt;</span>p<span class="token operator">></span><span class="token punctuation">&#123;</span>error<span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span><span class="token punctuation">&#125;</span>
-    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
-  <span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-comment">// 没有 Actions 之前</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">UpdateName</span>(<span class="hljs-params">&#123;&#125;</span>) &#123;<br>  <span class="hljs-keyword">const</span> [name, setName] = <span class="hljs-title function_">useState</span>(<span class="hljs-string">&quot;&quot;</span>);<br>  <span class="hljs-keyword">const</span> [error, setError] = <span class="hljs-title function_">useState</span>(<span class="hljs-literal">null</span>);<br>  <span class="hljs-keyword">const</span> [isPending, setIsPending] = <span class="hljs-title function_">useState</span>(<span class="hljs-literal">false</span>);<br>  <span class="hljs-keyword">const</span> <span class="hljs-title function_">handleSubmit</span> = <span class="hljs-keyword">async</span> (<span class="hljs-params"></span>) =&gt; &#123;<br>    <span class="hljs-title function_">setIsPending</span>(<span class="hljs-literal">true</span>);<br>    <span class="hljs-keyword">const</span> error = <span class="hljs-keyword">await</span> <span class="hljs-title function_">updateName</span>(name);<br>    <span class="hljs-title function_">setIsPending</span>(<span class="hljs-literal">false</span>);<br>    <span class="hljs-keyword">if</span> (error) &#123;<br>      <span class="hljs-title function_">setError</span>(error);<br>      <span class="hljs-keyword">return</span>;<br>    &#125;<br>    <span class="hljs-title function_">redirect</span>(<span class="hljs-string">&quot;/path&quot;</span>);<br>  &#125;;<br>  <span class="hljs-keyword">return</span> (<br>    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&#123;name&#125;</span> <span class="hljs-attr">onChange</span>=<span class="hljs-string">&#123;(event)</span> =&gt;</span> setName(event.target.value)&#125; /&gt;</span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">&#123;handleSubmit&#125;</span> <span class="hljs-attr">disabled</span>=<span class="hljs-string">&#123;isPending&#125;</span>&gt;</span></span><br><span class="language-xml">        Update</span><br><span class="language-xml">      <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><br><span class="language-xml">      &#123;error &amp;&amp; <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>&#123;error&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>&#125;</span><br><span class="language-xml">    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br>  );<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p>在 React 19 中，我们正在添加在过渡中使用异步函数的支持，以自动处理待定状态、错误、表单和乐观更新。</p>
 <p>例如，你可以使用 <code>useTransition</code> 来为你处理待定状态：</p>
-<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">// 使用 Actions 中的待定状态</span>
-<span class="token keyword">function</span> <span class="token function">UpdateName</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">const</span> <span class="token punctuation">[</span>name<span class="token punctuation">,</span> setName<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">const</span> <span class="token punctuation">[</span>error<span class="token punctuation">,</span> setError<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">const</span> <span class="token punctuation">[</span>isPending<span class="token punctuation">,</span> startTransition<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useTransition</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">const</span> <span class="token function-variable function">handleSubmit</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-    <span class="token function">startTransition</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-      <span class="token keyword">const</span> error <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">updateName</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token function">setError</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span><span class="token punctuation">;</span>
-      <span class="token punctuation">&#125;</span>
-      <span class="token function">redirect</span><span class="token punctuation">(</span><span class="token string">"/path"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-  <span class="token keyword">return</span> <span class="token punctuation">(</span>
-    <span class="token operator">&lt;</span>div<span class="token operator">></span>
-      <span class="token operator">&lt;</span>input value<span class="token operator">=</span><span class="token punctuation">&#123;</span>name<span class="token punctuation">&#125;</span> onChange<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">setName</span><span class="token punctuation">(</span>event<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">&#125;</span> <span class="token operator">/</span><span class="token operator">></span>
-      <span class="token operator">&lt;</span>button onClick<span class="token operator">=</span><span class="token punctuation">&#123;</span>handleSubmit<span class="token punctuation">&#125;</span> disabled<span class="token operator">=</span><span class="token punctuation">&#123;</span>isPending<span class="token punctuation">&#125;</span><span class="token operator">></span>
-        Update
-      <span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span>
-      <span class="token punctuation">&#123;</span>error <span class="token operator">&amp;&amp;</span> <span class="token operator">&lt;</span>p<span class="token operator">></span><span class="token punctuation">&#123;</span>error<span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span><span class="token punctuation">&#125;</span>
-    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
-  <span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-comment">// 使用 Actions 中的待定状态</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">UpdateName</span>(<span class="hljs-params">&#123;&#125;</span>) &#123;<br>  <span class="hljs-keyword">const</span> [name, setName] = <span class="hljs-title function_">useState</span>(<span class="hljs-string">&quot;&quot;</span>);<br>  <span class="hljs-keyword">const</span> [error, setError] = <span class="hljs-title function_">useState</span>(<span class="hljs-literal">null</span>);<br>  <span class="hljs-keyword">const</span> [isPending, startTransition] = <span class="hljs-title function_">useTransition</span>();<br>  <span class="hljs-keyword">const</span> <span class="hljs-title function_">handleSubmit</span> = (<span class="hljs-params"></span>) =&gt; &#123;<br>    <span class="hljs-title function_">startTransition</span>(<span class="hljs-title function_">async</span> () =&gt; &#123;<br>      <span class="hljs-keyword">const</span> error = <span class="hljs-keyword">await</span> <span class="hljs-title function_">updateName</span>(name);<br>      <span class="hljs-keyword">if</span> (error) &#123;<br>        <span class="hljs-title function_">setError</span>(error);<br>        <span class="hljs-keyword">return</span>;<br>      &#125;<br>      <span class="hljs-title function_">redirect</span>(<span class="hljs-string">&quot;/path&quot;</span>);<br>    &#125;);<br>  &#125;;<br>  <span class="hljs-keyword">return</span> (<br>    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&#123;name&#125;</span> <span class="hljs-attr">onChange</span>=<span class="hljs-string">&#123;(event)</span> =&gt;</span> setName(event.target.value)&#125; /&gt;</span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">&#123;handleSubmit&#125;</span> <span class="hljs-attr">disabled</span>=<span class="hljs-string">&#123;isPending&#125;</span>&gt;</span></span><br><span class="language-xml">        Update</span><br><span class="language-xml">      <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><br><span class="language-xml">      &#123;error &amp;&amp; <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>&#123;error&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>&#125;</span><br><span class="language-xml">    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br>  );<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p>异步过渡会立即将 <code>isPending</code> 状态设置为 true，发出异步请求，然后在任何过渡后将 <code>isPending</code> 切换为 <code>false</code>。这使你能够在数据变化时保持当前 UI 的响应性和交互性。</p>
 <h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><h3 id="按照惯例，使用异步过渡的函数被称为-“Actions”。"><a href="#按照惯例，使用异步过渡的函数被称为-“Actions”。" class="headerlink" title="按照惯例，使用异步过渡的函数被称为 “Actions”。"></a>按照惯例，使用异步过渡的函数被称为 “Actions”。</h3><p>Actions 自动为你管理数据提交：</p>
@@ -540,68 +405,41 @@
 </ul>
 <p>在 Actions 的基础上，React 19 引入了 <a target="_blank" rel="noopener" href="https://zh-hans.react.dev/blog/2024/12/05/react-19#new-hook-optimistic-updates"><code>useOptimistic</code></a> 来管理乐观更新，以及一个新的 Hook <a target="_blank" rel="noopener" href="https://zh-hans.react.dev/blog/2024/12/05/react-19#new-hook-useactionstate"><code>React.useActionState</code></a> 来处理 Actions 的常见情况。在 <code>react-dom</code> 中我们添加了 <a target="_blank" rel="noopener" href="https://zh-hans.react.dev/blog/2024/12/05/react-19#form-actions"><code>&lt;form&gt;</code></a><a target="_blank" rel="noopener" href="https://zh-hans.react.dev/blog/2024/12/05/react-19#form-actions"> Actions</a> 来自动管理表单和 <code>useFormStatus</code> 来支持表单中 Actions 的常见情况。</p>
 <p>在 React 19 中，上述示例可以简化为：</p>
-<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">// 使用表单的 Actions 和 useActionState</span>
-<span class="token keyword">function</span> <span class="token function">ChangeName</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> name<span class="token punctuation">,</span> setName <span class="token punctuation">&#125;</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">const</span> <span class="token punctuation">[</span>error<span class="token punctuation">,</span> submitAction<span class="token punctuation">,</span> isPending<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useActionState</span><span class="token punctuation">(</span>
-    <span class="token keyword">async</span> <span class="token punctuation">(</span>previousState<span class="token punctuation">,</span> formData<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-      <span class="token keyword">const</span> error <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">updateName</span><span class="token punctuation">(</span>formData<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">return</span> error<span class="token punctuation">;</span>
-      <span class="token punctuation">&#125;</span>
-      <span class="token function">redirect</span><span class="token punctuation">(</span><span class="token string">"/path"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-    <span class="token keyword">null</span>
-  <span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">return</span> <span class="token punctuation">(</span>
-    <span class="token operator">&lt;</span>form action<span class="token operator">=</span><span class="token punctuation">&#123;</span>submitAction<span class="token punctuation">&#125;</span><span class="token operator">></span>
-      <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"text"</span> name<span class="token operator">=</span><span class="token string">"name"</span> <span class="token operator">/</span><span class="token operator">></span>
-      <span class="token operator">&lt;</span>button type<span class="token operator">=</span><span class="token string">"submit"</span> disabled<span class="token operator">=</span><span class="token punctuation">&#123;</span>isPending<span class="token punctuation">&#125;</span><span class="token operator">></span>
-        Update
-      <span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span>
-      <span class="token punctuation">&#123;</span>error <span class="token operator">&amp;&amp;</span> <span class="token operator">&lt;</span>p<span class="token operator">></span><span class="token punctuation">&#123;</span>error<span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span><span class="token punctuation">&#125;</span>
-    <span class="token operator">&lt;</span><span class="token operator">/</span>form<span class="token operator">></span>
-  <span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-comment">// 使用表单的 Actions 和 useActionState</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">ChangeName</span>(<span class="hljs-params">&#123; name, setName &#125;</span>) &#123;<br>  <span class="hljs-keyword">const</span> [error, submitAction, isPending] = <span class="hljs-title function_">useActionState</span>(<br>    <span class="hljs-title function_">async</span> (previousState, formData) =&gt; &#123;<br>      <span class="hljs-keyword">const</span> error = <span class="hljs-keyword">await</span> <span class="hljs-title function_">updateName</span>(formData.<span class="hljs-title function_">get</span>(<span class="hljs-string">&quot;name&quot;</span>));<br>      <span class="hljs-keyword">if</span> (error) &#123;<br>        <span class="hljs-keyword">return</span> error;<br>      &#125;<br>      <span class="hljs-title function_">redirect</span>(<span class="hljs-string">&quot;/path&quot;</span>);<br>      <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>    &#125;,<br>    <span class="hljs-literal">null</span><br>  );<br>  <span class="hljs-keyword">return</span> (<br>    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&#123;submitAction&#125;</span>&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;name&quot;</span> /&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">disabled</span>=<span class="hljs-string">&#123;isPending&#125;</span>&gt;</span></span><br><span class="language-xml">        Update</span><br><span class="language-xml">      <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><br><span class="language-xml">      &#123;error &amp;&amp; <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>&#123;error&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>&#125;</span><br><span class="language-xml">    <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span></span><br>  );<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p>在下一节中，我们将详细介绍 React 19 中的每一个新的 Action 功能。</p>
 <h1 id="新的-Hook-useActionState"><a href="#新的-Hook-useActionState" class="headerlink" title="新的 Hook: useActionState"></a>新的 Hook: <code>useActionState</code></h1><p>为了使 Actions 的常见情况更加简单，我们添加了一个名为 <code>useActionState</code> 的新 Hook：</p>
-<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">const</span> <span class="token punctuation">[</span>error<span class="token punctuation">,</span> submitAction<span class="token punctuation">,</span> isPending<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useActionState</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span>previousState<span class="token punctuation">,</span> newName<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span><span class="token keyword">const</span> error <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">updateName</span><span class="token punctuation">(</span>newName<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">// 你可以返回操作的任何结果。// 这里，我们只返回错误。return error;&#125;// 处理成功的情况。return null;&#125;,null,);</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-keyword">const</span> [error, submitAction, isPending] = <span class="hljs-title function_">useActionState</span>(<span class="hljs-title function_">async</span> (previousState, newName) =&gt; &#123;<span class="hljs-keyword">const</span> error = <span class="hljs-keyword">await</span> <span class="hljs-title function_">updateName</span>(newName);<span class="hljs-keyword">if</span> (error) &#123;<span class="hljs-comment">// 你可以返回操作的任何结果。// 这里，我们只返回错误。return error;&#125;// 处理成功的情况。return null;&#125;,null,);</span><br></code></pre></td></tr></table></figure>
 
 <p><code>useActionState</code> 接受一个函数（“Action”），并返回一个被包装的用于调用的 Action。这是因为 Actions 是可以组合的。当调用被包装的 Action 时，<code>useActionState</code> 将返回 Action 的最后结果作为 <code>data</code>，以及 Action 的待定状态作为 <code>pending</code>。</p>
 <h1 id="注意-1"><a href="#注意-1" class="headerlink" title="注意"></a>注意</h1><p><code>React.useActionState</code> 在 Canary 版本中曾被称为 <code>ReactDOM.useFormState</code>，但我们已经将其重命名并弃用了 <code>useFormState</code>。</p>
 <p>有关更多信息，请参见 <a target="_blank" rel="noopener" href="https://github.com/facebook/react/pull/28491">#28491</a>。</p>
 <p>相关的更多信息，请参阅文档 <a target="_blank" rel="noopener" href="https://zh-hans.react.dev/reference/react/useActionState"><code>useActionState</code></a>。</p>
 <h1 id="React-DOM-Actions"><a href="#React-DOM-Actions" class="headerlink" title="React DOM: &lt;form&gt; Actions"></a>React DOM: <code>&lt;form&gt;</code> Actions</h1><p>Actions 也与 React 19 的新 <code>&lt;form&gt;</code> 功能集成在 <code>react-dom</code> 中。我们已经添加了对将函数作为 <code>&lt;form&gt;</code>、<code>&lt;input&gt;</code> 和 <code>&lt;button&gt;</code> 元素的 <code>action</code> 和 <code>formAction</code> 属性的支持，以便使用 Actions 自动提交表单：</p>
-<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token operator">&lt;</span>form action<span class="token operator">=</span><span class="token punctuation">&#123;</span>actionFunction<span class="token punctuation">&#125;</span><span class="token operator">></span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs typescript">&lt;form action=&#123;actionFunction&#125;&gt;<br><br></code></pre></td></tr></table></figure>
 
 <p>当 <code>&lt;form&gt;</code> Action 成功时，React 将自动为非受控组件重置表单。如果你需要手动重置 <code>&lt;form&gt;</code>，你可以调用新的 <code>requestFormReset</code> React DOM API。</p>
 <p>有关更多信息，请参阅 <code>react-dom</code> 文档中的 <a target="_blank" rel="noopener" href="https://zh-hans.react.dev/reference/react-dom/components/form"><code>&lt;form&gt;</code></a>、<a target="_blank" rel="noopener" href="https://zh-hans.react.dev/reference/react-dom/components/input"><code>&lt;input&gt;</code></a> 和 <code>&lt;button&gt;</code>。</p>
 <h1 id="React-DOM-新-Hook-useFormStatus"><a href="#React-DOM-新-Hook-useFormStatus" class="headerlink" title="React DOM: 新 Hook: useFormStatus"></a>React DOM: 新 Hook: <code>useFormStatus</code></h1><p>在设计系统中，常常需要编写设计一类能够访问其所在的 <code>&lt;form&gt;</code> 的信息而无需将属性传递到组件内的组件。这可以通过 Context 来实现，但为了使这类常见情况更简单，我们添加了一个新的 Hook <code>useFormStatus</code>：</p>
-<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> useFormStatus <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">"react-dom"</span><span class="token punctuation">;</span>
-<span class="token keyword">function</span> <span class="token function">DesignButton</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">const</span> <span class="token punctuation">&#123;</span> pending <span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token function">useFormStatus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">return</span> <span class="token operator">&lt;</span>button type<span class="token operator">=</span><span class="token string">"submit"</span> disabled<span class="token operator">=</span><span class="token punctuation">&#123;</span>pending<span class="token punctuation">&#125;</span> <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-keyword">import</span> &#123; useFormStatus &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;react-dom&quot;</span>;<br><span class="hljs-keyword">function</span> <span class="hljs-title function_">DesignButton</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">const</span> &#123; pending &#125; = <span class="hljs-title function_">useFormStatus</span>();<br>  <span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">disabled</span>=<span class="hljs-string">&#123;pending&#125;</span> /&gt;</span></span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p><code>useFormStatus</code> 读取父 <code>&lt;form&gt;</code> 的状态，就像表单是一个 Context 提供者一样。</p>
 <p>有关更多信息，请参阅 <code>react-dom</code> 文档中的 <a target="_blank" rel="noopener" href="https://zh-hans.react.dev/reference/react-dom/hooks/useFormStatus"><code>useFormStatus</code></a>。</p>
 <h1 id="新-Hook-useOptimistic"><a href="#新-Hook-useOptimistic" class="headerlink" title="新 Hook: useOptimistic"></a>新 Hook: <code>useOptimistic</code></h1><p>执行数据变更时的另一个常见 UI 模式是在异步请求进行时乐观地显示最终状态。在 React 19 中，我们添加了一个名为 <code>useOptimistic</code> 的新 Hook，以便更容易实现这一点：</p>
-<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">function</span> <span class="token function">ChangeName</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>currentName<span class="token punctuation">,</span> onUpdateName<span class="token punctuation">&#125;</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token keyword">const</span> <span class="token punctuation">[</span>optimisticName<span class="token punctuation">,</span> setOptimisticName<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useOptimistic</span><span class="token punctuation">(</span>currentName<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">const</span> <span class="token function-variable function">submitAction</span> <span class="token operator">=</span> <span class="token keyword">async</span> formData <span class="token operator">=></span> <span class="token punctuation">&#123;</span><span class="token keyword">const</span> newName <span class="token operator">=</span> formData<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token function">setOptimisticName</span><span class="token punctuation">(</span>newName<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">const</span> updatedName <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">updateName</span><span class="token punctuation">(</span>newName<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token function">onUpdateName</span><span class="token punctuation">(</span>updatedName<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token operator">&lt;</span>form action<span class="token operator">=</span><span class="token punctuation">&#123;</span>submitAction<span class="token punctuation">&#125;</span><span class="token operator">></span><span class="token operator">&lt;</span>p<span class="token operator">></span>Your name <span class="token keyword">is</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>optimisticName<span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span><span class="token operator">&lt;</span>p<span class="token operator">></span><span class="token operator">&lt;</span>label<span class="token operator">></span>Change Name<span class="token operator">:</span><span class="token operator">&lt;</span><span class="token operator">/</span>label<span class="token operator">></span><span class="token operator">&lt;</span>inputtype<span class="token operator">=</span><span class="token string">"text"</span>name<span class="token operator">=</span><span class="token string">"name"</span>disabled<span class="token operator">=</span><span class="token punctuation">&#123;</span>currentName <span class="token operator">!==</span> optimisticName<span class="token punctuation">&#125;</span><span class="token operator">/</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>form<span class="token operator">></span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">ChangeName</span>(<span class="hljs-params">&#123;currentName, onUpdateName&#125;</span>) &#123;<span class="hljs-keyword">const</span> [optimisticName, setOptimisticName] = <span class="hljs-title function_">useOptimistic</span>(currentName);<span class="hljs-keyword">const</span> <span class="hljs-title function_">submitAction</span> = <span class="hljs-keyword">async</span> formData =&gt; &#123;<span class="hljs-keyword">const</span> newName = formData.<span class="hljs-title function_">get</span>(<span class="hljs-string">&quot;name&quot;</span>);<span class="hljs-title function_">setOptimisticName</span>(newName);<span class="hljs-keyword">const</span> updatedName = <span class="hljs-keyword">await</span> <span class="hljs-title function_">updateName</span>(newName);<span class="hljs-title function_">onUpdateName</span>(updatedName);&#125;;<span class="hljs-keyword">return</span> (<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&#123;submitAction&#125;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Your name is: &#123;optimisticName&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Change Name:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>&lt;inputtype=&quot;text&quot;name=&quot;name&quot;disabled=&#123;currentName !== optimisticName&#125;/&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span></span>);&#125;<br></code></pre></td></tr></table></figure>
 
 <p><code>useOptimistic</code> Hook 会在 <code>updateName</code> 请求进行时立即渲染 <code>optimisticName</code>。当更新完成或出错时，React 将自动切换回 <code>currentName</code> 值。</p>
 <p>有关更多信息，请参阅 <a target="_blank" rel="noopener" href="https://zh-hans.react.dev/reference/react/useOptimistic"><code>useOptimistic</code></a> 文档。</p>
 <h1 id="新的-API-use"><a href="#新的-API-use" class="headerlink" title="新的 API: use"></a>新的 API: <code>use</code></h1><p>在 React 19 中，我们引入了一个新的 API 来在渲染中读取资源：<code>use</code>。</p>
 <p>例如，你可以使用 <code>use</code> 读取一个 promise，React 将挂起，直到 promise 解析完成：</p>
-<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span>use<span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span><span class="token keyword">function</span> <span class="token function">Comments</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>commentsPromise<span class="token punctuation">&#125;</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">// `use` 将被暂停直到 promise 被解决.const comments = use(commentsPromise);return comments.map(comment => &lt;p key=&#123;comment.id&#125;>&#123;comment&#125;&lt;/p>);&#125;function Page(&#123;commentsPromise&#125;) &#123;// 当“use”在注释中暂停时,// 将显示此悬念边界。return (&lt;Suspense fallback=&#123;&lt;div>Loading...&lt;/div>&#125;>&lt;Comments commentsPromise=&#123;commentsPromise&#125; />&lt;/Suspense>)&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-keyword">import</span> &#123;use&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react&#x27;</span>;<span class="hljs-keyword">function</span> <span class="hljs-title function_">Comments</span>(<span class="hljs-params">&#123;commentsPromise&#125;</span>) &#123;<span class="hljs-comment">// `use` 将被暂停直到 promise 被解决.const comments = use(commentsPromise);return comments.map(comment =&gt; &lt;p key=&#123;comment.id&#125;&gt;&#123;comment&#125;&lt;/p&gt;);&#125;function Page(&#123;commentsPromise&#125;) &#123;// 当“use”在注释中暂停时,// 将显示此悬念边界。return (&lt;Suspense fallback=&#123;&lt;div&gt;Loading...&lt;/div&gt;&#125;&gt;&lt;Comments commentsPromise=&#123;commentsPromise&#125; /&gt;&lt;/Suspense&gt;)&#125;</span><br></code></pre></td></tr></table></figure>
 
 <h1 id="注意-2"><a href="#注意-2" class="headerlink" title="注意"></a>注意</h1><h3 id="use-不支持在渲染中创建的-promises。"><a href="#use-不支持在渲染中创建的-promises。" class="headerlink" title="use 不支持在渲染中创建的 promises。"></a><code>use</code> 不支持在渲染中创建的 promises。</h3><p>如果你尝试将在渲染中创建的 promise 传递给 <code>use</code>，React 将发出警告：</p>
 <p>Console</p>
 <p>A component was suspended by an uncached promise. Creating promises inside a Client Component or hook is not yet supported, except via a Suspense-compatible library or framework.</p>
 <p>为了解决这个问题，你需要从支持 promise 缓存的 Suspense 强化库或框架中传递一个 promise。在未来，我们计划推出功能，使在渲染中缓存 promise 更加容易。</p>
 <p>你也可以使用 <code>use</code> 读取 context，这使你能够在如提前返回之后的情况下有条件地读取 Context：</p>
-<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span>use<span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span><span class="token keyword">import</span> ThemeContext <span class="token keyword">from</span> <span class="token string">'./ThemeContext'</span><span class="token keyword">function</span> <span class="token function">Heading</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>children<span class="token punctuation">&#125;</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token keyword">if</span> <span class="token punctuation">(</span>children <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span><span class="token comment">// 因为过早的返回// 这里 useContext 无法正常工作。const theme = use(ThemeContext);return (&lt;h1 style=&#123;&#123;color: theme.color&#125;&#125;>&#123;children&#125;&lt;/h1>);&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-keyword">import</span> &#123;use&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react&#x27;</span>;<span class="hljs-keyword">import</span> <span class="hljs-title class_">ThemeContext</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./ThemeContext&#x27;</span><span class="hljs-keyword">function</span> <span class="hljs-title function_">Heading</span>(<span class="hljs-params">&#123;children&#125;</span>) &#123;<span class="hljs-keyword">if</span> (children == <span class="hljs-literal">null</span>) &#123;<span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;&#125;<span class="hljs-comment">// 因为过早的返回// 这里 useContext 无法正常工作。const theme = use(ThemeContext);return (&lt;h1 style=&#123;&#123;color: theme.color&#125;&#125;&gt;&#123;children&#125;&lt;/h1&gt;);&#125;</span><br></code></pre></td></tr></table></figure>
 
 <p><code>use</code> API 只能在渲染中被调用，类似于 hooks。与 hooks 不同，<code>use</code> 可以被有条件地调用。在未来，我们计划支持在渲染中使用 <code>use</code> 消费更多资源的方式。</p>
 <p>有关更多信息，请参阅 <a target="_blank" rel="noopener" href="https://zh-hans.react.dev/reference/react/use"><code>use</code></a> 文档。</p>
@@ -613,7 +451,7 @@
 </li>
 </ul>
 <p>These new APIs improve on <code>renderToString</code> by waiting for data to load for static HTML generation. They are designed to work with streaming environments like Node.js Streams and Web Streams. For example, in a Web Stream environment, you can prerender a React tree to static HTML with <code>prerender</code>:</p>
-<pre class="line-numbers language-plain" data-language="plain"><div class="caption"><span>text</span></div><code class="language-plain">import &#123; prerender &#125; from 'react-dom/static';async function handler(request) &#123;const &#123;prelude&#125; = await prerender(&lt;App />, &#123;bootstrapScripts: ['/main.js']&#125;);return new Response(prelude, &#123;headers: &#123; 'content-type': 'text/html' &#125;,&#125;);&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight plaintext"><figcaption><span>text</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">import &#123; prerender &#125; from &#x27;react-dom/static&#x27;;async function handler(request) &#123;const &#123;prelude&#125; = await prerender(&lt;App /&gt;, &#123;bootstrapScripts: [&#x27;/main.js&#x27;]&#125;);return new Response(prelude, &#123;headers: &#123; &#x27;content-type&#x27;: &#x27;text/html&#x27; &#125;,&#125;);&#125;<br></code></pre></td></tr></table></figure>
 
 <p>Prerender APIs will wait for all data to load before returning the static HTML stream. Streams can be converted to strings, or sent with a streaming response. They do not support streaming content as it loads, which is supported by the existing <a target="_blank" rel="noopener" href="https://zh-hans.react.dev/reference/react-dom/server">React DOM server rendering APIs</a>.</p>
 <p>For more information, see <a target="_blank" rel="noopener" href="https://zh-hans.react.dev/reference/react-dom/static">React DOM Static APIs</a>.</p>
@@ -629,9 +467,7 @@
 <p>服务器 Actions 可以在服务器组件中创建并作为 props 传递给客户端组件，或者可以在客户端组件中导入和使用。</p>
 <p>有关更多信息，请参阅 <a target="_blank" rel="noopener" href="https://zh-hans.react.dev/reference/rsc/server-actions">React 服务器 Actions</a> 文档。</p>
 <h1 id="React-19-中的改进"><a href="#React-19-中的改进" class="headerlink" title="React 19 中的改进"></a>React 19 中的改进</h1><h1 id="ref-作为一个属性"><a href="#ref-作为一个属性" class="headerlink" title="ref 作为一个属性"></a><code>ref</code> 作为一个属性</h1><p>从 React 19 开始，你现在可以在函数组件中将 <code>ref</code> 作为 prop 进行访问：</p>
-<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">function</span> <span class="token function">MyInput</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> placeholder<span class="token punctuation">,</span> ref <span class="token punctuation">&#125;</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">return</span> <span class="token operator">&lt;</span>input placeholder<span class="token operator">=</span><span class="token punctuation">&#123;</span>placeholder<span class="token punctuation">&#125;</span> ref<span class="token operator">=</span><span class="token punctuation">&#123;</span>ref<span class="token punctuation">&#125;</span> <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span> <span class="token comment">//...&lt;MyInput ref=&#123;ref&#125; /></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">MyInput</span>(<span class="hljs-params">&#123; placeholder, ref &#125;</span>) &#123;<br>  <span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&#123;placeholder&#125;</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&#123;ref&#125;</span> /&gt;</span></span>;<br>&#125; <span class="hljs-comment">//...&lt;MyInput ref=&#123;ref&#125; /&gt;</span><br></code></pre></td></tr></table></figure>
 
 <p>新的函数组件将不再需要 <code>forwardRef</code>，我们将发布一个 codemod 来自动更新你的组件以使用新的 <code>ref</code> prop。在未来的版本中，我们将弃用并移除 <code>forwardRef</code>。</p>
 <h1 id="注意-5"><a href="#注意-5" class="headerlink" title="注意"></a>注意</h1><p>在类组件中，<code>ref</code> 不作为 props 传递，因为它们引用的是组件实例。这意味着，如果你在类组件中需要访问 <code>ref</code>，你需要使用 <code>React.forwardRef</code> 或者 <code>React.createRef</code>。</p>
@@ -646,55 +482,55 @@
 <p>Console</p>
 <p>Uncaught Error: Hydration failed because the server rendered HTML didn’t match the client. As a result this tree will be regenerated on the client. This can happen if an SSR-ed Client Component used: - A server&#x2F;client branch <code>if (typeof window !== &#39;undefined&#39;)</code>. - Variable input such as <code>Date.now()</code> or <code>Math.random()</code> which changes each time it’s called. - Date formatting in a user’s locale which doesn’t match the server. - External changing data without sending a snapshot of it along with the HTML. - Invalid HTML tag nesting. It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.<a target="_blank" rel="noopener" href="https://react.dev/link/hydration-mismatch">https://react.dev/link/hydration-mismatch</a>  &lt;App&gt;    &lt;span&gt; +    Client -    Server  at throwOnHydrationMismatch  …</p>
 <h1 id="作为提供者"><a href="#作为提供者" class="headerlink" title="&lt;Context&gt; 作为提供者"></a><code>&lt;Context&gt;</code> 作为提供者</h1><p>在 React 19 中，你可以将 <code>&lt;Context&gt;</code> 渲染为提供者，就无需再使用 <code>&lt;Context.Provider&gt;</code> 了：</p>
-<pre class="line-numbers language-plain" data-language="plain"><div class="caption"><span>text</span></div><code class="language-plain">const ThemeContext = createContext('');function App(&#123;children&#125;) &#123;return (&lt;ThemeContext value="dark">&#123;children&#125;&lt;/ThemeContext>);&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight plaintext"><figcaption><span>text</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">const ThemeContext = createContext(&#x27;&#x27;);function App(&#123;children&#125;) &#123;return (&lt;ThemeContext value=&quot;dark&quot;&gt;&#123;children&#125;&lt;/ThemeContext&gt;);&#125;<br></code></pre></td></tr></table></figure>
 
 <p>新的 Context 提供者可以使用 <code>&lt;Context&gt;</code>，我们将发布一个 codemod 来转换现有的提供者。在未来的版本中，我们将弃用 <code>&lt;Context.Provider&gt;</code>。</p>
 <h1 id="refs-支持清理函数"><a href="#refs-支持清理函数" class="headerlink" title="refs 支持清理函数"></a>refs 支持清理函数</h1><p>这将使得在 <code>ref</code> 改变时执行清理操作变得更加容易。例如，你可以在 <code>ref</code> 改变时取消订阅事件：</p>
-<pre class="line-numbers language-plain" data-language="plain"><div class="caption"><span>text</span></div><code class="language-plain">&lt;inputref=&#123;(ref) => &#123;// ref 创建// 新特性: 当元素从 DOM 中被移除时// 返回一个清理函数来重置 refreturn () => &#123;// ref cleanup&#125;;&#125;&#125;/><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight plaintext"><figcaption><span>text</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">&lt;inputref=&#123;(ref) =&gt; &#123;// ref 创建// 新特性: 当元素从 DOM 中被移除时// 返回一个清理函数来重置 refreturn () =&gt; &#123;// ref cleanup&#125;;&#125;&#125;/&gt;<br></code></pre></td></tr></table></figure>
 
 <p>当组件卸载时，React 将调用从 <code>ref</code> 回调返回的清理函数。这适用于 DOM refs，类组件的 refs，以及 <code>useImperativeHandle</code>。</p>
 <h1 id="注意-6"><a href="#注意-6" class="headerlink" title="注意"></a>注意</h1><p>以前，当卸载组件时，React 会用 <code>null</code> 调用 <code>ref</code> 函数。如果你的 <code>ref</code> 返回一个清理函数，React 现在将跳过这一步。</p>
 <p>在未来的版本中，我们将弃用在卸载组件时用 <code>null</code> 调用 refs。</p>
 <p>由于引入了 <code>ref</code> 清理函数，现在 TypeScript 将拒绝从 <code>ref</code> 回调中返回任何其他内容。通常的解决方法是停止使用隐式返回，例如：</p>
-<pre class="line-numbers language-plain" data-language="plain"><div class="caption"><span>text</span></div><code class="language-plain">- &lt;div ref=&#123;current => (instance = current)&#125; />+ &lt;div ref=&#123;current => &#123;instance = current&#125;&#125; /><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight plaintext"><figcaption><span>text</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">- &lt;div ref=&#123;current =&gt; (instance = current)&#125; /&gt;+ &lt;div ref=&#123;current =&gt; &#123;instance = current&#125;&#125; /&gt;<br></code></pre></td></tr></table></figure>
 
 <p>原始代码返回了 <code>HTMLDivElement</code> 的实例，TypeScript 不知道这是否应该是一个清理函数，或者你是否不想返回一个清理函数。</p>
 <p>你可以使用 <a target="_blank" rel="noopener" href="https://github.com/eps1lon/types-react-codemod/#no-implicit-ref-callback-return"><code>no-implicit-ref-callback-return</code></a> 这个 codemod 来转换这种模式。</p>
 <h1 id="useDeferredValue-初始化-value"><a href="#useDeferredValue-初始化-value" class="headerlink" title="useDeferredValue 初始化 value"></a><code>useDeferredValue</code> 初始化 value</h1><p>我们为 <code>useDeferredValue</code> 添加了一个 <code>initialValue</code> 选项：</p>
-<pre class="line-numbers language-plain" data-language="plain"><div class="caption"><span>text</span></div><code class="language-plain">function Search(&#123;deferredValue&#125;) &#123;// On initial render the value is ''.// Then a re-render is scheduled with the deferredValue.const value = useDeferredValue(deferredValue, '');return (&lt;Results query=&#123;value&#125; />);&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight plaintext"><figcaption><span>text</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">function Search(&#123;deferredValue&#125;) &#123;// On initial render the value is &#x27;&#x27;.// Then a re-render is scheduled with the deferredValue.const value = useDeferredValue(deferredValue, &#x27;&#x27;);return (&lt;Results query=&#123;value&#125; /&gt;);&#125;<br></code></pre></td></tr></table></figure>
 
 <p>当提供了 initialValue, <code>useDeferredValue</code> 将在组件的初始渲染中返回它作为 <code>value</code> , 并在后台安排一个使用返回的  deferredValue 重新渲染。</p>
 <p>有关更多信息，请参阅 <a target="_blank" rel="noopener" href="https://zh-hans.react.dev/reference/react/useDeferredValue"><code>useDeferredValue</code></a>。</p>
 <h1 id="支持文档元数据"><a href="#支持文档元数据" class="headerlink" title="支持文档元数据"></a>支持文档元数据</h1><p>在 HTML 中，像 <code>&lt;title&gt;</code>、<code>&lt;link&gt;</code> 和 <code>&lt;meta&gt;</code> 这样的文档元数据标签被保留在文档的 <code>&lt;head&gt;</code> 部分。在 React 中，决定应用程序适合的元数据的组件可能与你渲染 <code>&lt;head&gt;</code> 的地方相距甚远，或者 React 根本不渲染 <code>&lt;head&gt;</code>。在过去，这些元素需要在效果中手动插入，或者通过像 <a target="_blank" rel="noopener" href="https://github.com/nfl/react-helmet"><code>react-helmet</code></a> 这样的库，并在服务器渲染 React 应用程序时需要小心处理。</p>
 <p>在 React 19 中，我们将原生支持在组件中渲染文档元数据标签：</p>
-<pre class="line-numbers language-plain" data-language="plain"><div class="caption"><span>text</span></div><code class="language-plain">function BlogPost(&#123;post&#125;) &#123;return (&lt;article>&lt;h1>&#123;post.title&#125;&lt;/h1>&lt;title>&#123;post.title&#125;&lt;/title>&lt;meta name="author" content="Josh" />&lt;link rel="author" href="https://twitter.com/joshcstory/" />&lt;meta name="keywords" content=&#123;post.keywords&#125; />&lt;p>Eee equals em-see-squared...&lt;/p>&lt;/article>);&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight plaintext"><figcaption><span>text</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">function BlogPost(&#123;post&#125;) &#123;return (&lt;article&gt;&lt;h1&gt;&#123;post.title&#125;&lt;/h1&gt;&lt;title&gt;&#123;post.title&#125;&lt;/title&gt;&lt;meta name=&quot;author&quot; content=&quot;Josh&quot; /&gt;&lt;link rel=&quot;author&quot; href=&quot;https://twitter.com/joshcstory/&quot; /&gt;&lt;meta name=&quot;keywords&quot; content=&#123;post.keywords&#125; /&gt;&lt;p&gt;Eee equals em-see-squared...&lt;/p&gt;&lt;/article&gt;);&#125;<br></code></pre></td></tr></table></figure>
 
 <p>当 React 渲染这个组件时，它会看到 <code>&lt;title&gt;</code>、<code>&lt;link&gt;</code> 和 <code>&lt;meta&gt;</code> 标签，并自动将它们提升到文档的 <code>&lt;head&gt;</code> 部分。通过原生支持这些元数据标签，我们能够确保它们与仅客户端应用、流式 SSR 和服务器组件一起工作。</p>
 <h1 id="注意-7"><a href="#注意-7" class="headerlink" title="注意"></a>注意</h1><h3 id="你可能仍然需要一个元数据库"><a href="#你可能仍然需要一个元数据库" class="headerlink" title="你可能仍然需要一个元数据库"></a>你可能仍然需要一个元数据库</h3><p>对于简单的用例，渲染文档元数据为标签可能是合适的，但库可以提供更强大的功能，如基于当前路由用特定的元数据覆盖通用元数据。这些功能使得像 <a target="_blank" rel="noopener" href="https://github.com/nfl/react-helmet"><code>react-helmet</code></a> 这样的框架和库更容易支持元数据标签，而不是替换它们。</p>
 <p>有关更多信息，请参阅文档 <a target="_blank" rel="noopener" href="https://zh-hans.react.dev/reference/react-dom/components/title"><code>&lt;title&gt;</code></a>, <a target="_blank" rel="noopener" href="https://zh-hans.react.dev/reference/react-dom/components/link"><code>&lt;link&gt;</code></a>, and <a target="_blank" rel="noopener" href="https://zh-hans.react.dev/reference/react-dom/components/meta"><code>&lt;meta&gt;</code></a>.</p>
 <h1 id="支持样式表"><a href="#支持样式表" class="headerlink" title="支持样式表"></a>支持样式表</h1><p>样式表，无论是外部链接的 (<code>&lt;link rel=&quot;stylesheet&quot; href=&quot;...&quot;&gt;</code>) 还是内联的 (<code>&lt;style&gt;...&lt;/style&gt;</code>)，都需要在 DOM 中进行精确的定位，因为样式优先级规则。构建一个允许在组件内部进行组合的样式表功能是困难的，所以用户通常要么将所有的样式远离可能依赖它们的组件加载，要么使用一个封装了这种复杂性的样式库。</p>
 <p>在 React 19 中，我们正在解决这个复杂性，并提供更深入的集成到客户端的并发渲染和服务器的流式渲染，内置支持样式表。如果你告诉 React 你的样式表的 <code>precedence</code>，它将管理样式表在 DOM 中的插入顺序，并确保在显示依赖于这些样式规则的内容之前加载样式表（如果是外部的）。</p>
-<pre class="line-numbers language-plain" data-language="plain"><div class="caption"><span>text</span></div><code class="language-plain">function ComponentOne() &#123;return (&lt;Suspense fallback="loading...">&lt;link rel="stylesheet" href="foo" precedence="default" />&lt;link rel="stylesheet" href="bar" precedence="high" />&lt;article class="foo-class bar-class">&#123;...&#125;&lt;/article>&lt;/Suspense>)&#125;function ComponentTwo() &#123;return (&lt;div>&lt;p>&#123;...&#125;&lt;/p>&lt;link rel="stylesheet" href="baz" precedence="default" />  &lt;-- will be inserted between foo &amp; bar&lt;/div>)&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight plaintext"><figcaption><span>text</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">function ComponentOne() &#123;return (&lt;Suspense fallback=&quot;loading...&quot;&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;foo&quot; precedence=&quot;default&quot; /&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;bar&quot; precedence=&quot;high&quot; /&gt;&lt;article class=&quot;foo-class bar-class&quot;&gt;&#123;...&#125;&lt;/article&gt;&lt;/Suspense&gt;)&#125;function ComponentTwo() &#123;return (&lt;div&gt;&lt;p&gt;&#123;...&#125;&lt;/p&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;baz&quot; precedence=&quot;default&quot; /&gt;  &lt;-- will be inserted between foo &amp; bar&lt;/div&gt;)&#125;<br></code></pre></td></tr></table></figure>
 
 <p>在服务器端渲染时，React 会在 <code>&lt;head&gt;</code> 中包含样式表，确保浏览器在加载完样式表之前不会进行绘制。如果在已经开始流式传输后才发现样式表，React 会确保在揭示依赖于该样式表的 Suspense 边界的内容之前，将样式表插入到客户端的 <code>&lt;head&gt;</code> 中。</p>
 <p>在客户端渲染时，React 会等待新渲染的样式表加载完成后再提交渲染。如果你在应用程序的多个地方渲染此组件，React 会只在文档中包含一次样式表：</p>
-<pre class="line-numbers language-plain" data-language="plain"><div class="caption"><span>text</span></div><code class="language-plain">function App() &#123;return &lt;>&lt;ComponentOne />...&lt;ComponentOne /> // won't lead to a duplicate stylesheet link in the DOM&lt;/>&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight plaintext"><figcaption><span>text</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">function App() &#123;return &lt;&gt;&lt;ComponentOne /&gt;...&lt;ComponentOne /&gt; // won&#x27;t lead to a duplicate stylesheet link in the DOM&lt;/&gt;&#125;<br></code></pre></td></tr></table></figure>
 
 <p>对于习惯于手动加载样式表的用户来说，这是一个机会，可以将这些样式表放在依赖它们的组件旁边，从而更好地进行本地推理，并确保只加载你实际依赖的样式表。</p>
 <p>样式库和与打包器的样式集成也可以采用这种新的功能，所以即使你不直接渲染你自己的样式表，你也可以从你的工具升级到使用这个特性中受益。</p>
 <p>有关更多详细信息，请阅读 <a target="_blank" rel="noopener" href="https://zh-hans.react.dev/reference/react-dom/components/link"><code>&lt;link&gt;</code></a> 和 <a target="_blank" rel="noopener" href="https://zh-hans.react.dev/reference/react-dom/components/style"><code>&lt;style&gt;</code></a> 的文档。</p>
 <h1 id="支持异步脚本"><a href="#支持异步脚本" class="headerlink" title="支持异步脚本"></a>支持异步脚本</h1><p>在 HTML 中，普通脚本 (<code>&lt;script src=&quot;...&quot;&gt;</code>) 和延迟脚本 (<code>&lt;script defer=&quot;&quot; src=&quot;...&quot;&gt;</code>) 按照文档顺序加载，这使得在组件树深处渲染这些类型的脚本变得具有挑战性。然而，异步脚本 (<code>&lt;script async=&quot;&quot; src=&quot;...&quot;&gt;</code>) 将以任意顺序加载。</p>
 <p>在 React 19 中，我们通过允许你在组件树的任何位置，即实际依赖脚本的组件内部，渲染它们，从而为异步脚本提供了更好的支持，无需管理脚本实例的重新定位和去重。</p>
-<pre class="line-numbers language-plain" data-language="plain"><div class="caption"><span>text</span></div><code class="language-plain">function MyComponent() &#123;return (&lt;div>&lt;script async=&#123;true&#125; src="..." />Hello World&lt;/div>)&#125;function App() &#123;&lt;html>&lt;body>&lt;MyComponent>...&lt;MyComponent> // won't lead to duplicate script in the DOM&lt;/body>&lt;/html>&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight plaintext"><figcaption><span>text</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">function MyComponent() &#123;return (&lt;div&gt;&lt;script async=&#123;true&#125; src=&quot;...&quot; /&gt;Hello World&lt;/div&gt;)&#125;function App() &#123;&lt;html&gt;&lt;body&gt;&lt;MyComponent&gt;...&lt;MyComponent&gt; // won&#x27;t lead to duplicate script in the DOM&lt;/body&gt;&lt;/html&gt;&#125;<br></code></pre></td></tr></table></figure>
 
 <p>在所有渲染环境中，异步脚本将被去重，因此即使它被多个不同的组件渲染，React 也只会加载并执行脚本一次。</p>
 <p>在服务器端渲染中，异步脚本将被包含在 <code>&lt;head&gt;</code> 中，并优先于阻塞绘制的更关键的资源，如样式表、字体和图片预加载。</p>
 <p>有关更多详细信息，请阅读 <a target="_blank" rel="noopener" href="https://zh-hans.react.dev/reference/react-dom/components/script"><code>&lt;script&gt;</code></a> 的文档。</p>
 <h1 id="支持预加载资源"><a href="#支持预加载资源" class="headerlink" title="支持预加载资源"></a>支持预加载资源</h1><p>在初始文档加载和客户端更新时，尽早告诉浏览器它可能需要加载的资源，可以显著提高页面性能。</p>
 <p>React 19 包含了一些新的 API，用于加载和预加载浏览器资源，使得构建不受资源加载效率影响的优秀体验变得尽可能容易。</p>
-<pre class="line-numbers language-plain" data-language="plain"><div class="caption"><span>text</span></div><code class="language-plain">import &#123; prefetchDNS, preconnect, preload, preinit &#125; from 'react-dom'function MyComponent() &#123;preinit('https://.../path/to/some/script.js', &#123;as: 'script' &#125;) // loads and executes this script eagerlypreload('https://.../path/to/font.woff', &#123; as: 'font' &#125;) // preloads this fontpreload('https://.../path/to/stylesheet.css', &#123; as: 'style' &#125;) // preloads this stylesheetprefetchDNS('https://...') // when you may not actually request anything from this hostpreconnect('https://...') // when you will request something but aren't sure what&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight plaintext"><figcaption><span>text</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">import &#123; prefetchDNS, preconnect, preload, preinit &#125; from &#x27;react-dom&#x27;function MyComponent() &#123;preinit(&#x27;https://.../path/to/some/script.js&#x27;, &#123;as: &#x27;script&#x27; &#125;) // loads and executes this script eagerlypreload(&#x27;https://.../path/to/font.woff&#x27;, &#123; as: &#x27;font&#x27; &#125;) // preloads this fontpreload(&#x27;https://.../path/to/stylesheet.css&#x27;, &#123; as: &#x27;style&#x27; &#125;) // preloads this stylesheetprefetchDNS(&#x27;https://...&#x27;) // when you may not actually request anything from this hostpreconnect(&#x27;https://...&#x27;) // when you will request something but aren&#x27;t sure what&#125;<br></code></pre></td></tr></table></figure>
 
-<pre class="line-numbers language-plain" data-language="plain"><div class="caption"><span>text</span></div><code class="language-plain">&lt;!-- the above would result in the following DOM/HTML -->&lt;html>&lt;head>&lt;!-- links/scripts are prioritized by their utility to early loading, not call order -->&lt;link rel="prefetch-dns" href="https://...">&lt;link rel="preconnect" href="https://...">&lt;link rel="preload" as="font" href="https://.../path/to/font.woff">&lt;link rel="preload" as="style" href="https://.../path/to/stylesheet.css">&lt;script async="" src="https://.../path/to/some/script.js">&lt;/script>&lt;/head>&lt;body>...&lt;/body>&lt;/html><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight plaintext"><figcaption><span>text</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">&lt;!-- the above would result in the following DOM/HTML --&gt;&lt;html&gt;&lt;head&gt;&lt;!-- links/scripts are prioritized by their utility to early loading, not call order --&gt;&lt;link rel=&quot;prefetch-dns&quot; href=&quot;https://...&quot;&gt;&lt;link rel=&quot;preconnect&quot; href=&quot;https://...&quot;&gt;&lt;link rel=&quot;preload&quot; as=&quot;font&quot; href=&quot;https://.../path/to/font.woff&quot;&gt;&lt;link rel=&quot;preload&quot; as=&quot;style&quot; href=&quot;https://.../path/to/stylesheet.css&quot;&gt;&lt;script async=&quot;&quot; src=&quot;https://.../path/to/some/script.js&quot;&gt;&lt;/script&gt;&lt;/head&gt;&lt;body&gt;...&lt;/body&gt;&lt;/html&gt;<br></code></pre></td></tr></table></figure>
 
 <p>这些 API 可以通过将像字体这样的额外资源的发现从样式表加载中移出来，优化初始页面加载。它们还可以通过预取预期导航使用的资源列表，然后在点击或甚至悬停时积极预加载这些资源，使客户端更新更快。</p>
 <p>有关更多详细信息，请参阅 <a target="_blank" rel="noopener" href="https://zh-hans.react.dev/reference/react-dom#resource-preloading-apis">资源预加载 API</a>。</p>
@@ -737,621 +573,462 @@
 </ul>
 
                 
-            </div>
+              </div>
+            
             <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
 
-            
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/react/" class="category-chain-item">react</a>
+  
+  
 
-    <div class="reprint" id="reprint-statement">
-        
-            <div class="reprint__author">
-                <span class="reprint-meta" style="font-weight: bold;">
-                    <i class="fas fa-user">
-                        文章作者:
-                    </i>
-                </span>
-                <span class="reprint-info">
-                    <a href="/blog/about" rel="external nofollow noreferrer">fullsize</a>
-                </span>
-            </div>
-            <div class="reprint__type">
-                <span class="reprint-meta" style="font-weight: bold;">
-                    <i class="fas fa-link">
-                        文章链接:
-                    </i>
-                </span>
-                <span class="reprint-info">
-                    <a href="https://fullsize.github.io/blog/blog/2025/03/20/notion/react19-de-gai-jin-he-xin-gong-neng/">https://fullsize.github.io/blog/blog/2025/03/20/notion/react19-de-gai-jin-he-xin-gong-neng/</a>
-                </span>
-            </div>
-            <div class="reprint__notice">
-                <span class="reprint-meta" style="font-weight: bold;">
-                    <i class="fas fa-copyright">
-                        版权声明:
-                    </i>
-                </span>
-                <span class="reprint-info">
-                    本博客所有文章除特別声明外，均采用
-                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
-                    许可协议。转载请注明来源
-                    <a href="/blog/about" target="_blank">fullsize</a>
-                    !
-                </span>
-            </div>
-        
+      </span>
+    
+  
+</span>
+
     </div>
-
-    <script async defer>
-      document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
-        M.toast({html: toastHTML})
-      });
-
-      function navToReprintStatement() {
-        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
-      }
-    </script>
-
-
-
-            <div class="tag_share" style="display: block;">
-                <div class="post-meta__tag-list" style="display: inline-block;">
-                    
-                        <div class="article-tag">
-                            
-                                <a href="/blog/tags/%E5%9F%BA%E7%A1%80/">
-                                    <span class="chip bg-color">基础</span>
-                                </a>
-                            
-                        </div>
-                    
-                </div>
-                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
-                    <link rel="stylesheet" type="text/css" href="/blog/libs/share/css/share.min.css">
-<div id="article-share">
-
-    
-    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-    <script src="/blog/libs/share/js/social-share.min.js"></script>
-    
-
-    
-
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E5%9F%BA%E7%A1%80/" class="print-no-link">#基础</a>
+      
+    </div>
+  
 </div>
 
-                </div>
-            </div>
-            
-        </div>
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>react19的改进和新功能</div>
+      <div>https://blog.fullsize.cn/2025/03/20/notion/react19-de-gai-jin-he-xin-gong-neng/</div>
     </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-<article id="prenext-posts" class="prev-next articles">
-    <div class="row article-row">
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
-            <div class="card">
-                <a href="/blog/2025/03/20/notion/js-zhong-for-he-foreach-xing-neng-qu-bie/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/blog/medias/featureimages/18.jpg" class="responsive-img" alt="js中for和forEach性能区别">
-                        
-                        <span class="card-title">js中for和forEach性能区别</span>
-                    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>fullsize</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年3月20日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
                 </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2025-03-20
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/blog/categories/javascript/" class="post-category">
-                                    javascript
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/03/20/notion/js-zhong-for-he-foreach-xing-neng-qu-bie/" title="js中for和forEach性能区别">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">js中for和forEach性能区别</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/03/19/notion/vue3-0-zhong-watch-he-watcheffect-de-qu-bie/" title="vue3.0中watch和watchEffect的区别">
+                        <span class="hidden-mobile">vue3.0中watch和watchEffect的区别</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/blog/tags/%E6%80%9D%E8%80%83/">
-                        <span class="chip bg-color">思考</span>
-                    </a>
-                    
-                    <a href="/blog/tags/%E6%89%A9%E5%B1%95/">
-                        <span class="chip bg-color">扩展</span>
-                    </a>
-                    
-                </div>
-                
+              
             </div>
+
+            
+          </article>
         </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/blog/2025/03/19/notion/vue3-0-zhong-watch-he-watcheffect-de-qu-bie/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/blog/medias/featureimages/0.jpg" class="responsive-img" alt="vue3.0中watch和watchEffect的区别">
-                        
-                        <span class="card-title">vue3.0中watch和watchEffect的区别</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-03-19
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/blog/categories/vue/" class="post-category">
-                                    vue
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/blog/tags/%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">基础</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
+      </div>
     </div>
-</article>
 
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
 </div>
 
 
 
-<!-- 代码块功能依赖 -->
-<script type="text/javascript" src="/blog/libs/codeBlock/codeBlockFuction.js"></script>
-
-<!-- 代码语言 -->
-
-
-<!-- 代码块复制 -->
-
-<script type="text/javascript" src="/blog/libs/codeBlock/codeCopy.js"></script>
-
-
-<!-- 代码块收缩 -->
-
-<script type="text/javascript" src="/blog/libs/codeBlock/codeShrink.js"></script>
+  </aside>
 
 
     </div>
-    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
-        <div class="toc-widget card" style="background-color: white;">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
-            <div id="toc-content"></div>
-        </div>
-    </div>
-</div>
-
-<!-- TOC 悬浮按钮. -->
-
-<div id="floating-toc-btn" class="hide-on-med-and-down">
-    <a class="btn-floating btn-large bg-color">
-        <i class="fas fa-list-ul"></i>
-    </a>
+  </div>
 </div>
 
 
-<script src="/blog/libs/tocbot/tocbot.min.js"></script>
-<script>
-    $(function () {
-        tocbot.init({
-            tocSelector: '#toc-content',
-            contentSelector: '#articleContent',
-            headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
-        });
 
-        // modify the toc link href to support Chinese.
-        let i = 0;
-        let tocHeading = 'toc-heading-';
-        $('#toc-content a').each(function () {
-            $(this).attr('href', '#' + tocHeading + (++i));
-        });
 
-        // modify the heading title id to support Chinese.
-        i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
-            $(this).attr('id', tocHeading + (++i));
-        });
 
-        // Set scroll toc fixed.
-        let tocHeight = parseInt($(window).height() * 0.4 - 64);
-        let $tocWidget = $('.toc-widget');
-        $(window).scroll(function () {
-            let scroll = $(window).scrollTop();
-            /* add post toc fixed. */
-            if (scroll > tocHeight) {
-                $tocWidget.addClass('toc-fixed');
-            } else {
-                $tocWidget.removeClass('toc-fixed');
-            }
-        });
+  
 
-        
-        /* 修复文章卡片 div 的宽度. */
-        let fixPostCardWidth = function (srcId, targetId) {
-            let srcDiv = $('#' + srcId);
-            if (srcDiv.length === 0) {
-                return;
-            }
 
-            let w = srcDiv.width();
-            if (w >= 450) {
-                w = w + 21;
-            } else if (w >= 350 && w < 450) {
-                w = w + 18;
-            } else if (w >= 300 && w < 350) {
-                w = w + 16;
-            } else {
-                w = w + 14;
-            }
-            $('#' + targetId).width(w);
-        };
 
-        // 切换TOC目录展开收缩的相关操作.
-        const expandedClass = 'expanded';
-        let $tocAside = $('#toc-aside');
-        let $mainContent = $('#main-content');
-        $('#floating-toc-btn .btn-floating').click(function () {
-            if ($tocAside.hasClass(expandedClass)) {
-                $tocAside.removeClass(expandedClass).hide();
-                $mainContent.removeClass('l9');
-            } else {
-                $tocAside.addClass(expandedClass).show();
-                $mainContent.addClass('l9');
-            }
-            fixPostCardWidth('artDetail', 'prenext-posts');
-        });
-        
-    });
-</script>
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
 
     
 
-</main>
-
-
-
-
-    <footer class="page-footer bg-color">
     
-        <link rel="stylesheet" href="/blog/libs/aplayer/APlayer.min.css">
-<style>
-    .aplayer .aplayer-lrc p {
-        
-        display: none;
-        
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 16px !important;
-    }
-
-    .aplayer .aplayer-lrc p.aplayer-lrc-current {
-        
-        display: none;
-        
-        font-size: 15px;
-        color: #42b983;
-    }
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
 
     
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
-        left: -66px !important;
-    }
-
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
-        left: 0px !important;
-    }
-
-    
-</style>
-<div class="">
-    
-    <div class="row">
-        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
-                   server="netease"
-                   type="song"
-                   id="26613394"
-                   fixed='true'
-                   autoplay='false'
-                   theme='#42b983'
-                   loop='all'
-                   order='random'
-                   preload='auto'
-                   volume='0.7'
-                   list-folded='true'
-        >
-        </meting-js>
-    </div>
-</div>
-
-<script src="/blog/libs/aplayer/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
-
-    
-    <div class="container row center-align" style="margin-bottom: 0px !important;">
-        <div class="col s12 m8 l8 copy-right">
-            Copyright&nbsp;&copy;
-            
-                <span id="year">2019-2026</span>
-            
-            <span id="year">2019</span>
-            <a href="/blog/about" target="_blank">fullsize</a>
-            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
-            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
-            <br>
-            
-            
-            
-            
-            
-            
-            <span id="busuanzi_container_site_pv">
-                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
-                    class="white-color"></span>&nbsp;次
-            </span>
-            
-            
-            <span id="busuanzi_container_site_uv">
-                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
-                    class="white-color"></span>&nbsp;人
-            </span>
-            
-            <br>
-            
-            <br>
-            
-        </div>
-        <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/Fullsize" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fab fa-github"></i>
-    </a>
-
-
-
-    <a href="mailto:zhouyutao1683@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fas fa-envelope-open"></i>
-    </a>
-
-
-
-
-
-
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1619686166" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1619686166" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
-    </a>
-
-
-
-
-
-    <a href="https://www.zhihu.com/people/ni-guan-67" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://www.zhihu.com/people/ni-guan-67" data-position="top" data-delay="50">
-        <i class="fab fa-zhihu1">知</i>
-    </a>
-
-
-
-</div>
-    </div>
-</footer>
-
-<div class="progress-bar"></div>
-
-
-    <!-- 搜索遮罩框 -->
-<div id="searchModal" class="modal">
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
     <div class="modal-content">
-        <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
-            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
-                   class="search-input">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
-        <div id="searchResult"></div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
     </div>
+  </div>
 </div>
 
-<script type="text/javascript">
-$(function () {
-    var searchFunc = function (path, search_id, content_id) {
-        'use strict';
-        $.ajax({
-            url: path,
-            dataType: "xml",
-            success: function (xmlResponse) {
-                // get the contents from search data
-                var datas = $("entry", xmlResponse).map(function () {
-                    return {
-                        title: $("title", this).text(),
-                        content: $("content", this).text(),
-                        url: $("url", this).text()
-                    };
-                }).get();
-                var $input = document.getElementById(search_id);
-                var $resultContent = document.getElementById(content_id);
-                $input.addEventListener('input', function () {
-                    var str = '<ul class=\"search-result-list\">';
-                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-                    $resultContent.innerHTML = "";
-                    if (this.value.trim().length <= 0) {
-                        return;
-                    }
-                    // perform local searching
-                    datas.forEach(function (data) {
-                        var isMatch = true;
-                        var data_title = data.title.trim().toLowerCase();
-                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
-                        var data_url = data.url;
-                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
-                        var index_title = -1;
-                        var index_content = -1;
-                        var first_occur = -1;
-                        // only match artiles with not empty titles and contents
-                        if (data_title !== '' && data_content !== '') {
-                            keywords.forEach(function (keyword, i) {
-                                index_title = data_title.indexOf(keyword);
-                                index_content = data_content.indexOf(keyword);
-                                if (index_title < 0 && index_content < 0) {
-                                    isMatch = false;
-                                } else {
-                                    if (index_content < 0) {
-                                        index_content = 0;
-                                    }
-                                    if (i === 0) {
-                                        first_occur = index_content;
-                                    }
-                                }
-                            });
-                        }
-                        // show search results
-                        if (isMatch) {
-                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
-                            var content = data.content.trim().replace(/<[^>]+>/g, "");
-                            if (first_occur >= 0) {
-                                // cut out 100 characters
-                                var start = first_occur - 20;
-                                var end = first_occur + 80;
-                                if (start < 0) {
-                                    start = 0;
-                                }
-                                if (start === 0) {
-                                    end = 100;
-                                }
-                                if (end > content.length) {
-                                    end = content.length;
-                                }
-                                var match_content = content.substr(start, end);
-                                // highlight all keywords
-                                keywords.forEach(function (keyword) {
-                                    var regS = new RegExp(keyword, "gi");
-                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
-                                });
+    
 
-                                str += "<p class=\"search-result\">" + match_content + "...</p>"
-                            }
-                            str += "</li>";
-                        }
-                    });
-                    str += "</ul>";
-                    $resultContent.innerHTML = str;
-                });
-            }
-        });
-    };
+    
+  </main>
 
-    searchFunc('/blog/search.xml', 'searchInput', 'searchResult');
-});
-</script>
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
 
-    <!-- 回到顶部按钮 -->
-<div id="backTop" class="top-scroll">
-    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
-        <i class="fas fa-arrow-up"></i>
-    </a>
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
 </div>
 
+  
+  
+</div>
 
-    <script src="/blog/libs/materialize/materialize.min.js"></script>
-    <script src="/blog/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="/blog/libs/aos/aos.js"></script>
-    <script src="/blog/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="/blog/libs/lightGallery/js/lightgallery-all.min.js"></script>
-    <script src="/blog/js/matery.js"></script>
+  </footer>
 
-    <!-- Baidu Analytics -->
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
 
-    <!-- Baidu Push -->
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
 
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
 <script>
-    (function () {
-        var bp = document.createElement('script');
-        var curProtocol = window.location.protocol.split(':')[0];
-        if (curProtocol === 'https') {
-            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-        } else {
-            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    function isExpandAllEnabled() {
+      return CONFIG.toc && CONFIG.toc.expand_all === true;
+    }
+    function expandAllToc() {
+      if (!isExpandAllEnabled()) { return; }
+      jQuery('#toc-body .tocbot-is-collapsed').removeClass('tocbot-is-collapsed');
+    }
+    function updateTocToggle($li, $childList) {
+      var $toggle = $li.children('.toc-toggle');
+      if ($toggle.length === 0) { return; }
+      var collapsed = $childList.hasClass('tocbot-is-collapsed');
+      $toggle
+        .toggleClass('toc-toggle-collapsed', collapsed)
+        .toggleClass('toc-toggle-expanded', !collapsed);
+    }
+    function bindTocToggle() {
+      if (!isExpandAllEnabled()) { return; }
+      jQuery('#toc-body .toc-list-item').each(function() {
+        var $li = jQuery(this);
+        var $childList = $li.children('ol');
+        if ($childList.length === 0) {
+          if ($li.children('.toc-toggle').length === 0) {
+            $li.prepend('<span class="toc-toggle toc-toggle-placeholder" aria-hidden="true">›</span>');
+          }
+          return;
         }
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(bp, s);
-    })();
+
+        if ($li.children('.toc-toggle').length === 0) {
+          $li.prepend('<span class="toc-toggle toc-toggle-expanded" aria-hidden="true">›</span>');
+        }
+        updateTocToggle($li, $childList);
+      });
+      jQuery('#toc-body').off('click.tocToggle').on('click.tocToggle', '.toc-toggle', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var $li = jQuery(this).parent('.toc-list-item');
+        var $childList = $li.children('ol');
+        if ($childList.length === 0) { return; }
+        $childList.toggleClass('tocbot-is-collapsed');
+        updateTocToggle($li, $childList);
+      });
+      if (!window.__tocToggleObserver) {
+        window.__tocToggleObserver = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            if (mutation.type !== 'attributes' || mutation.attributeName !== 'class') { return; }
+            var $list = jQuery(mutation.target);
+            var $li = $list.parent('.toc-list-item');
+            if ($li.length === 0) { return; }
+            updateTocToggle($li, $list);
+          });
+        });
+        jQuery('#toc-body ol').each(function() {
+          window.__tocToggleObserver.observe(this, { attributes: true });
+        });
+      }
+    }
+    var tocConfig = Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc);
+    if (isExpandAllEnabled()) {
+      tocConfig.collapseDepth = 6;
+    }
+    window.tocbot.init(tocConfig);
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+    expandAllToc();
+    bindTocToggle();
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+        expandAllToc();
+        bindTocToggle();
+      }
+    });
+  });
 </script>
 
-    
-    
-    <script async src="/blog/libs/others/busuanzi.pure.mini.js"></script>
-    
 
-    
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
 
-    
+  <script>Fluid.plugins.codeWidget();</script>
 
-	
-    
 
-    
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
 
-    
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
 
-    
-    <script src="/blog/libs/instantpage/instantpage.js" type="module"></script>
-    
 
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 </body>
-
 </html>
