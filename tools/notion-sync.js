@@ -2,10 +2,14 @@ const { syncNotionToHexo } = require("./notion-sync-lib");
 
 async function main() {
   const config = require("../notion-sync.config.cjs");
+  console.log("Starting Notion sync...");
   const result = await syncNotionToHexo(config);
-  console.log(
-    `Synced ${result.writtenPosts}/${result.publishedPages} published posts from ${result.totalPages} Notion pages, removed ${result.removedPosts} stale posts.`,
-  );
+  console.log("-----------------------------------------");
+  console.log(`Total Notion pages found: ${result.totalPages}`);
+  console.log(`Pages matching status:    ${result.publishedPages}`);
+  console.log(`Files written to disk:   ${result.writtenPosts}`);
+  console.log(`Stale files removed:     ${result.removedPosts}`);
+  console.log("-----------------------------------------");
 }
 
 main().catch((error) => {
