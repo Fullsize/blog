@@ -218,7 +218,7 @@ function buildFrontMatter(post) {
     "tags:",
     ...post.tags.map((tag) => `  - ${tag}`),
     "categories:",
-    ...post.categories.map((category) => `  - ${category}`),
+    ...post.categories.map((category) => `  - [${category}]`),
     `notion_id: ${post.notionId}`,
     "---",
   ];
