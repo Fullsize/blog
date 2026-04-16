@@ -27,7 +27,7 @@
 <meta property="og:description" content="React 18 更新解析：并发特性、优化与新API">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-11-06T02:45:00.000Z">
-<meta property="article:modified_time" content="2026-04-13T09:07:52.111Z">
+<meta property="article:modified_time" content="2026-04-16T15:50:33.698Z">
 <meta property="article:author" content="fullsize">
 <meta property="article:tag" content="react">
 <meta name="twitter:card" content="summary_large_image">
@@ -401,9 +401,9 @@
 </ul>
 <h3 id="4-新的流式服务器端渲染-API（Streaming-Server-Rendering）"><a href="#4-新的流式服务器端渲染-API（Streaming-Server-Rendering）" class="headerlink" title="4. 新的流式服务器端渲染 API（Streaming Server Rendering）"></a>4. 新的流式服务器端渲染 API（Streaming Server Rendering）</h3><p>React 18 提供了新的流式服务器端渲染方法。通过分块传输内容，服务器可以在部分内容渲染完毕后就将其发送到客户端，使得应用可以更早地展示内容。相比之前的 SSR 模式，这种流式渲染方式能够提升初始加载速度，为用户带来更加流畅的浏览体验。</p>
 <h3 id="5-新的-Hooks：useTransition-和-useDeferredValue"><a href="#5-新的-Hooks：useTransition-和-useDeferredValue" class="headerlink" title="5. 新的 Hooks：useTransition 和 useDeferredValue"></a>5. 新的 Hooks：<code>useTransition</code> 和 <code>useDeferredValue</code></h3><ul>
-<li><p>**<code>useTransition</code>**：这是 React 18 中另一个用于处理并发更新的 Hook，可以搭配 <code>startTransition</code> 使用。通过将一些低优先级的更新（如数据加载）放入 <code>useTransition</code> 中，React 可以推迟这些更新的执行，从而保证页面的流畅性，特别适合在复杂交互场景下使用。</p>
+<li><p><strong><code>useTransition</code></strong>：这是 React 18 中另一个用于处理并发更新的 Hook，可以搭配 <code>startTransition</code> 使用。通过将一些低优先级的更新（如数据加载）放入 <code>useTransition</code> 中，React 可以推迟这些更新的执行，从而保证页面的流畅性，特别适合在复杂交互场景下使用。</p>
 </li>
-<li><p>**<code>useDeferredValue</code>**：此 Hook 允许将某些更新延迟到后续的空闲时间再处理。对于那些需要频繁交互的组件（例如输入框、搜索框等），<code>useDeferredValue</code> 能够有效减少重新渲染的次数，避免卡顿。</p>
+<li><p><strong><code>useDeferredValue</code></strong>：此 Hook 允许将某些更新延迟到后续的空闲时间再处理。对于那些需要频繁交互的组件（例如输入框、搜索框等），<code>useDeferredValue</code> 能够有效减少重新渲染的次数，避免卡顿。</p>
 </li>
 </ul>
 <h3 id="6-严格模式中的双重渲染"><a href="#6-严格模式中的双重渲染" class="headerlink" title="6. 严格模式中的双重渲染"></a>6. 严格模式中的双重渲染</h3><p>React 18 加强了开发环境下的严格模式（Strict Mode），在首次渲染组件时会触发两次渲染。这一机制帮助开发者更容易检测副作用，确保组件的行为稳定。虽然双重渲染仅在开发模式下启用，但它能有效帮助开发者找到隐藏的依赖和潜在问题，提高代码质量。</p>

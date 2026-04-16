@@ -27,7 +27,7 @@
 <meta property="og:description" content="openvpn在Linux系统如何使用">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-01-02T03:14:00.000Z">
-<meta property="article:modified_time" content="2026-04-13T09:07:52.110Z">
+<meta property="article:modified_time" content="2026-04-16T15:50:33.698Z">
 <meta property="article:author" content="fullsize">
 <meta property="article:tag" content="tool">
 <meta name="twitter:card" content="summary_large_image">
@@ -406,7 +406,7 @@
 <h3 id="配置和使用-OpenVPN："><a href="#配置和使用-OpenVPN：" class="headerlink" title="配置和使用 OpenVPN："></a><strong>配置和使用 OpenVPN：</strong></h3><ol>
 <li><p><strong>获取 OpenVPN 配置文件：</strong><br>通常，你需要从 OpenVPN 服务提供商或管理员处获得配置文件。这个文件通常以 <strong><code>.ovpn</code></strong> 结尾。</p>
 </li>
-<li><p><strong>使用 OpenVPN 连接：</strong><br>在终端中使用 <strong><code>sudo</code></strong> 权限运行 OpenVPN，指定你的配置文件。例如，假设你的配置文件是 **<code>client.ovpn</code>**：</p>
+<li><p><strong>使用 OpenVPN 连接：</strong><br>在终端中使用 <strong><code>sudo</code></strong> 权限运行 OpenVPN，指定你的配置文件。例如，假设你的配置文件是 <strong><code>client.ovpn</code></strong>：</p>
 </li>
 </ol>
 <figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> openvpn <span class="token parameter variable">--config</span> client.ovpn<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure>
@@ -417,7 +417,7 @@
 </li>
 <li><p><strong>使用 <strong><strong><code>Ctrl + C</code></strong></strong> 停止连接：</strong><br>当你想断开连接时，可以在终端上按下 <strong><code>Ctrl + C</code></strong> 来停止 OpenVPN 连接。</p>
 </li>
-<li><p><strong>管理 OpenVPN 连接：</strong><br>你可以使用 <strong><code>sudo systemctl start openvpn@config_file.service</code><strong>、</strong><code>sudo systemctl stop openvpn@config_file.service</code><strong>、</strong><code>sudo systemctl status openvpn@config_file.service</code></strong> 等命令来管理 OpenVPN 连接，其中 <strong><code>config_file</code></strong> 是你的配置文件名称。</p>
+<li><p><strong>管理 OpenVPN 连接：</strong><br>你可以使用 <strong><code>sudo systemctl start openvpn@config_file.service</code></strong>、<strong><code>sudo systemctl stop openvpn@config_file.service</code></strong>、<strong><code>sudo systemctl status openvpn@config_file.service</code></strong> 等命令来管理 OpenVPN 连接，其中 <strong><code>config_file</code></strong> 是你的配置文件名称。</p>
 </li>
 </ol>
 <h2 id="执行脚本"><a href="#执行脚本" class="headerlink" title="执行脚本"></a>执行脚本</h2><p>需要先给脚本权限</p>
