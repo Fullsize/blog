@@ -1,6 +1,7 @@
 ---
 title: Windows 安装 FFmpeg
 date: 2026-03-30 09:53
+description: Windows 安装 FFmpeg
 tags:
   - system
 categories:
