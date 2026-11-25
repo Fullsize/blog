@@ -2,6 +2,9 @@ name: Sync Notion Posts
 
 on:
   workflow_dispatch:
+  schedule:
+    # GitHub Actions 默认使用 UTC，对应北京时间每天 03:17。
+    - cron: "17 19 * * *"
 
 permissions:
   contents: write

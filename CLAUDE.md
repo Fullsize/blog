@@ -29,7 +29,7 @@ Hexo 7.3.0 blog with the Fluid theme (`hexo-theme-fluid` as npm dep, configured 
 - `notion_id` in front matter links a post back to its Notion page
 
 **CI/CD** (`.github/workflows/`):
-- `notion-sync.yml` — hourly cron + manual dispatch; syncs from Notion and commits changes
+- `notion-sync.yml` — runs daily at 03:17 Beijing time and supports manual dispatch. Syncs from Notion and commits changes.
 - `deploy.yml` — triggers on push to `master` AND after successful Notion sync; builds and deploys
 
 ## Conventions

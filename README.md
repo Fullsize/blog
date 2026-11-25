@@ -116,7 +116,7 @@ Accepted publication statuses are `done`, `Done`, `已发布`, and `done🙌🏻
 
 Pushing to `master` triggers `.github/workflows/deploy.yml`, which installs dependencies, generates the static site, and publishes `public/` to GitHub Pages.
 
-The Notion sync workflow, `.github/workflows/notion-sync.yml`, is triggered manually in GitHub Actions and commits synced content. The deployment workflow also runs after a successful Notion sync workflow. The configured site URL is [https://blog.fullsize.cn/](https://blog.fullsize.cn/).
+The Notion sync workflow, `.github/workflows/notion-sync.yml`, runs daily at 03:17 Beijing time (19:17 UTC) and also supports manual runs. It commits synced content, and a successful sync triggers deployment to `gh-pages`. The configured site URL is [https://blog.fullsize.cn/](https://blog.fullsize.cn/).
 
 ## Feedback
 

@@ -114,7 +114,7 @@ npm run sync:notion
 
 推送到 `master` 分支会触发 `.github/workflows/deploy.yml`：安装依赖、生成静态页面，然后将 `public/` 发布到 GitHub Pages。
 
-Notion 同步工作流 `.github/workflows/notion-sync.yml` 通过 GitHub Actions 手动触发，完成后会提交同步内容；部署工作流也会在该同步工作流成功结束后运行。线上站点地址配置为 [https://blog.fullsize.cn/](https://blog.fullsize.cn/)。
+Notion 同步工作流 `.github/workflows/notion-sync.yml` 每天北京时间 03:17 运行，也支持手动触发。同步内容有变化时会提交。同步成功后自动部署到 `gh-pages`。线上站点地址为 [https://blog.fullsize.cn/](https://blog.fullsize.cn/)。
 
 ## 反馈与交流
 
