@@ -1,11 +1,80 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
+const fs = require("node:fs/promises");
+const os = require("node:os");
+const path = require("node:path");
 
 const {
   mapPageToPost,
   diffSyncedPosts,
   renderBlocksToMarkdown,
+  syncNotionToHexo,
 } = require("../tools/notion-sync-lib");
+
+test("syncNotionToHexo waits and retries a rate-limited child block request", async (t) => {
+  const tempDir = await fs.mkdtemp(path.join(os.tmpdir(), "notion-sync-"));
+  t.after(() => fs.rm(tempDir, { recursive: true, force: true }));
+  const config = {
+    ...require("../notion-sync.config.cjs"),
+    outputDir: path.relative(process.cwd(), tempDir),
+  };
+  const env = process.env;
+  t.mock.method(globalThis, "setTimeout", (resolve) => queueMicrotask(resolve));
+  const timer = globalThis.setTimeout;
+  t.mock.method(console, "warn", () => {});
+  process.env = {
+    ...env,
+    NOTION_TOKEN: "test-token",
+    NOTION_DATABASE_ID: "test-db",
+  };
+  t.after(() => {
+    process.env = env;
+  });
+
+  const responses = [
+    Response.json({
+      results: [{
+        id: "page",
+        created_time: "2026-04-28T00:00:00Z",
+        properties: {
+          Name: { type: "title", title: [{ plain_text: "Example" }] },
+          Status: { type: "status", status: { name: "done" } },
+        },
+      }],
+    }),
+    Response.json({
+      results: [{
+        id: "child",
+        type: "paragraph",
+        has_children: true,
+        paragraph: { rich_text: [] },
+      }],
+    }),
+    Response.json({ additional_data: { retry_after: "60" } }, {
+      status: 429,
+      headers: { "Retry-After": "24" },
+    }),
+    Response.json({ additional_data: { retry_after: "30" } }, { status: 429 }),
+    Response.json({ results: [] }),
+  ];
+  const request = t.mock.method(globalThis, "fetch", async () => responses.shift());
+
+  const result = await syncNotionToHexo(config);
+
+  assert.equal(result.writtenPosts, 1);
+  assert.equal(request.mock.callCount(), 5);
+  const childUrl = "https://api.notion.com/v1/blocks/child/children?page_size=100";
+  assert.deepEqual(
+    request.mock.calls.slice(2).map(({ arguments: [url] }) => url),
+    [childUrl, childUrl, childUrl],
+  );
+  const delays = timer.mock.calls.map(({ arguments: [, delay] }) => delay);
+  assert.equal(delays.length, 2);
+  assert.ok(delays[0] >= 24000 && delays[0] < 24250);
+  assert.ok(delays[1] >= 30000 && delays[1] < 30250);
+  const post = await fs.readFile(path.join(tempDir, "example.md"), "utf8");
+  assert.match(post, /title: Example/);
+});
 
 test("mapPageToPost converts notion properties into a Hexo post record", async () => {
   const page = {

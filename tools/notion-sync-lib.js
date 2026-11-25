@@ -272,7 +272,8 @@ function diffSyncedPosts(currentPosts, existingPosts) {
 }
 
 async function notionRequest({ token, pathName, method = "GET", body }) {
-  const response = await fetch(`https://api.notion.com/v1${pathName}`, {
+  const url = `https://api.notion.com/v1${pathName}`;
+  const options = {
     method,
     headers: {
       Authorization: `Bearer ${token}`,
@@ -280,16 +281,46 @@ async function notionRequest({ token, pathName, method = "GET", body }) {
       "Content-Type": "application/json",
     },
     body: body ? JSON.stringify(body) : undefined,
-  });
+  };
+  const maxRetries = 5;
 
-  if (!response.ok) {
+  for (let attempt = 0; ; attempt += 1) {
+    const response = await fetch(url, options);
+    if (response.ok) {
+      return response.json();
+    }
+
     const errorText = await response.text();
-    throw new Error(
+    const error = new Error(
       `Notion API ${method} ${pathName} failed: ${response.status} ${errorText}`,
     );
-  }
+    if (response.status !== 429 || attempt >= maxRetries) {
+      throw error;
+    }
 
-  return response.json();
+    let rateLimit;
+    try {
+      rateLimit = JSON.parse(errorText)?.additional_data;
+    } catch {
+      // 代理返回的 429 可能没有 JSON 正文，此时仍可按响应头重试。
+    }
+    if (rateLimit?.rate_limit_reason === "public_api_request_blocked") {
+      throw error;
+    }
+
+    const retryAfter = Number(
+      response.headers.get("Retry-After") || rateLimit?.retry_after,
+    );
+    const backoffSeconds = 2 ** attempt;
+    const delaySeconds = Number.isFinite(retryAfter) && retryAfter >= 0
+      ? Math.max(retryAfter, backoffSeconds)
+      : backoffSeconds;
+    const delayMs = delaySeconds * 1000 + Math.floor(Math.random() * 250);
+    console.warn(
+      `Notion API ${method} ${pathName} returned 429. Retrying in ${delayMs} ms (${attempt + 1}/${maxRetries}).`,
+    );
+    await new Promise((resolve) => setTimeout(resolve, delayMs));
+  }
 }
 
 async function queryDatabase({ token, databaseId }) {
